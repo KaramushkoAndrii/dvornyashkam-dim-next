@@ -22,7 +22,7 @@ const Header = () => {
       <Navigation list={navigationList} />
 
       <Link to={"/"} className="logo__wrapper">
-        <img className="logo" src="/logo.png" alt="logo" />
+        <img className="logo" src="/images/logo.png" alt="logo" />
       </Link>
 
       <ChangeLng />
