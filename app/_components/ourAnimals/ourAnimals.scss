@@ -1,0 +1,18 @@
+
+
+@import '../../style/var.scss';
+@import '../../style/mixins.scss';
+
+
+.animals {
+
+    .animal {
+        width: 55dvw;
+    }
+
+    @media (min-width: $large) {
+        .animal {
+            width: 29dvw;
+        }
+    }
+}

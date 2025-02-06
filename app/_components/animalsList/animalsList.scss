@@ -1,0 +1,47 @@
+
+@import '../../style/var.scss';
+@import '../../style/mixins.scss';
+
+.animals__title {
+    padding: 0 2rem;
+}
+
+.animals__list {
+    @include container();
+    display: flex;
+    gap: 2rem;
+
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+
+    img {
+        height: 35vh;
+    }
+}
+
+.animal__choice:nth-child(2) {
+    display: none;
+}
+
+.animals__more-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0 4rem;
+
+    &:last-of-type {
+        padding: 2rem 0;
+    }
+
+    button {
+        border: 1px solid $secondary;
+        background-color: $primary;
+    }
+}
+
+@media (min-width: $large) {
+    .animals__list {
+        justify-content: center;
+        scrollbar-width: none;
+    }
+}

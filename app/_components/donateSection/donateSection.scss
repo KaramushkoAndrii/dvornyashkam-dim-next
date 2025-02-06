@@ -1,0 +1,83 @@
+
+
+@import '../../style/var.scss';
+@import '../../style/mixins.scss';
+
+
+.donate {
+    @include container($marginTop: 10rem, $marginBottom: 4rem);
+    position: relative;
+    background-color: $primary;
+
+    border-radius: $main-border-radius;
+
+    &::before {
+        position: absolute;
+        content: '';
+        bottom: calc(100% - 3.25rem);
+        left: 0;
+
+        width: 100%;
+        height: 44%;
+
+        background-image: url('../../../public/images/donateAnimals.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        z-index: 5;
+    }
+
+    &__title {
+        text-align: center;
+    }
+
+    &__option {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        align-items: center;
+        padding: 2rem 0;
+
+        &::before {
+            position: absolute;
+            top: 2rem;
+            left: 50%;
+            height: calc(100% - 4rem);
+            width: 1px;
+            content: "";
+            background-color: $white;
+        }
+
+        li {
+            width: 100%;
+        }
+
+        a {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+
+            color: $white;
+        }
+    }
+
+    .img__container {
+        display: flex;
+        
+        width: 5rem;
+        height: 5rem;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    @media (min-width: $tablet) {
+        &::before {
+            bottom: calc(100% - 2.45rem);
+        }
+    }
+}

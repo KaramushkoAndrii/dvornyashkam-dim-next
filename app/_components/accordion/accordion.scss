@@ -1,0 +1,74 @@
+
+@import '../../style/var.scss';
+@import '../../style/mixins.scss';
+  
+
+.accordion {
+    margin: 0 auto;
+    max-width: 30rem;
+
+    background-color: $secondary;
+    border-radius: $main-border-radius;
+
+
+    &__item {
+        margin-bottom: 1rem;
+        background-color: $white;
+        border-radius: $main-border-radius;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    &__header {
+        position: relative;
+        width: 100%;
+        padding: 1rem 3rem 1rem 2rem;
+        background-color: $primary;
+        border: 0;
+        border-radius: $main-border-radius;
+        font-size: clamp(1.1rem, 2vw, 4rem);
+        text-align: center;
+        cursor: pointer;
+
+        svg {
+            width: clamp(1.5rem, 4vw, 3.5rem);
+            height: clamp(1.5rem, 4vw, 3.5rem);            
+        }
+    }
+
+    &__collapse {
+        height: 0px;
+        overflow: hidden;
+        transition: height 0.3s;
+    }
+
+    &__collapse.open {
+        height: auto;
+    }
+
+    &__body {
+        padding: 2rem 1rem;
+        background-color: $white;
+        border-bottom-left-radius: $main-border-radius;
+        border-bottom-right-radius: $main-border-radius;
+        font-size: clamp(1rem, 1.75vw, 3.5rem);
+        color: $primary;
+    }
+
+    &__arrow {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        display: block;
+        width: 30px;
+        height: 1rem;
+        fill: $secondary;
+        transform: translateY(-50%);
+    }
+
+    &__arrow.active {
+        transform: translateY(-50%) rotate(180deg);
+    }
+}

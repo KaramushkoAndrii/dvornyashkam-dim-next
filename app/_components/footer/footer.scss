@@ -1,0 +1,32 @@
+
+
+@import '../../style/var.scss';
+@import '../../style/mixins.scss';
+
+
+footer {
+    @include container();
+    background-color: $primary;
+    border-radius: $main-border-radius $main-border-radius 0 0;
+
+    .footer__main {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo__wrapper {
+        display: flex;
+        width: 4rem;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .hero__title {
+        max-width: 75%;
+    }
+}

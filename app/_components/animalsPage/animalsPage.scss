@@ -1,0 +1,142 @@
+
+
+
+@import '../../style/var.scss';
+@import '../../style/mixins.scss';
+
+
+.dogPage, .catPage {
+    @include container();
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    & > h2 {
+        text-align: center;
+    }
+
+    .animalPage__more {
+        width: 35dvw;
+        max-width: 350px;
+        padding: 0.75rem 1rem;
+
+        font-size: clamp(0.8rem, 3vw, 5rem);
+
+        border-radius: $main-border-radius;
+        color: $white;
+        background-color: $primary;
+
+        cursor: pointer;
+    }
+}
+
+
+.animalPage__content {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .animal {
+        width: 35dvw;
+    }
+
+    img {
+        border-radius: 1rem;
+    }
+
+    & .animal__buttons {
+        display: none;
+    }
+    
+}
+
+.animalPage__aside {
+    position: fixed;
+    top: 0;
+    right: -100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    background: $secondary;
+
+    transition: right 0.3s ease-in-out;
+    z-index: 999;
+
+
+    
+
+    img {
+        width: 50dvw;
+    }
+}
+
+.animalPage__aside-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 70dvw;
+    border: 1px solid $primary;
+    background-color: $primary;
+    border-radius: $main-border-radius;
+
+    header {
+        display: flex;
+        justify-content: end;
+        padding: 1rem 1rem 0;
+    }
+
+    button {
+        padding: 0.5rem 0.75rem;
+        background-color: $secondary;
+        color: $white;
+        border-radius: $main-border-radius;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .imgContainer {
+        display: flex;
+        width: 100%;
+        padding: 0 1rem;
+        gap: 1rem;
+
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+    }
+
+    div {
+        display: flex;
+        gap: 1rem;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0.5rem 1rem 0;
+        margin-bottom: 1rem;
+        width: 100%;
+
+        button {
+            width: 100%;
+        }
+    }
+}
+
+.animalPage__aside.open {
+    right: 0;
+}

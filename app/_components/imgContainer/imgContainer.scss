@@ -1,0 +1,11 @@
+
+
+@import '../../style/var.scss';
+@import '../../style/mixins.scss'; 
+
+.img-container {
+    img {
+        width: 100%;
+        border-radius: $main-border-radius;
+    }
+}

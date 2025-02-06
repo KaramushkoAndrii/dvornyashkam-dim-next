@@ -1,0 +1,26 @@
+
+@import '../../style/var.scss';
+
+
+.custom-cursor {
+  display: none;
+  
+  @media (min-width: $laptop) {
+    position: fixed;
+    width: 40px; /* Размер курсора */
+    height: 40px;
+    z-index: 9999; /* Убедитесь, что он всегда выше других элементов */
+    pointer-events: none; /* Чтобы курсор не блокировал взаимодействие с элементами */
+    transition: transform 0.1s ease-out, background-color 0.3s ease-in-out;
+  
+    /* Стили по умолчанию */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+  
+ .custom-cursor.clicked {
+  transform: translate(-50%, -50%) scale(0.9); /* Легкий эффект уменьшения при клике */
+  //background-color: rgba(0, 0, 0, 0.1); /* Если нужно добавить фон при нажатии */
+}
