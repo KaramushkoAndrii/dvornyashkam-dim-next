@@ -5,7 +5,7 @@ import "./styles/global.scss";
 
 // Init Fonts
 const robotoFont = Roboto({
-  variable: "--font-roboto",
+  variable: "--font-first",
   weight: ["400", "500"],
   subsets: ["cyrillic", "latin"],
   display: "swap",
@@ -14,7 +14,7 @@ const robotoFont = Roboto({
 });
 
 const loraFont = Lora({
-  variable: "--font-lora",
+  variable: "--font-second",
   weight: ["400", "500", "600", "700"],
   subsets: ["cyrillic", "latin"],
   display: "swap",
