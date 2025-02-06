@@ -12,7 +12,7 @@
 h1,
 h2,
 h3 {
-  font-family: "Lora";
+  font-family: var(--font-second);
   font-weight: normal;
 }
 
@@ -38,7 +38,7 @@ button {
 }
 
 body {
-  font-family: "Roboto";
+  font-family: var(--font-first);
   font-weight: normal;
   font-size: 16px;
   color: $white;
