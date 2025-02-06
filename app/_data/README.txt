@@ -1,0 +1,1 @@
+This folder is for Backend data. There's nothing like i18n keys, React components, etc. here.
