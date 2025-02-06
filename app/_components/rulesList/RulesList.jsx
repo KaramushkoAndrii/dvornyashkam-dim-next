@@ -1,25 +1,21 @@
+// import { useTranslation } from "react-i18next";
+import Accordion from "@/app/_components/accordion/Accordion";
 
-import { useTranslation } from 'react-i18next';
-import Accordion from '../accordion/Accordion';
+import "./rulesList.scss";
 
-import './rulesList.scss';
+const RulesList = ({ data, accordionData = null }) => {
+  const { t } = { t: (x) => x }; // useTranslation();
 
-const RulesList = ({data, accordionData = null}) => {
+  const { title, description } = data;
 
-    const { t } = useTranslation();
+  return (
+    <div className="rules">
+      <h2>{t(title)}</h2>
+      <p>{t(description)}</p>
 
-    const {title, description} = data;
-
-    return (
-        <div className='rules'>
-            <h2>{t(title)}</h2>
-            <p>{t(description)}</p>
-
-
-            {accordionData ? <Accordion data={accordionData}/> : null}
-            
-        </div>
-    )
-}
+      {accordionData ? <Accordion data={accordionData} /> : null}
+    </div>
+  );
+};
 
 export default RulesList;

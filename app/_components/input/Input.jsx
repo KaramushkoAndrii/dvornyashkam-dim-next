@@ -1,37 +1,39 @@
-
+"use client";
 
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 
-import './input.scss';
+import "./input.scss";
 
-const Input = ({type, name, id, label, ...rest}) => {
+const Input = ({ type, name, id, label, ...rest }) => {
+  const [isFocus, setIsFocus] = useState(false);
 
-    const [isFocus, setIsFocus] = useState(false);
+  const { t } = { t: (x) => x }; // useTranslation();
 
-    const { t } = useTranslation();
+  const handleBlur = (e) => {
+    setIsFocus(!!e.target.value);
+  };
 
-    const handleBlur = (e) => {
-        setIsFocus(!!e.target.value)
-    };
-
-    return (
-        <>
-            <div className="input-group">
-                <label  htmlFor={id}
-                        className={`input-label ${isFocus ? "filled" : ""}`}
-                >
-                    {t(label)}
-                </label>
-                <input  id={id} 
-                        type={type} 
-                        name={name} 
-                        onBlur={handleBlur}
-                        onFocus={() => setIsFocus(true)}
-                        {...rest}/>
-            </div>
-        </>
-    )
-}
+  return (
+    <>
+      <div className="input-group">
+        <label
+          htmlFor={id}
+          className={`input-label ${isFocus ? "filled" : ""}`}
+        >
+          {t(label)}
+        </label>
+        <input
+          id={id}
+          type={type}
+          name={name}
+          onBlur={handleBlur}
+          onFocus={() => setIsFocus(true)}
+          {...rest}
+        />
+      </div>
+    </>
+  );
+};
 
 export default Input;
