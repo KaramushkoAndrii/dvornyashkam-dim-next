@@ -1,3 +1,4 @@
+// https://nextjs.org/docs/app/getting-started/images-and-fonts#optimizing-fonts
 import { Roboto, Lora } from "next/font/google";
 
 import "./styles/normalize.scss";
