@@ -1,7 +1,7 @@
 // import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 
-import { rotateAndScale } from "@/app/_components/Animations";
+import { rotateAndScale } from "@/app/_constants/animations";
 import { FaDog } from "react-icons/fa6";
 import { TbVaccine } from "react-icons/tb";
 

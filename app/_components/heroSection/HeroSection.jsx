@@ -1,7 +1,7 @@
 // import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 
-import { slideFromLeft } from "@/app/_components/Animations";
+import { slideFromLeft } from "@/app/_constants/animations";
 import "./heroSection.scss";
 
 const HeroSection = () => {

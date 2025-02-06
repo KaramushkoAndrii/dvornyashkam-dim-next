@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 
 import "./helpListDetailed.scss";
-import { slideFromLeft, slideFromRight } from "@/app/_components/Animations";
+import { slideFromLeft, slideFromRight } from "@/app/_constants/animations";
 
 const HelpListDetailed = ({ dataList, translationGroup, isOpen }) => {
   const { t } = { t: (x) => x }; // useTranslation();

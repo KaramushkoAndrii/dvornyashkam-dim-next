@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 
-import { slideFromBottom } from "@/app/_components/Animations";
+import { slideFromBottom } from "@/app/_constants/animations";
 
 import "./map.scss";
 

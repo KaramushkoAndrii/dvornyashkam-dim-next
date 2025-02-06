@@ -1,7 +1,7 @@
 // import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 
-import { appear } from "@/app/_components/Animations";
+import { appear } from "@/app/_constants/animations";
 import RulesList from "@/app/_components/rulesList/RulesList";
 
 import "./visitedUs.scss";

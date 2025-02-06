@@ -1,7 +1,7 @@
 // import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 
-import { slideFromBottom } from "@/app/_components/Animations";
+import { slideFromBottom } from "@/app/_constants/animations";
 import DonateList from "@/app/_data/donateList";
 
 import "./donateSection.scss";

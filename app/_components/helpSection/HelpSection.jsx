@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-import { slideFromRight } from "@/app/_components/Animations";
+import { slideFromRight } from "@/app/_constants/animations";
 import HelpList from "@/app/_data/helpList";
 import Button from "@/app/_components/button/Button";
 import { FaPaw } from "react-icons/fa";

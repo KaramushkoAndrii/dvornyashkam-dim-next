@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-import { slideFromLeft } from "@/app/_components/Animations";
+import { slideFromLeft } from "@/app/_constants/animations";
 import AnimalCard from "@/app/_components/AnimalCard/AnimalCard";
 import Button from "@/app/_components/button/Button";
 

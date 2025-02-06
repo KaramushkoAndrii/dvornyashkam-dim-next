@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-import { slideFromBottom } from "@/app/_components/Animations";
+import { slideFromBottom } from "@/app/_constants/animations";
 import AnimalCard from "@/app/_components/AnimalCard/AnimalCard";
 import dogsDB from "@/app/_data/dogsDB";
 import Button from "@/app/_components/button/Button";

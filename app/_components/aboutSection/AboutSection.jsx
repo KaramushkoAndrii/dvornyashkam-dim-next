@@ -6,7 +6,7 @@ import {
   slideFromRight,
   slideFromLeft,
   scale,
-} from "@/app/_components/Animations";
+} from "@/app/_constants/animations";
 import AboutList from "@/app/_data/aboutList";
 import AboutListItem from "@/app/_data/aboutInfoList";
 

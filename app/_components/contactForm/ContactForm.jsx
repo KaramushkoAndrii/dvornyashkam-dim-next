@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 import { PiTelegramLogo } from "react-icons/pi";
 
-import { slideFromBottom } from "@/app/_components/Animations";
+import { slideFromBottom } from "@/app/_constants/animations";
 import Button from "@/app/_components/button/Button";
 
 import "./contactForm.scss";
