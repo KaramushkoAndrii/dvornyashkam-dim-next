@@ -1,10 +1,14 @@
+// TO DO: i18n https://next-intl.dev/docs/getting-started/app-router/with-i18n-routing
+// Video Instruction: https://www.youtube.com/watch?v=2Jh9olZXBfw (not checked yet)
 // import { useTranslation } from "react-i18next";
+
 import "./changeLng.scss";
 
-import React from "react";
-
 const ChangeLng = () => {
-  const { i18n } = useTranslation();
+  // TO DO: i18n https://next-intl.dev/docs/getting-started/app-router/with-i18n-routing
+  const { i18n } = {
+    i18n: { resolvedLanguage: "uk", changeLanguage: (x) => x },
+  }; // useTranslation();
 
   const locales = {
     uk: {
@@ -21,7 +25,6 @@ const ChangeLng = () => {
 
   return (
     <div className="language_toggle">
-      {i18n.resolvedLanguage}
       <select onChange={handleLanguageChange} value={i18n.resolvedLanguage}>
         {Object.keys(locales).map((locale) => (
           <option key={locale} value={locale}>
