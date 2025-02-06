@@ -1,10 +1,11 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+// import Image from "next/image";
+import "./page.scss";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
+    <div className="page">
+      <h1 className="page__title">Hello, Page!</h1>
+      {/* <main className={styles.main}>
         <Image
           className={styles.logo}
           src="/next.svg"
@@ -89,7 +90,7 @@ export default function Home() {
           />
           Go to nextjs.org →
         </a>
-      </footer>
+      </footer> */}
     </div>
   );
 }
