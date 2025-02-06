@@ -124,11 +124,11 @@ export default function RootLayout({ children }) {
           isModalOpen ? "modal-open" : ""
         }`}
       >
-        {/* <Header /> */}
+        <Header />
 
         <main>{children}</main>
 
-        {/* <DonateSection /> */}
+        <DonateSection />
         <Footer />
         <CustomCursor />
         <Modal />
