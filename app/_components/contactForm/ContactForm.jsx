@@ -11,24 +11,31 @@ import "./contactForm.scss";
 const ContactForm = ({ data, isOpen }) => {
   const { t } = { t: (x) => x }; // useTranslation();
 
+  // TO DO: isOpen is may be openHandler like in other components?
   return (
     <motion.ul {...slideFromBottom} className="contactForm">
       {data.map((item, key) => (
         <li key={key} className="contactForm__item">
           <p>{item.name}</p>
-          {item.typeHref === "tel" ? (
+          {(item.key === "phone" || item.key === "telegram") && (
             <div>
-              <a href={`${item.typeHref}:${item.number}`}>{item.number}</a>
-              <a
-                href={`${item.tgLink}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <PiTelegramLogo />
-              </a>
+              {item.key === "phone" && (
+                <a href={`tel:${item.value}`}>{item.value}</a>
+              )}
+
+              {item.key === "telegram" && (
+                <a
+                  href={`https://t.me/${item.value}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <PiTelegramLogo />
+                </a>
+              )}
             </div>
-          ) : (
-            <a href={`mailto:${item.link}`}>{item.link}</a>
+          )}
+          {item.key === "email" && (
+            <a href={`mailto:${item.value}`}>{item.value}</a>
           )}
         </li>
       ))}

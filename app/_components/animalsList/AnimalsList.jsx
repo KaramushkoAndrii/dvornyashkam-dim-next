@@ -24,7 +24,7 @@ const AnimalsList = ({ title, dataList, src, btnText, isOpen }) => {
       </ul>
       {dataList.length > 3 && (
         <div className="animals__more-button">
-          <Link to={src}>
+          <Link href={src || "/"}>
             <Button text={t(`${btnText}`)} />
           </Link>
         </div>

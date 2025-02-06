@@ -5,8 +5,9 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 import Navigation from "@/app/_components/navigation/Navigation";
-import { navigationList } from "@/app/_data/navigationList";
 import ChangeLng from "@/app/_components/changeLng/ChangeLng";
+
+import { navigationList } from "@/app/_data/navigationList";
 
 import "./header.scss";
 
@@ -21,7 +22,7 @@ const Header = () => {
     <header className="header">
       <Navigation list={navigationList} />
 
-      <Link to={"/"} className="logo__wrapper">
+      <Link href="/" className="logo__wrapper">
         <img className="logo" src="/images/logo.png" alt="logo" />
       </Link>
 

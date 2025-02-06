@@ -27,7 +27,7 @@ const HelpSection = ({ btnText }) => {
         </ul>
 
         {btnText ? (
-          <Link to={"/help"}>
+          <Link href="/help">
             <Button text={t(btnText)} />
           </Link>
         ) : null}

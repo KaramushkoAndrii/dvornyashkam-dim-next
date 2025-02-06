@@ -1,6 +1,6 @@
 import { ContactsLinks, ContactsSocial } from "@/app/_data/contactsList";
 
-import SocialList from "./SocialList";
+import SocialList from "@/app/_components/contacts/SocialList";
 
 import "./contacts.scss";
 
@@ -9,13 +9,13 @@ const Contacts = () => {
     <div className="contacts">
       <ul className="contacts__links">
         <li className="contacts__links-item">
-          <a target="__blank" href={`mailto:${ContactsLinks[0]}`}>
-            {ContactsLinks[0]}
+          <a target="_blank" href={`mailto:${ContactsLinks.eamil}`}>
+            {ContactsLinks.eamil}
           </a>
         </li>
         <li className="contacts__links-item">
-          <a target="__blank" href={`tel:${ContactsLinks[1]}`}>
-            {ContactsLinks[1]}
+          <a target="_blank" href={`tel:${ContactsLinks.phone}`}>
+            {ContactsLinks.phone}
           </a>
         </li>
       </ul>

@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 // // import { useTranslation } from "react-i18next";
 import { usePathname } from "next/navigation";
-import { Link } from "next/link";
+import Link from "next/link";
 
 import { FaArrowRightLong } from "react-icons/fa6";
 
@@ -26,7 +26,7 @@ const Navigation = ({ list }) => {
     setMenuOpen(false);
   }, [location]);
 
-  console.log(t("navigation.about_us"));
+  // console.log(t("navigation.about_us"));
 
   return (
     <div className="nav__wrapper">
@@ -43,8 +43,9 @@ const Navigation = ({ list }) => {
         <ul className="navigation__list">
           {list.map((item, key) => (
             <li key={key} className="navigation__list-item">
-              <Link to={item.href}>
-                <span>{t(`${item.title}`)}</span> <FaArrowRightLong />
+              <Link href={item.href || "/"}>
+                <span>{t(item.title)}</span>
+                <FaArrowRightLong />
               </Link>
             </li>
           ))}

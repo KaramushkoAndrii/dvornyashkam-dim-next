@@ -53,7 +53,7 @@ const SearchSection = ({ isOpen }) => {
           onClick={animalRerol}
           disabled={isAnimating}
         />
-        <Link to={"/about"}>
+        <Link href="/about">
           <Button text={t("buttons.about")} />
         </Link>
       </motion.div>

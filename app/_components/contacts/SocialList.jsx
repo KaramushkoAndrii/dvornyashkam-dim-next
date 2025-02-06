@@ -12,7 +12,7 @@ const SocialList = ({ data }) => {
     <ul className="contacts__social">
       {data.map((item) => (
         <li key={item.key} className="contacts__social-item">
-          <a target="__blank" href={item.href}>
+          <a target="_blank" href={item.href}>
             {icon[item.key] || item.key}
           </a>
         </li>
