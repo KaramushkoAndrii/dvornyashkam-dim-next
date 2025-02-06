@@ -5,8 +5,8 @@ const nextConfig = {
   // https://sass-lang.com/documentation/at-rules/use/
   sassOptions: {
     additionalData: `
-            @use "./app/styles/vars.scss" as *;
-            @use "./app/styles/mixins.scss" as *;
+            @use "./app/_styles/vars.scss" as *;
+            @use "./app/_styles/mixins.scss" as *;
         `,
   },
 };
