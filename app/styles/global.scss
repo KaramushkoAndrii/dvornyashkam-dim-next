@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+  list-style: none;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  cursor: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Lora";
+  font-weight: normal;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+h3 {
+  font-size: clamp(1.75rem, 2.5vw, 3rem);
+}
+
+p {
+  font-size: clamp(1.5rem, 2vw, 3.5rem);
+  line-height: 1.6;
+}
+
+span {
+  font-size: clamp(1rem, 2vw, 2rem);
+}
+
+button {
+  font-size: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+body {
+  font-family: "Roboto";
+  font-weight: normal;
+  font-size: 16px;
+  color: $white;
+  background-color: $secondary;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+main {
+  margin-top: 10dvh;
+}
+
+.page__title {
+  padding-bottom: 2rem;
+}

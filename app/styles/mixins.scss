@@ -1,0 +1,12 @@
+@mixin container(
+  $paddingX: 2rem,
+  $paddingY: 2rem,
+  $max-width: auto,
+  $marginTop: 0,
+  $marginX: auto,
+  $marginBottom: 0
+) {
+  padding: $paddingY $paddingX;
+  margin: $marginTop $marginX $marginBottom;
+  max-width: $max-width;
+}
