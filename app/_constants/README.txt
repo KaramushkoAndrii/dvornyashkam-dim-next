@@ -1,0 +1,1 @@
+This folder is for constant data that uses in Frontend. For example: i18n keys of any titles.
