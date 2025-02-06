@@ -4,6 +4,12 @@ import { Roboto, Lora } from "next/font/google";
 import "./_styles/normalize.scss";
 import "./_styles/global.scss";
 
+import Header from "@/app/_components/header/Header";
+import Footer from "@/app/_components/footer/Footer";
+import DonateSection from "@/app/_components/donateSection/DonateSection";
+import CustomCursor from "@/app/_components/customCursor/CustomCursor";
+import Modal from "@/app/_components/modal/Modal";
+
 // Init Fonts
 const robotoFont = Roboto({
   variable: "--font-first",
@@ -32,6 +38,9 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  // TO DO: get state from store (redux, zustand, mobx, etc.)
+  const [isModalOpen] = [false];
+
   return (
     <html lang="en">
       <head>
@@ -110,8 +119,19 @@ export default function RootLayout({ children }) {
         <meta name="theme-color" content="#87c7b2" />
       </head>
 
-      <body className={`${robotoFont.variable} ${loraFont.variable}`}>
-        {children}
+      <body
+        className={`${robotoFont.variable} ${loraFont.variable} ${
+          isModalOpen ? "modal-open" : ""
+        }`}
+      >
+        {/* <Header /> */}
+
+        <main>{children}</main>
+
+        {/* <DonateSection /> */}
+        <Footer />
+        <CustomCursor />
+        <Modal />
       </body>
     </html>
   );

@@ -1,32 +1,33 @@
 "use client";
 
-import { useEffect } from "react";
 // import { useTranslation } from "react-i18next";
 import Input from "@/app/_components/input/Input";
 
 import "./modal.scss";
 
-const Modal = ({ isModalOpen, isClose }) => {
+const Modal = () => {
   const { t } = { t: (x) => x }; // useTranslation();
 
-  useEffect(() => {
-    if (isModalOpen) {
-      document.body.classList.add("modal-open");
-    } else {
-      document.body.classList.remove("modal-open");
-    }
+  // TO DO: get state from store (redux, zustand, mobx, etc.)
+  // https://zustand-demo.pmnd.rs/
+  // or
+  // https://react-redux.js.org/introduction/getting-started
+  const [isModalOpen] = [false];
 
-    return () => {
-      document.body.classList.remove("modal-open");
-    };
-  }, [isModalOpen]);
+  const closeHandler = () => {
+    // TO DO: toggle Modal store (redux, zustand, mobx, etc.) state to false
+    // setIsModalOpen(false);
+    console.log(
+      "// TO DO: toggle Modal store (redux, zustand, mobx, etc.) state to false"
+    );
+  };
 
   return (
     <div className={`modal-container ${isModalOpen ? "modal-open" : ""}`}>
       <div className="modal">
         <header className="modal__header">
           <h2>{t("modal.callback")}</h2>
-          <span className="modal__close" onClick={isClose}>
+          <span className="modal__close" onClick={closeHandler}>
             X
           </span>
         </header>

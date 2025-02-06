@@ -12,6 +12,14 @@ const AnimalCard = ({ animal, isOpen }) => {
 
   const { t } = { t: (x) => x }; // useTranslation();
 
+  const openHandler = () => {
+    // TO DO: toggle Modal store (redux, zustand, mobx, etc.) state to true
+    //   setIsModalOpen(true);
+    console.log(
+      "TO DO: toggle Modal store (redux, zustand, mobx, etc.) state to true"
+    );
+  };
+
   return (
     <motion.div {...rotateAndScale} className="animal">
       <div className="animal__info">
@@ -40,10 +48,10 @@ const AnimalCard = ({ animal, isOpen }) => {
         </div>
       </div>
       <div className="animal__buttons">
-        <button className="animal__choice" onClick={isOpen}>
+        <button className="animal__choice" onClick={openHandler}>
           {t("search.choice")}
         </button>
-        <button className="animal__choice" onClick={isOpen}>
+        <button className="animal__choice" onClick={openHandler}>
           {t("search.trustee")}
         </button>
       </div>
