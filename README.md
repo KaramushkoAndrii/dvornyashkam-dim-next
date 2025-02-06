@@ -2,6 +2,8 @@
 
 «Dvoronyshkam dim» is an animal shelter in Ukraine
 
+Based on [React.js project](https://github.com/KaramushkoAndrii/dvornyshkam-dim)
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
