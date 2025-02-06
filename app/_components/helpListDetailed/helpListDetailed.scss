@@ -1,59 +1,55 @@
-
-@import '../../style/var.scss';
-
-
 .detailed__item {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.75rem;
+  padding: 1rem;
+
+  border-radius: $main-border-radius;
+
+  background-color: $purple;
+
+  footer {
+    position: relative;
 
     display: flex;
     flex-direction: column;
 
     gap: 0.75rem;
-    padding: 1rem;
+    padding: 0.75rem 0 0;
+    margin: 0;
+    max-width: auto;
 
-    border-radius: $main-border-radius;
+    border-radius: none;
 
     background-color: $purple;
 
-    footer {
-        position: relative;
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
 
-        display: flex;
-        flex-direction: column;
+      width: 100%;
+      height: 2px;
 
-        gap: 0.75rem;
-        padding: 0.75rem 0 0;
-        margin: 0;
-        max-width: auto;
+      color: $white;
+      background-color: $white;
 
-        border-radius: none;
-
-        background-color: $purple;
-
-        &::after {
-            position: absolute;
-            top: 0;
-            left: 0;
-
-            width: 100%;
-            height: 2px;
-
-            color: $white;
-            background-color: $white;
-
-            content: '';
-        }
+      content: "";
     }
+  }
 
-    button, a {
-        display: flex;
-        justify-content: center;
+  button,
+  a {
+    display: flex;
+    justify-content: center;
 
-        padding: 0.5rem 4rem;
-        max-width: max-content;
+    padding: 0.5rem 4rem;
+    max-width: max-content;
 
-        border: 1px solid $secondary;
-        border-radius: $main-border-radius;
+    border: 1px solid $secondary;
+    border-radius: $main-border-radius;
 
-        background-color: transparent;
-    }
+    background-color: transparent;
+  }
 }

@@ -1,99 +1,94 @@
-
-
-@import '../../style/var.scss';
-@import '../../style/mixins.scss';
-
 .animal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: $primary;
+
+  border-radius: 2rem;
+
+  .animal__info {
+    width: 100%;
+  }
+
+  .animal__picture {
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+    max-height: 60dvh;
+
+    border-radius: 2rem 2rem 1rem 1rem;
+
+    object-fit: cover;
+  }
+
+  .animal__description {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 
-    background-color: $primary;
+    height: fit-content;
 
-    border-radius: 2rem;
+    padding: 0.5rem 0;
+  }
 
-    .animal__info {
-        width: 100%;
+  .animal__name {
+    width: 100%;
+    padding-bottom: 0.25rem;
+
+    text-align: center;
+  }
+
+  .animal__gender,
+  .animal__age {
+    width: 100%;
+    text-align: center;
+  }
+
+  .animal__characteristics {
+    display: none;
+    gap: 1rem;
+
+    svg {
+      width: 2rem;
+      height: 2rem;
     }
+  }
 
-    .animal__picture {
-        width: 100%;
-    }
+  .animal__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 
-    img {
-        width: 100%;
-        max-height: 60dvh;
+    padding-bottom: 1rem;
+  }
 
-        border-radius: 2rem 2rem 1rem 1rem;
+  .animal__choice {
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
 
-        object-fit: cover;
-    }
-
-    .animal__description {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-
-        height: fit-content;
-
-        padding: 0.5rem 0;
-    }
-
-    .animal__name {
-        width: 100%;
-        padding-bottom: 0.25rem;
-
-        text-align: center;
-    }
-
-    .animal__gender, .animal__age {
-        width: 100%;
-        text-align: center;
-    }
-
-    .animal__characteristics {
-        display: none;
-        gap: 1rem;
-
-        svg {
-            width: 2rem;
-            height: 2rem;
-        }
-    }
-
-    .animal__buttons {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 0.5rem;
-
-        padding-bottom: 1rem;
-    }
-
-    .animal__choice {
-        padding: 1rem 1.5rem;
-        border-radius: 1rem;
-
-        color: $white;
-        background-color: $secondary;
-    }
-
+    color: $white;
+    background-color: $secondary;
+  }
 }
 
 @media (min-width: $large) {
-    .animal {
-        gap: 2rem;
-    }
+  .animal {
+    gap: 2rem;
+  }
 
-    .search .animal__characteristics {
-        display: flex;
-    }
+  .search .animal__characteristics {
+    display: flex;
+  }
 
-    .search .animal__info {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+  .search .animal__info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

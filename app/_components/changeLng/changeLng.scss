@@ -1,14 +1,11 @@
-@import '../../style/var.scss';
-
-
 .language_toggle {
-    select {
-        padding: 0.5rem 1rem;
+  select {
+    padding: 0.5rem 1rem;
 
-        border-radius: $main-border-radius;
+    border-radius: $main-border-radius;
 
-        color: $primary;
+    color: $primary;
 
-        appearance: none;
-    }
+    appearance: none;
+  }
 }

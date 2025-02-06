@@ -1,7 +1,3 @@
-@import '../../style/var.scss';
-@import '../../style/mixins.scss';
-
-
 .input-group {
   position: relative;
   margin: 1rem 0;
@@ -41,5 +37,3 @@ input {
 input[type="textarea"] {
   height: 12vh;
 }
-
-  

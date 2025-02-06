@@ -1,22 +1,17 @@
-
-
-@import '../../style/var.scss';
-
 .mainButton {
-    width: max-content;
-    padding: 1rem 1.5rem;
-    border: 1px solid $primary;
+  width: max-content;
+  padding: 1rem 1.5rem;
+  border: 1px solid $primary;
 
-    // font-size: clamp(0.75rem, 2vw, 1.5rem);
+  // font-size: clamp(0.75rem, 2vw, 1.5rem);
 
-    border-radius: 1rem;
+  border-radius: 1rem;
 
-    background-color: $secondary;
-    color: $white;
+  background-color: $secondary;
+  color: $white;
 
-
-    &:disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-    }
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 }

@@ -1,43 +1,38 @@
-@import '../../style/var.scss';
-@import '../../style/mixins.scss';
-
-
-
 .contactForm {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    padding: 1.5rem;
-    margin: 2rem 0;
-    border-radius: $main-border-radius;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: $main-border-radius;
 
-    background-color: $primary;
+  background-color: $primary;
 
-    .contactForm__item {
-        min-width: 185px;
+  .contactForm__item {
+    min-width: 185px;
 
-        svg {
-            width: 1.25rem;
-            height: 1.25rem;
-            fill: $secondary;
-        }
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      fill: $secondary;
     }
+  }
 
-    button {
-        flex-grow: 1;
-        min-width: 500px;
-    }
+  button {
+    flex-grow: 1;
+    min-width: 500px;
+  }
 }
 
 .contactForm__item {
-    div {
-        display: flex;
-        align-items: center;
+  div {
+    display: flex;
+    align-items: center;
 
-        gap: 1rem;
-    }
+    gap: 1rem;
+  }
 
-    a {
-        display: flex;
-    }
+  a {
+    display: flex;
+  }
 }

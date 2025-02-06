@@ -1,31 +1,28 @@
-@import '../../style/var.scss';
-@import '../../style/mixins.scss';
-
 .hero {
-    @include container($marginTop: 9vh);
+  @include container($marginTop: 9vh);
 
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100vh;
-    gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  gap: 1.5rem;
 
-    color: $white;
+  color: $white;
 
-    background-image: url('../../../public/images/heroBg.png');
-    background-size: cover;
-    background-position: right;
-    background-repeat: no-repeat;
-    background-color: $secondary;
+  background-image: url("/images/heroBg.png");
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-color: $secondary;
 
-    &__title {
-        max-width: 97%;
-        font-size: 2rem;
-        background-color: transparent;
-    }
+  &__title {
+    max-width: 97%;
+    font-size: 2rem;
+    background-color: transparent;
+  }
 
-    &__description {
-        max-width: 75%;
-        background-color: transparent;
-    }
+  &__description {
+    max-width: 75%;
+    background-color: transparent;
+  }
 }
