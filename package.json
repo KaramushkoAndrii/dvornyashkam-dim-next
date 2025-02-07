@@ -2,9 +2,9 @@
   "name": "dvornyshkam-dim-next",
   "version": "0.1.0",
   "private": true,
-  "engines" : { 
-    "npm" : "^10.9.2",
-    "node" : "^22.13.1"
+  "engines": {
+    "npm": "^10.9.2",
+    "node": "^22.13.1"
   },
   "scripts": {
     "dev": "next dev --turbopack",
@@ -18,7 +18,8 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.4.0",
-    "react-intersection-observer": "^9.15.1"
+    "react-intersection-observer": "^9.15.1",
+    "react-select": "^5.10.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
