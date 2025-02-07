@@ -10,7 +10,7 @@ import Button from "@/app/_components/button/Button";
 
 import "./animalsList.scss";
 
-const AnimalsList = ({ title, dataList, src, btnText }) => {
+const AnimalsList = ({ title, src, btnText, dataList }) => {
   const { t } = { t: (x) => x }; // useTranslation();
   return (
     <>

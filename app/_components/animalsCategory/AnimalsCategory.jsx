@@ -1,22 +1,15 @@
 "use client";
 
 import { useState, useCallback, useMemo } from "react";
-// import { useTranslation } from "react-i18next";
-
-import { FaDog } from "react-icons/fa6";
-import { TbVaccine } from "react-icons/tb";
 
 import AllAnimalsList from "@/app/_components/allAnimalsList/AllAnimalsList";
-import Button from "@/app/_components/button/Button";
 import SearchFilter from "@/app/_components/searchFilter/SearchFilter";
 
 import "./AnimalsCategory.scss";
 
 const AnimalsCategory = ({ title, btnMoreTitle, data = [] }) => {
-  const { t } = { t: (x) => x }; // useTranslation();
-
   const [visibleCards, setVisibleCards] = useState(4);
-  const [selectedAnimal, setSelectedAnimal] = useState(null);
+
   const [filters, setFilters] = useState({
     age: "",
     size: "",
@@ -82,14 +75,6 @@ const AnimalsCategory = ({ title, btnMoreTitle, data = [] }) => {
     setVisibleCards((prev) => prev + 4);
   };
 
-  const handleAnimalSelect = useCallback((animal) => {
-    setSelectedAnimal(animal);
-  }, []);
-
-  const handleCloseAside = () => {
-    setSelectedAnimal(null);
-  };
-
   const handleFilterChange = (newFilters) => {
     setFilters(newFilters);
     setVisibleCards(4);
@@ -102,65 +87,7 @@ const AnimalsCategory = ({ title, btnMoreTitle, data = [] }) => {
       <SearchFilter onFilterChange={handleFilterChange} />
 
       <section className="animals-category__content">
-        <AllAnimalsList
-          list={visibleData}
-          onAnimalSelect={handleAnimalSelect}
-        />
-        <aside
-          className={`animals-category__aside ${selectedAnimal ? "open" : ""}`}
-        >
-          {selectedAnimal && (
-            <div className="animals-category__aside-content">
-              <header>
-                <button
-                  className="animals-category__close"
-                  onClick={handleCloseAside}
-                >
-                  X
-                </button>
-              </header>
-              <section>
-                <ul className="imgContainer">
-                  {selectedAnimal.moreImg.map((img, indx) => (
-                    <li key={indx}>
-                      <img src={img} alt={selectedAnimal.name} />
-                    </li>
-                  ))}
-                </ul>
-                <h3>{selectedAnimal.name}</h3>
-                <h3>{selectedAnimal.gender}</h3>
-                <h3>{selectedAnimal.age}</h3>
-                <div>
-                  <i>
-                    {" "}
-                    <FaDog
-                      style={{ fill: selectedAnimal.animals ? "green" : "red" }}
-                    />{" "}
-                  </i>
-                  <i>
-                    {" "}
-                    <TbVaccine
-                      style={{
-                        fill: selectedAnimal.vaccine ? "green" : "red",
-                        stroke: selectedAnimal.vaccine ? "green" : "red",
-                      }}
-                    />{" "}
-                  </i>
-                </div>
-                <footer>
-                  <Button
-                    text={t("buttons.house")}
-                    onClick={(evt) => console.log(evt)}
-                  />
-                  <Button
-                    text={t("buttons.guard")}
-                    onClick={(evt) => console.log(evt)}
-                  />
-                </footer>
-              </section>
-            </div>
-          )}
-        </aside>
+        <AllAnimalsList list={visibleData} />
       </section>
 
       {visibleCards < data.length && (

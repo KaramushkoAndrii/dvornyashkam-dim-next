@@ -12,7 +12,7 @@ import Button from "@/app/_components/button/Button";
 
 import "./searchSection.scss";
 
-const SearchSection = ({ isOpen }) => {
+const SearchSection = () => {
   const { t } = { t: (x) => x }; // useTranslation();
 
   const [currentAnimal, setCurrentAnimal] = useState(getRandomAnimal());

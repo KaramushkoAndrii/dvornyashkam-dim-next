@@ -4,18 +4,16 @@ import AnimalCard from "@/app/_components/AnimalCard/AnimalCard";
 
 import "./allAnimalsList.scss";
 
-const AllAnimalsList = ({ list, onAnimalSelect }) => {
+const AllAnimalsList = ({ list }) => {
   return (
     <>
       <ul className="allAnnimals__list">
         {list.map((item) => (
-          <li key={item.id} onClick={() => onAnimalSelect(item)}>
-            {console.log("Rendering item with id:", item.id)}
+          <li key={item.id}>
             <AnimalCard animal={item} />
           </li>
         ))}
       </ul>
-      {console.log(list.length)}
     </>
   );
 };

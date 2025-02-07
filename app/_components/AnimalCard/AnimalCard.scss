@@ -1,12 +1,16 @@
 .animal {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
   background-color: $primary;
 
   border-radius: 2rem;
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: inherit;
+  }
 
   .animal__info {
     width: 100%;
