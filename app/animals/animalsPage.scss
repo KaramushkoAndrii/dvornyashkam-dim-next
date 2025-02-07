@@ -1,0 +1,76 @@
+.animals__section {
+  @include container();
+
+  p {
+    padding: 2rem 0;
+  }
+}
+
+.animals-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  &__dogs,
+  &__cats {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: $main-border-radius;
+
+    a {
+      width: 100%;
+      height: 100%;
+
+      color: $white;
+    }
+
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      background-color: black;
+      opacity: 0.5;
+      width: 100%;
+      height: 100%;
+
+      border-radius: $main-border-radius;
+      z-index: 1;
+    }
+  }
+
+  @media (min-width: $tablet) {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.animals-content img {
+  position: relative;
+
+  display: block;
+  margin: 0 auto;
+
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+
+  object-fit: cover;
+
+  border-radius: $main-border-radius;
+
+  z-index: 0;
+}
