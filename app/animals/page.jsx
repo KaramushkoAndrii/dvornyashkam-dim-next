@@ -8,6 +8,8 @@ import {
   slideFromBottom,
 } from "../../components/Animations";
 
+import AnimalList from "./data/animalList";
+
 import "./animalsPage.scss";
 
 export default function AnimalsPage() {
@@ -22,7 +24,7 @@ export default function AnimalsPage() {
         </motion.p>
       </div>
       <ul className="animals-content">
-        {animalList.map((animal, i) => {
+        {AnimalList.map((animal, i) => {
           const animation = i === 0 ? slideFromLeft : slideFromRight;
 
           return (
