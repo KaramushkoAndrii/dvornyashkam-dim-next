@@ -4,17 +4,18 @@
 import { motion } from "framer-motion";
 
 import { slideFromLeft } from "@/app/_constants/animations";
-import HelpListDetailed from "@/app/_components/helpListDetailed/HelpListDetailed";
+import HelpListItem from "@/app/_components/helpListDetailed/HelpListItem";
+import HelpSection from "@/app/_components/helpSection/HelpSection";
 
-import HelpListDetailedData from "@/app/_data/helpListDetailedData";
-import HelpPageData from "@/app/_data/helpPageData";
+import items from "@/app/_data/helpListDetailedData";
+import pageData from "@/app/_data/helpPageData";
 
 import "./helpPage.scss";
 
 export default function HelpPage() {
   const { t } = { t: (x) => x }; // useTranslation();
 
-  const { title, description, HelpSection } = HelpPageData || {};
+  const { title, description } = pageData || {};
 
   return (
     <section className="help__page">
@@ -25,10 +26,14 @@ export default function HelpPage() {
       <HelpSection />
 
       <ul className="help__detailed">
-        <HelpListDetailed
-          dataList={HelpListDetailedData}
-          translationGroup={"help-list-detailed"}
-        />
+        {items.map((item, index) => (
+          <HelpListItem
+            key={`help-list-detailed-${index}`}
+            data={item}
+            index={index}
+            translationGroup={"help-list-detailed"}
+          />
+        ))}
       </ul>
     </section>
   );
