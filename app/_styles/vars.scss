@@ -1,3 +1,9 @@
+:root {
+  // Modal z-index
+  --z-modal-backdrop: 1000;
+  --z-modal: 2000;
+}
+
 //screens
 $tablet: 767px;
 $large: 1024px;
