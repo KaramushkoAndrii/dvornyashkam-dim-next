@@ -1,0 +1,32 @@
+.about-page {
+  @include container();
+
+  overflow: hidden;
+
+  p {
+    padding: calc($list-item-padding * 2) 0;
+
+    @media (min-width: $large) {
+      max-width: 45%;
+    }
+  }
+
+  &__item {
+    &:not(:last-of-type) {
+      padding-bottom: 2rem;
+    }
+
+    &:last-child p {
+      padding-bottom: 0;
+    }
+
+    @media (min-width: $large) {
+      display: flex;
+      gap: 2rem;
+
+      &:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+}
