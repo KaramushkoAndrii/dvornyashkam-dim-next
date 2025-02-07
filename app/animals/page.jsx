@@ -1,5 +1,5 @@
 // import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 import {
@@ -33,7 +33,7 @@ export default function AnimalsPage() {
               key={animal.id}
               className={`animals-content__${animal.id}`}
             >
-              <Link to={`${animal.src}`}>
+              <Link href={`${animal.src}`}>
                 <img src={animal.imgSrc} alt={animal.id} />
                 <span>{t(`${animal.titleKey}`)}</span>
               </Link>
