@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import AccordionItem from "@/app/_components/AccordionItem";
+import AccordionItem from "@/app/_components/accordion/AccordionItem";
 
 import "./accordion.scss";
 
