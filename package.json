@@ -2,6 +2,10 @@
   "name": "dvornyshkam-dim-next",
   "version": "0.1.0",
   "private": true,
+  "engines" : { 
+    "npm" : "^10.9.2",
+    "node" : "^22.13.1"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
