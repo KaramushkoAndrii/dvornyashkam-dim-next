@@ -1,3 +1,5 @@
+"use client";
+
 import AnimalsCategory from "@/app/_components/animalsCategory/AnimalsCategory";
 
 import catsDB from "@/app/_data/catsDB";
