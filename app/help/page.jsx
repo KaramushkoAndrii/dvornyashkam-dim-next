@@ -1,16 +1,16 @@
-import { useTranslation } from "react-i18next";
-import { motion } from "motion/react";
+// import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
-import { slideFromLeft } from "../../components/Animations";
-import HelpListDetailed from "../../components/helpListDetailed/HelpListDetailed";
+import { slideFromLeft } from "@/app/_constants/animations";
+import HelpListDetailed from "@/app/_components/helpListDetailed/HelpListDetailed";
 
-import HelpListDetailedData from "../../data/helpListDetailedData";
-import HelpPageData from "./data/helpPageData";
+import HelpListDetailedData from "@/app/_data/helpListDetailedData";
+import HelpPageData from "@/app/_data/helpPageData";
 
 import "./helpPage.scss";
 
 export default function HelpPage() {
-  const { t } = useTranslation();
+  const { t } = { t: (x) => x }; // useTranslation();
 
   const { title, description, HelpSection } = HelpPageData || {};
 

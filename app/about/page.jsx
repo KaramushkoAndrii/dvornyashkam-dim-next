@@ -1,15 +1,15 @@
-import { useTranslation } from "react-i18next";
-import { motion } from "motion/react";
+// import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
-import { slideFromLeft, slideFromRight } from "../../components/Animations";
-import FigureContainer from "../../components/figureContainer/FigureContainer";
+import { slideFromLeft, slideFromRight } from "@/app/_constants/animations";
+import FigureContainer from "@/app/_components/figureContainer/FigureContainer";
 
-import AboutUsList from "./data/aboutUsList";
+import AboutUsList from "@/app/_data/aboutUsList";
 
 import "./page.scss";
 
 export default function AboutPage() {
-  const { t } = useTranslation();
+  const { t } = { t: (x) => x }; // useTranslation();
 
   return (
     <section className="about-page">

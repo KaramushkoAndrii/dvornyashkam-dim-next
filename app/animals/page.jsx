@@ -1,19 +1,19 @@
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 import {
   slideFromLeft,
   slideFromRight,
   slideFromBottom,
-} from "../../components/Animations";
+} from "@/app/_constants/animations";
 
-import AnimalList from "./data/animalList";
+import AnimalList from "@/app/_data/animalList";
 
 import "./animalsPage.scss";
 
 export default function AnimalsPage() {
-  const { t } = useTranslation();
+  const { t } = { t: (x) => x }; // useTranslation();
 
   return (
     <section className="animals__section">

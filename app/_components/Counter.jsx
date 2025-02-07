@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { useMotionValue, useTransform, motion, animate } from "motion/react";
+import { useMotionValue, useTransform, motion, animate } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const Counter = ({ startValue = 0, endValue = 100, duration = 5 }) => {

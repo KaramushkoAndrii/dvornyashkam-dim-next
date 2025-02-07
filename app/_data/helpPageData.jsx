@@ -1,4 +1,4 @@
-import HelpSection from "@/app/_components/components/helpSection/HelpSection";
+import HelpSection from "@/app/_components/helpSection/HelpSection";
 
 const HelpPageData = {
   title: "help-page.title",

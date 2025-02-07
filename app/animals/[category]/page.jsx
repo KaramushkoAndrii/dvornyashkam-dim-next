@@ -1,6 +1,6 @@
 import AnimalsCategory from "@/app/_components/animalsCategory/AnimalsCategory";
 
-import catsDB from "../../data/catsDB";
+import catsDB from "@/app/_data/catsDB";
 
 import "./page.scss";
 

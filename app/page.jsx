@@ -1,8 +1,8 @@
-import HeroSection from "../../components/heroSection/HeroSection";
-import SearchSection from "../../components/searchSection/SearchSection";
-import AboutSection from "../../components/aboutSection/AboutSection";
-import OurAnimals from "../../components/ourAnimals/OurAnimals";
-import HelpSection from "../../components/helpSection/HelpSection";
+import HeroSection from "@/app/_components/heroSection/HeroSection";
+import SearchSection from "@/app/_components/searchSection/SearchSection";
+import AboutSection from "@/app/_components/aboutSection/AboutSection";
+import OurAnimals from "@/app/_components/ourAnimals/OurAnimals";
+import HelpSection from "@/app/_components/helpSection/HelpSection";
 
 import "./page.scss";
 

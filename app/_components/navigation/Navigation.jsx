@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-// // import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 

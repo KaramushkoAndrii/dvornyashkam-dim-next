@@ -1,16 +1,16 @@
-import { useTranslation } from "react-i18next";
-import { motion } from "motion/react";
+// import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
-import Accordion from "../../components/accordion/Accordion";
-import Button from "../../components/button/Button";
-import { slideFromLeft, slideFromBottom } from "../../components/Animations";
+import Accordion from "@/app/_components/accordion/Accordion";
+import Button from "@/app/_components/button/Button";
+import { slideFromLeft, slideFromBottom } from "@/app/_constants/animations";
 
-import AdviseAccordionData from "./data/adviseAccordionData";
+import AdviseAccordionData from "@/app/_data/adviseAccordionData";
 
 import "./advisePage.scss";
 
 export default function AdvisePage() {
-  const { t } = useTranslation();
+  const { t } = { t: (x) => x }; // useTranslation();
 
   return (
     <section className="advise__page">
