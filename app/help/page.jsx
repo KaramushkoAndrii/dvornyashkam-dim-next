@@ -28,7 +28,6 @@ export default function HelpPage() {
         <HelpListDetailed
           dataList={HelpListDetailedData}
           translationGroup={"help-list-detailed"}
-          isOpen={isOpen}
         />
       </ul>
     </section>

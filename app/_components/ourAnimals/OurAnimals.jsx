@@ -5,7 +5,7 @@ import AnimalsList from "../animalsList/AnimalsList";
 
 import "./ourAnimals.scss";
 
-const OurAnimals = ({ isOpen }) => {
+const OurAnimals = () => {
   return (
     <section className="animals">
       <AnimalsList
@@ -13,14 +13,12 @@ const OurAnimals = ({ isOpen }) => {
         dataList={dogsDB}
         btnText={"buttons.more-dogs"}
         src={"animals/dogs"}
-        isOpen={isOpen}
       />
       <AnimalsList
         title={"lists-title.cats"}
         dataList={catsDB}
         btnText={"buttons.more-cats"}
         src={"animals/cats"}
-        isOpen={isOpen}
       />
     </section>
   );

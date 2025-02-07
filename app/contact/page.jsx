@@ -50,7 +50,7 @@ export default function ContactPage() {
         <SocialList data={ContactsSocial} />
       </motion.div>
 
-      <ContactForm data={ContactFormData} isOpen={isOpen} />
+      <ContactForm data={ContactFormData} />
 
       <motion.div {...scale} className="contact__info">
         <h2 className="contact__info--header">

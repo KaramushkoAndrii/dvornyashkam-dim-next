@@ -10,7 +10,7 @@ import Button from "@/app/_components/button/Button";
 
 import "./animalsList.scss";
 
-const AnimalsList = ({ title, dataList, src, btnText, isOpen }) => {
+const AnimalsList = ({ title, dataList, src, btnText }) => {
   const { t } = { t: (x) => x }; // useTranslation();
   return (
     <>
@@ -20,7 +20,7 @@ const AnimalsList = ({ title, dataList, src, btnText, isOpen }) => {
       <ul className="animals__list">
         {dataList.slice(0, 3).map((item, key) => (
           <li key={key} className="animal__list--item">
-            {<AnimalCard animal={item} isOpen={isOpen} />}
+            {<AnimalCard animal={item} />}
           </li>
         ))}
       </ul>

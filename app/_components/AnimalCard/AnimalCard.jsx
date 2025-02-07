@@ -7,8 +7,8 @@ import { TbVaccine } from "react-icons/tb";
 
 import "./AnimalCard.scss";
 
-const AnimalCard = ({ animal, isOpen }) => {
-  const { img, name, gender, age, vaccine, animals } = animal;
+const AnimalCard = ({ animal }) => {
+  const { img, name, gender, age, vaccine, animals } = animal || {};
 
   const { t } = { t: (x) => x }; // useTranslation();
 

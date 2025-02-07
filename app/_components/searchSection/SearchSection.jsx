@@ -44,7 +44,7 @@ const SearchSection = ({ isOpen }) => {
       <h2 className="search__title">{t("search.title")}</h2>
 
       <div className={`card-container ${isAnimating ? "rotate" : ""}`}>
-        <AnimalCard animal={currentAnimal} isOpen={isOpen} />
+        <AnimalCard animal={currentAnimal} />
       </div>
 
       <motion.div className="search__button-group" {...slideFromBottom}>
