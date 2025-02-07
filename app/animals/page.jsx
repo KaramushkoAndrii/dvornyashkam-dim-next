@@ -35,7 +35,7 @@ export default function AnimalsPage() {
               key={animal.id}
               className={`animals-content__${animal.id}`}
             >
-              <Link href={`${animal.src}`}>
+              <Link href={`/animals/${animal.src}`}>
                 <img src={animal.imgSrc} alt={animal.id} />
                 <span>{t(`${animal.titleKey}`)}</span>
               </Link>

@@ -1,3 +1,16 @@
+.animals-category {
+  @include container();
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  & > h2 {
+    text-align: center;
+  }
+}
+
 .animals-category__content {
   display: flex;
   justify-content: center;
