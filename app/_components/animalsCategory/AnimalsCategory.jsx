@@ -10,9 +10,9 @@ import AllAnimalsList from "@/app/_components/allAnimalsList/AllAnimalsList";
 import Button from "@/app/_components/button/Button";
 import SearchFilter from "@/app/_components/searchFilter/SearchFilter";
 
-import "./animalsPage.scss";
+import "./AnimalsCategory.scss";
 
-const AnimalsPage = ({ title, data = [], animal, isOpen }) => {
+const AnimalsCategory = ({ title, btnMoreTitle, data = [] }) => {
   const { t } = { t: (x) => x }; // useTranslation();
 
   const [visibleCards, setVisibleCards] = useState(4);
@@ -96,22 +96,24 @@ const AnimalsPage = ({ title, data = [], animal, isOpen }) => {
   };
 
   return (
-    <>
-      <h2>{t(`${title}`)}</h2>
+    <section className="animals-category">
+      <h2>{title || "Category"}</h2>
 
       <SearchFilter onFilterChange={handleFilterChange} />
 
-      <section className="animalPage__content">
+      <section className="animals-category__content">
         <AllAnimalsList
           list={visibleData}
           onAnimalSelect={handleAnimalSelect}
         />
-        <aside className={`animalPage__aside ${selectedAnimal ? "open" : ""}`}>
+        <aside
+          className={`animals-category__aside ${selectedAnimal ? "open" : ""}`}
+        >
           {selectedAnimal && (
-            <div className="animalPage__aside-content">
+            <div className="animals-category__aside-content">
               <header>
                 <button
-                  className="animalPage__close"
+                  className="animals-category__close"
                   onClick={handleCloseAside}
                 >
                   X
@@ -156,12 +158,12 @@ const AnimalsPage = ({ title, data = [], animal, isOpen }) => {
       </section>
 
       {visibleCards < data.length && (
-        <button className="animalPage__more" onClick={loadMoreAnimals}>
-          {t(`buttons.${animal}`)}
+        <button className="animals-category__more" onClick={loadMoreAnimals}>
+          {btnMoreTitle || "More"}
         </button>
       )}
-    </>
+    </section>
   );
 };
 
-export default AnimalsPage;
+export default AnimalsCategory;

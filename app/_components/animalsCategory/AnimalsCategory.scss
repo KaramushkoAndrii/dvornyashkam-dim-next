@@ -1,32 +1,4 @@
-.dogPage,
-.catPage {
-  @include container();
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-
-  & > h2 {
-    text-align: center;
-  }
-
-  .animalPage__more {
-    width: 35dvw;
-    max-width: 350px;
-    padding: 0.75rem 1rem;
-
-    font-size: clamp(0.8rem, 3vw, 5rem);
-
-    border-radius: $main-border-radius;
-    color: $white;
-    background-color: $primary;
-
-    cursor: pointer;
-  }
-}
-
-.animalPage__content {
+.animals-category__content {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,7 +16,7 @@
   }
 }
 
-.animalPage__aside {
+.animals-category__aside {
   position: fixed;
   top: 0;
   right: -100%;
@@ -65,7 +37,7 @@
   }
 }
 
-.animalPage__aside-content {
+.animals-category__aside-content {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -125,6 +97,20 @@
   }
 }
 
-.animalPage__aside.open {
+.animals-category__aside.open {
   right: 0;
+}
+
+.animals-category__more {
+  width: 35dvw;
+  max-width: 350px;
+  padding: 0.75rem 1rem;
+
+  font-size: clamp(0.8rem, 3vw, 5rem);
+
+  border-radius: $main-border-radius;
+  color: $white;
+  background-color: $primary;
+
+  cursor: pointer;
 }
