@@ -1,43 +1,38 @@
-
-
-@import '../../style/var.scss';
-@import '../../style/mixins.scss';
-
 .contact__page {
-    @include container();
-    overflow: hidden;
+  @include container();
+  overflow: hidden;
 
-    .contact__adres, .contact__social {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
+  .contact__adres,
+  .contact__social {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact__adres {
+    margin-bottom: 1.5rem;
+  }
+
+  svg {
+    fill: $primary;
+  }
+
+  .contact__info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    background-color: $primary;
+    border-radius: $main-border-radius;
+  }
+
+  @media (min-width: $tablet) {
+    .contact__contact {
+      display: flex;
+      align-items: flex-start;
+
+      margin-top: 1.5rem;
+      gap: 3rem;
     }
-
-    .contact__adres {
-        margin-bottom: 1.5rem;
-    } 
-
-    svg {
-        fill: $primary;
-    }
-
-    .contact__info {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1.5rem;
-        background-color: $primary;
-        border-radius: $main-border-radius;
-    }
-
-    @media (min-width: $tablet) {
-        .contact__contact {
-            display: flex;
-            align-items: flex-start;
-
-            margin-top: 1.5rem;
-            gap: 3rem;
-
-        }
-    }
+  }
 }
