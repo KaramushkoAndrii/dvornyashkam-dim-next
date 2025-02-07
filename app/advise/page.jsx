@@ -24,7 +24,7 @@ export default function AdvisePage() {
         {t("advise-page.content")}
       </motion.p>
 
-      <Button text={t("buttons.call")} onClick={isOpen} />
+      <Button text={t("buttons.call")} onClick={(evt) => console.log(evt)} />
     </section>
   );
 }

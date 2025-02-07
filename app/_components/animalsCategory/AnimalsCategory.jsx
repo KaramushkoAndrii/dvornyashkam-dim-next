@@ -148,8 +148,14 @@ const AnimalsCategory = ({ title, btnMoreTitle, data = [] }) => {
                   </i>
                 </div>
                 <footer>
-                  <Button text={t("buttons.house")} onClick={isOpen} />
-                  <Button text={t("buttons.guard")} onClick={isOpen} />
+                  <Button
+                    text={t("buttons.house")}
+                    onClick={(evt) => console.log(evt)}
+                  />
+                  <Button
+                    text={t("buttons.guard")}
+                    onClick={(evt) => console.log(evt)}
+                  />
                 </footer>
               </section>
             </div>

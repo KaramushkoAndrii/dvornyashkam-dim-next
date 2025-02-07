@@ -39,7 +39,7 @@ const ContactForm = ({ data, isOpen }) => {
           )}
         </li>
       ))}
-      <Button text={t("buttons.contact")} onClick={isOpen} />
+      <Button text={t("buttons.contact")} onClick={(evt) => console.log(evt)} />
     </motion.ul>
   );
 };

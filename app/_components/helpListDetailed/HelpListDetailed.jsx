@@ -24,7 +24,9 @@ const HelpListDetailed = ({ dataList, translationGroup, isOpen }) => {
                   {t(`${translationGroup}.${subDescription}`)}
                 </p>
                 {type === "button" ? (
-                  <button onClick={isOpen}>{linkContent}</button>
+                  <button onClick={(evt) => console.log(evt)}>
+                    {linkContent}
+                  </button>
                 ) : (
                   <a href={`${type}:${src}`} target="_blank">
                     {linkContent}
