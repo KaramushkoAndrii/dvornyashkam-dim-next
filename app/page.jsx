@@ -1,3 +1,5 @@
+"use client";
+
 import HeroSection from "@/app/_components/heroSection/HeroSection";
 import SearchSection from "@/app/_components/searchSection/SearchSection";
 import AboutSection from "@/app/_components/aboutSection/AboutSection";
