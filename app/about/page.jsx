@@ -4,6 +4,8 @@ import { motion } from "motion/react";
 import { slideFromLeft, slideFromRight } from "../../components/Animations";
 import FigureContainer from "../../components/figureContainer/FigureContainer";
 
+import AboutUsList from "./data/aboutUsList";
+
 import "./page.scss";
 
 export default function AboutPage() {
@@ -12,10 +14,10 @@ export default function AboutPage() {
   return (
     <section className="about-page">
       <h2 {...slideFromLeft} className="page__title">
-        {t(`${title}`)}
+        {t("navigation.about_us")}
       </h2>
       <ul className="about-page__list">
-        {dataList.map((item, key) => {
+        {AboutUsList.map((item, key) => {
           const slideText = key % 2 === 0 ? slideFromRight : slideFromLeft;
           const slideImg = key % 2 === 0 ? slideFromLeft : slideFromRight;
 
