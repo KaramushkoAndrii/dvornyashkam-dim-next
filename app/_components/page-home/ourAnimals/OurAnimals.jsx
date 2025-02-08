@@ -1,7 +1,7 @@
 import dogsDB from "@/app/_data/dogsDB";
 import catsDB from "@/app/_data/catsDB";
 
-import AnimalsList from "../animalsList/AnimalsList";
+import AnimalsList from "../../animalsList/AnimalsList";
 
 import "./ourAnimals.scss";
 
