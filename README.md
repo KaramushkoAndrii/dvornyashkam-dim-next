@@ -15,7 +15,7 @@ Based on [React.js project](https://github.com/KaramushkoAndrii/dvornyshkam-dim)
 - [ ] fix all `.scss` as I described to you in Telegram earlier (2025-02-07).
 - [ ] in folder `_components` create subfolders: `common`, `UI` and folders with names like existing Pages (`about`, etc.). In `UI` folder must be moved all components like `Button`. The `common` folder contains components that can used in many places in the project. The `[page]` folders contain components that are used only on a specific page. See `_components/page-home/..` folder for example.
 - [ ] - OPTIONAL `<img />` replace to [<Image />](https://nextjs.org/docs/pages/api-reference/components/image)
-
+- [ ] change the extension from `.jsx` to `.js` in all files in the `_data` folder
 - [ ] delete `// TO DO` comments from code after realization all of them
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
