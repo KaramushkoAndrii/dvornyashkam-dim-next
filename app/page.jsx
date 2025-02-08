@@ -4,7 +4,7 @@ import HeroSection from "@/app/_components/heroSection/HeroSection";
 import SearchSection from "@/app/_components/searchSection/SearchSection";
 import AboutSection from "@/app/_components/aboutSection/AboutSection";
 import OurAnimals from "@/app/_components/ourAnimals/OurAnimals";
-import HelpSection from "@/app/_components/helpSection/HelpSection";
+import HelpSection from "@/app/_components/common/helpSection/HelpSection";
 
 import "./page.scss";
 
