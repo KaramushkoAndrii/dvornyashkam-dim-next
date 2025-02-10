@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { motion } from "framer-motion";
 
-import { slideFromBottom } from "@/app/_constants/animations";
+import { slideFromBottom } from "@/constants/animations";
 import AnimalCard from "@/components/AnimalCard/AnimalCard";
 import dogsDB from "@/app/_data/dogsDB";
 import Button from "@/components/button/Button";

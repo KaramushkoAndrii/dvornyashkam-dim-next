@@ -8,7 +8,7 @@ import {
   slideFromRight,
   slideFromBottom,
   scale,
-} from "@/app/_constants/animations";
+} from "@/constants/animations";
 
 import SocialList from "@/components/contacts/SocialList";
 import ContactForm from "@/components/contactForm/ContactForm";

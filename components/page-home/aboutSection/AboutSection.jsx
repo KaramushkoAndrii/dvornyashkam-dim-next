@@ -4,11 +4,7 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
 import Counter from "@/components/Counter";
-import {
-  slideFromRight,
-  slideFromLeft,
-  scale,
-} from "@/app/_constants/animations";
+import { slideFromRight, slideFromLeft, scale } from "@/constants/animations";
 import AboutList from "@/app/_data/aboutList";
 import AboutListItem from "@/app/_data/aboutInfoList";
 

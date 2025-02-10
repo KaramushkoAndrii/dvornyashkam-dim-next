@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { motion } from "framer-motion";
 
-import { slideFromRight } from "@/app/_constants/animations";
+import { slideFromRight } from "@/constants/animations";
 import HelpList from "@/app/_data/helpList";
 import Button from "@/components/button/Button";
 import { FaPaw } from "react-icons/fa";

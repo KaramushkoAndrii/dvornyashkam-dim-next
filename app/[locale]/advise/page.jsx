@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 import Accordion from "@/components/accordion/Accordion";
 import Button from "@/components/button/Button";
-import { slideFromLeft, slideFromBottom } from "@/app/_constants/animations";
+import { slideFromLeft, slideFromBottom } from "@/constants/animations";
 
 import AdviseAccordionData from "@/app/_data/adviseAccordionData";
 

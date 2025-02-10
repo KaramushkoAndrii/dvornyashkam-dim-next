@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
-import { slideFromLeft } from "@/app/_constants/animations";
+import { slideFromLeft } from "@/constants/animations";
 import "./heroSection.scss";
 
 const HeroSection = () => {

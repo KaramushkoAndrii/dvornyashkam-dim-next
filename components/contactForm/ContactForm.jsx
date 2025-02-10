@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 import { PiTelegramLogo } from "react-icons/pi";
 
-import { slideFromBottom } from "@/app/_constants/animations";
+import { slideFromBottom } from "@/constants/animations";
 import Button from "@/components/button/Button";
 
 import "./contactForm.scss";

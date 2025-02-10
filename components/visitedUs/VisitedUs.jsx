@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
-import { appear } from "@/app/_constants/animations";
+import { appear } from "@/constants/animations";
 import RulesList from "@/components/rulesList/RulesList";
 
 import "./visitedUs.scss";

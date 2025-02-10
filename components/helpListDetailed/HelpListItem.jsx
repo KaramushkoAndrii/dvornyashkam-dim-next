@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
 import "./HelpListItem.scss";
-import { slideFromLeft, slideFromRight } from "@/app/_constants/animations";
+import { slideFromLeft, slideFromRight } from "@/constants/animations";
 
 const HelpListItem = ({ data, index, translationGroup }) => {
   const t = useTranslations();

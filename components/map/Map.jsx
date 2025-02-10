@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-import { slideFromBottom } from "@/app/_constants/animations";
+import { slideFromBottom } from "@/constants/animations";
 
 import "./map.scss";
 

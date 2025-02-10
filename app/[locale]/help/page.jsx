@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
-import { slideFromLeft } from "@/app/_constants/animations";
+import { slideFromLeft } from "@/constants/animations";
 import HelpListItem from "@/components/helpListDetailed/HelpListItem";
 import HelpSection from "@/components/common/helpSection/HelpSection";
 

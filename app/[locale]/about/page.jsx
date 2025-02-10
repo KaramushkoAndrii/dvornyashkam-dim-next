@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
-import { slideFromLeft, slideFromRight } from "@/app/_constants/animations";
+import { slideFromLeft, slideFromRight } from "@/constants/animations";
 import FigureContainer from "@/components/figureContainer/FigureContainer";
 
 import AboutUsList from "@/app/_data/aboutUsList";

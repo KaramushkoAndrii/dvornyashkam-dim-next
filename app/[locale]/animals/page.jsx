@@ -8,7 +8,7 @@ import {
   slideFromLeft,
   slideFromRight,
   slideFromBottom,
-} from "@/app/_constants/animations";
+} from "@/constants/animations";
 
 import AnimalList from "@/app/_data/animalList";
 
