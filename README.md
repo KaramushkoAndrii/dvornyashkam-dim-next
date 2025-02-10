@@ -6,16 +6,18 @@ Based on [React.js project](https://github.com/KaramushkoAndrii/dvornyshkam-dim)
 
 ## TO DO list:
 
-- [ ] add `next-intl` package. [Official guide i18n](https://next-intl.dev/docs/getting-started/app-router/with-i18n-routing) and [YouTube video](https://www.youtube.com/watch?v=2Jh9olZXBfw)
+- [x] add `next-intl` package. [Official guide i18n](https://next-intl.dev/docs/getting-started/app-router/with-i18n-routing) and [YouTube video](https://www.youtube.com/watch?v=2Jh9olZXBfw)
 - [ ] add store [zustand](https://zustand-demo.pmnd.rs/), or [redux](https://react-redux.js.org/introduction/getting-started), or [mobx](https://mobx.js.org/README.html), etc.
 - [ ] control Modal open/close state in Store
+- [ ] data for all sections of the page should be obtained from the backend in the page component and then passed to the components through props (see `HomePage.jsx` and her sections components as example)
 - [ ] add `typography.scss` and classes `h1 - h6` for styling titles
 - [ ] `page__title -> title` or better solution is replace it to `h1` SCSS class from `typography.scss`
 - [ ] check all `.scss` and `.jsx` files and change name of BEM blocks and elements from [Camel or Pascal case to Kebab case](https://medium.com/@alivander/camel-pascal-snake-case-%D0%B8-%D0%B4%D1%80%D1%83%D0%B3%D0%B8%D0%B5-%D1%81%D1%82%D0%B8%D0%BB%D0%B8-%D0%BD%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D1%8F-288ec62ca0d0). Example: `/app/about/page.jsx` and `/app/about/page.scss` (compare it with your React page version and make another pages structure and styles similarly)
 - [ ] fix all `.scss` as I described to you in Telegram earlier (2025-02-07).
-- [ ] in folder `_components` create subfolders: `common`, `UI` and folders with names like existing Pages (`about`, etc.). In `UI` folder must be moved all components like `Button`. The `common` folder contains components that can used in many places in the project. The `[page]` folders contain components that are used only on a specific page. See `_components/page-home/..` folder for example.
+- [ ] in folder `components` create subfolders: `common`, `UI` and folders with names like existing Pages (`about`, etc.). In `UI` folder must be moved all components like `Button`. The `common` folder contains components that can used in many places in the project. The `[page]` folders contain components that are used only on a specific page. See `components/page-home/..` folder for example.
 - [ ] - OPTIONAL `<img />` replace to [<Image />](https://nextjs.org/docs/pages/api-reference/components/image)
-- [ ] change the extension from `.jsx` to `.js` in all files in the `_data` folder
+- [ ] change the extension from `.jsx` to `.js` in all files in the `data` folder
+- [ ] redo the filters as you did earlier in the Movie API project
 - [ ] delete `// TO DO` comments from code after realization all of them
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
