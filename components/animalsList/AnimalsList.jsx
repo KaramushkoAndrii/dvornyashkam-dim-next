@@ -1,34 +1,41 @@
 "use client";
 
-import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/routing";
+import { useLocale } from "next-intl";
+import { useRouter } from "@/i18n/routing";
+
 import { motion } from "framer-motion";
 
 import { slideFromLeft } from "@/constants/animations";
 import AnimalCard from "@/components/AnimalCard/AnimalCard";
 import Button from "@/components/button/Button";
 
+import { getAnimalsCategoryLink } from "@/utils";
+
 import "./animalsList.scss";
 
-const AnimalsList = ({ title, src, btnText, dataList }) => {
-  const t = useTranslations();
+const AnimalsList = ({ data }) => {
+  const locale = useLocale();
+  const router = useRouter();
+
+  // Go to animals category
+  const toAnimalsCategoryHandler = () => {
+    router.push({ pathname: getAnimalsCategoryLink(data.slug) }, { locale });
+  };
   return (
     <>
       <motion.h2 className="animals__title" {...slideFromLeft}>
-        {t(`${title}`)}
+        {data.title}
       </motion.h2>
       <ul className="animals__list">
-        {dataList.slice(0, 3).map((item, key) => (
-          <li key={key} className="animal__list--item">
+        {(data.items || []).map((item) => (
+          <li key={item.slug} className="animal__list--item">
             {<AnimalCard animal={item} />}
           </li>
         ))}
       </ul>
-      {dataList.length > 3 && (
+      {data.btnTitle && (
         <div className="animals__more-button">
-          <Link href={src || "/"}>
-            <Button text={t(`${btnText}`)} />
-          </Link>
+          <Button text={data.btnTitle} onClick={toAnimalsCategoryHandler} />
         </div>
       )}
     </>
