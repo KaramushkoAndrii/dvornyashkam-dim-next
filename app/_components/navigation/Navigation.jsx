@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
-import { usePathname } from "next/navigation";
+import { usePathname } from "@/i18n/routing";
 import { Link } from "@/i18n/routing";
 
 import { FaArrowRightLong } from "react-icons/fa6";
