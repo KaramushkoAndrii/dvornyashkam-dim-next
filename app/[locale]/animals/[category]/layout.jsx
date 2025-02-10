@@ -7,7 +7,7 @@ import "./layout.scss";
 export default async function AnimalsCategoryLayout({ params, children }) {
   const { category } = await params;
 
-  const { t } = { t: (x) => x }; // useTranslation();
+  const t = useTranslations();
 
   let title = "Category Title";
   let btnMoreTitle = "More Category Items";

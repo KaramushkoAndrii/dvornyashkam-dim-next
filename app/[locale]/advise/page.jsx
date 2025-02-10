@@ -1,6 +1,6 @@
 "use client";
 
-// import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
 import Accordion from "@/app/_components/accordion/Accordion";
@@ -12,7 +12,7 @@ import AdviseAccordionData from "@/app/_data/adviseAccordionData";
 import "./advisePage.scss";
 
 export default function AdvisePage() {
-  const { t } = { t: (x) => x }; // useTranslation();
+  const t = useTranslations();
 
   return (
     <section className="advise__page">

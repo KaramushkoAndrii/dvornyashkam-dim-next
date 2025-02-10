@@ -1,4 +1,4 @@
-// import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
 import { appear } from "@/app/_constants/animations";
@@ -7,7 +7,7 @@ import RulesList from "@/app/_components/rulesList/RulesList";
 import "./visitedUs.scss";
 
 const VisitedUs = ({ data }) => {
-  const { t } = { t: (x) => x }; // useTranslation();
+  const t = useTranslations();
 
   const {
     title,

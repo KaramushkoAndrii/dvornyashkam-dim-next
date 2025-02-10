@@ -1,6 +1,6 @@
 "use client";
 
-// import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { motion } from "framer-motion";
 
@@ -12,7 +12,7 @@ import { FaPaw } from "react-icons/fa";
 import "./helpSection.scss";
 
 const HelpSection = ({ btnText }) => {
-  const { t } = { t: (x) => x }; // useTranslation();
+  const t = useTranslations();
 
   return (
     <section className="help">

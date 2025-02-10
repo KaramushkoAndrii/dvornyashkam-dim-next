@@ -1,4 +1,4 @@
-// import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
 import { PiTelegramLogo } from "react-icons/pi";
@@ -9,7 +9,7 @@ import Button from "@/app/_components/button/Button";
 import "./contactForm.scss";
 
 const ContactForm = ({ data, isOpen }) => {
-  const { t } = { t: (x) => x }; // useTranslation();
+  const t = useTranslations();
 
   // TO DO: isOpen is may be openHandler like in other components?
   return (

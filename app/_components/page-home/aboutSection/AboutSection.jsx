@@ -1,6 +1,6 @@
 "use client";
 
-// import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
 import Counter from "@/app/_components/Counter";
@@ -15,7 +15,7 @@ import AboutListItem from "@/app/_data/aboutInfoList";
 import "./aboutSection.scss";
 
 const AboutSection = () => {
-  const { t } = { t: (x) => x }; // useTranslation();
+  const t = useTranslations();
 
   return (
     <section className="about">

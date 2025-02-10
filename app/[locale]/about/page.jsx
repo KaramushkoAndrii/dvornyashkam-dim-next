@@ -1,6 +1,6 @@
 "use client";
 
-// import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
 import { slideFromLeft, slideFromRight } from "@/app/_constants/animations";
@@ -11,7 +11,7 @@ import AboutUsList from "@/app/_data/aboutUsList";
 import "./page.scss";
 
 export default function AboutPage() {
-  const { t } = { t: (x) => x }; // useTranslation();
+  const t = useTranslations();
 
   return (
     <section className="about-page">

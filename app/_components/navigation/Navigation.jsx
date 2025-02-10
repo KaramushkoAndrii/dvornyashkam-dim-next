@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-// import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 import { Link } from "@/i18n/routing";
 
@@ -12,7 +12,7 @@ import Contacts from "@/app/_components/contacts/Contacts";
 import "./navigation.scss";
 
 const Navigation = ({ list }) => {
-  const { t } = { t: (x) => x }; // useTranslation();
+  const t = useTranslations();
 
   const [menuOpen, setMenuOpen] = useState(false);
 

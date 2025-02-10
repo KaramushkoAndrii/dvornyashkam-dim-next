@@ -1,10 +1,10 @@
 import { Link } from "@/i18n/routing";
-// import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 
 import "./footer.scss";
 
 const Footer = () => {
-  const { t } = { t: (x) => x }; // useTranslation();
+  const t = useTranslations();
 
   return (
     <footer>

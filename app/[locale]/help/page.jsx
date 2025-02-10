@@ -1,6 +1,6 @@
 "use client";
 
-// import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
 import { slideFromLeft } from "@/app/_constants/animations";
@@ -13,7 +13,7 @@ import pageData from "@/app/_data/helpPageData";
 import "./helpPage.scss";
 
 export default function HelpPage() {
-  const { t } = { t: (x) => x }; // useTranslation();
+  const t = useTranslations();
 
   const { title, description } = pageData || {};
 

@@ -1,6 +1,6 @@
 "use client";
 
-// import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { motion } from "framer-motion";
 
@@ -11,7 +11,7 @@ import Button from "@/app/_components/button/Button";
 import "./animalsList.scss";
 
 const AnimalsList = ({ title, src, btnText, dataList }) => {
-  const { t } = { t: (x) => x }; // useTranslation();
+  const t = useTranslations();
   return (
     <>
       <motion.h2 className="animals__title" {...slideFromLeft}>

@@ -1,11 +1,11 @@
-// import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
 import "./HelpListItem.scss";
 import { slideFromLeft, slideFromRight } from "@/app/_constants/animations";
 
 const HelpListItem = ({ data, index, translationGroup }) => {
-  const { t } = { t: (x) => x }; // useTranslation();
+  const t = useTranslations();
 
   const { header, description, subDescription, type, src, linkContent } =
     data || {};

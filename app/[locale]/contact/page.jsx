@@ -1,6 +1,6 @@
 "use client";
 
-// import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
 import {
@@ -33,7 +33,7 @@ export default function ContactPage() {
     tomuch,
     slogan,
   } = contactPageData || {};
-  const { t } = { t: (x) => x }; // useTranslation();
+  const t = useTranslations();
 
   return (
     <section className="contact__page">

@@ -1,14 +1,14 @@
 "use client";
 
 import { useState } from "react";
-// import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 
 import "./input.scss";
 
 const Input = ({ type, name, id, label, ...rest }) => {
   const [isFocus, setIsFocus] = useState(false);
 
-  const { t } = { t: (x) => x }; // useTranslation();
+  const t = useTranslations();
 
   const handleBlur = (e) => {
     setIsFocus(!!e.target.value);

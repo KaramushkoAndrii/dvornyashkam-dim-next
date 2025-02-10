@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
-// import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 
 import { FaDog } from "react-icons/fa6";
 import { TbVaccine } from "react-icons/tb";
@@ -15,7 +15,7 @@ import "./AnimalDetails.scss";
 export default function AnimalDetails({ animal }) {
   const router = useRouter();
 
-  const { t } = { t: (x) => x }; // useTranslation();
+  const t = useTranslations();
 
   const [isOpen, setIsOpen] = useState(false);
 

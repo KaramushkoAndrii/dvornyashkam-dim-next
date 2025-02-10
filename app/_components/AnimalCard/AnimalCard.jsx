@@ -1,6 +1,6 @@
 import { Link } from "@/i18n/routing";
 
-// import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
 import { rotateAndScale } from "@/app/_constants/animations";
@@ -13,7 +13,7 @@ const AnimalCard = ({ animal }) => {
   const { slug, category, img, name, gender, age, vaccine, animals } =
     animal || {};
 
-  const { t } = { t: (x) => x }; // useTranslation();
+  const t = useTranslations();
 
   const openHandler = (evt) => {
     evt.preventDefault();

@@ -1,6 +1,6 @@
 "use client";
 
-// import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
 import { slideFromBottom } from "@/app/_constants/animations";
@@ -10,7 +10,7 @@ import DonateList from "@/app/_data/donateList";
 import "./donateSection.scss";
 
 const DonateSection = () => {
-  const { t } = { t: (x) => x }; // useTranslation();
+  const t = useTranslations();
 
   return (
     <motion.section

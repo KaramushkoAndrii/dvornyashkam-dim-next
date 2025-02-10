@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-// import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { motion } from "framer-motion";
 
@@ -13,7 +13,7 @@ import Button from "@/app/_components/button/Button";
 import "./searchSection.scss";
 
 const SearchSection = () => {
-  const { t } = { t: (x) => x }; // useTranslation();
+  const t = useTranslations();
 
   const [currentAnimal, setCurrentAnimal] = useState(getRandomAnimal());
   const [isAnimating, setIsAnimating] = useState(false);

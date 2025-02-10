@@ -1,10 +1,10 @@
-// import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 import Accordion from "@/app/_components/accordion/Accordion";
 
 import "./rulesList.scss";
 
 const RulesList = ({ data, accordionData = null }) => {
-  const { t } = { t: (x) => x }; // useTranslation();
+  const t = useTranslations();
 
   const { title, description } = data;
 

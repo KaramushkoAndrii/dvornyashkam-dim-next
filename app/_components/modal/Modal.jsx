@@ -1,12 +1,12 @@
 "use client";
 
-// import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 import Input from "@/app/_components/input/Input";
 
 import "./modal.scss";
 
 const Modal = () => {
-  const { t } = { t: (x) => x }; // useTranslation();
+  const t = useTranslations();
 
   // TO DO: get state from store (redux, zustand, mobx, etc.)
   // https://zustand-demo.pmnd.rs/

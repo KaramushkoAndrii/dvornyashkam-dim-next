@@ -1,13 +1,13 @@
 "use client";
 
-// import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
 import { slideFromLeft } from "@/app/_constants/animations";
 import "./heroSection.scss";
 
 const HeroSection = () => {
-  const { t } = { t: (x) => x }; // useTranslation();
+  const t = useTranslations();
 
   return (
     <section className="hero">

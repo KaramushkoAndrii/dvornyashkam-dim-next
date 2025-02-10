@@ -1,6 +1,6 @@
 // TO DO: i18n https://next-intl.dev/docs/getting-started/app-router/with-i18n-routing
 // Video Instruction: https://www.youtube.com/watch?v=2Jh9olZXBfw (not checked yet)
-// import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 
 import "./changeLng.scss";
 

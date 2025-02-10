@@ -1,10 +1,10 @@
-// import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
 import "./figureContainer.scss";
 
 const FigureContainer = ({ src, alt, text, ...props }) => {
-  const { t } = { t: (x) => x }; // useTranslation();
+  const t = useTranslations();
 
   return (
     <motion.figure {...props} className="figure-container">

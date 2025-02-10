@@ -1,6 +1,6 @@
 "use client";
 
-// import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { motion } from "framer-motion";
 
@@ -15,7 +15,7 @@ import AnimalList from "@/app/_data/animalList";
 import "./animalsPage.scss";
 
 export default function AnimalsPage() {
-  const { t } = { t: (x) => x }; // useTranslation();
+  const t = useTranslations();
 
   return (
     <section className="animals__section">
