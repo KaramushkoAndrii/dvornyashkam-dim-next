@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 // import { useTranslation } from "react-i18next";
 
 import "./footer.scss";

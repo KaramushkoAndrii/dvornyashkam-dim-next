@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 
 import Navigation from "@/app/_components/navigation/Navigation";
 import ChangeLng from "@/app/_components/changeLng/ChangeLng";

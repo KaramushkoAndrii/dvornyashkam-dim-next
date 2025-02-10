@@ -1,7 +1,7 @@
 "use client";
 
 // import { useTranslation } from "react-i18next";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { motion } from "framer-motion";
 
 import { slideFromRight } from "@/app/_constants/animations";
