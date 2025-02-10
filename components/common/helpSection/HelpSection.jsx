@@ -1,38 +1,32 @@
 "use client";
 
-import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/routing";
 import { motion } from "framer-motion";
 
 import { slideFromRight } from "@/constants/animations";
-import HelpList from "@/data/helpList";
+
 import Button from "@/components/button/Button";
 import { FaPaw } from "react-icons/fa";
 
 import "./helpSection.scss";
 
-const HelpSection = ({ btnText }) => {
-  const t = useTranslations();
+const HelpSection = ({ data }) => {
+  const { title, description, btn, items } = data || {};
 
   return (
     <section className="help">
       <motion.div {...slideFromRight} className="help__content">
-        <h2>{t("help-section.title")}</h2>
-        <p>{t("help-section.description")}</p>
+        <h2>{title}</h2>
+        <p>{description}</p>
         <ul>
-          {HelpList.map((item, key) => (
+          {items.map((item, key) => (
             <li key={key}>
               <FaPaw />
-              <span>{t(`${item}`)}</span>
+              <span>{item.text}</span>
             </li>
           ))}
         </ul>
 
-        {btnText ? (
-          <Link href="/help">
-            <Button text={t(btnText)} />
-          </Link>
-        ) : null}
+        {btn?.title && btn?.href && <Button text={btn.title} href={btn.href} />}
       </motion.div>
     </section>
   );

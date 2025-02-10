@@ -9,6 +9,7 @@ import HelpSection from "@/components/common/helpSection/HelpSection";
 
 import items from "@/data/helpListDetailedData";
 import pageData from "@/data/helpPageData";
+import dataHelpList from "@/data/helpList";
 
 import "./helpPage.scss";
 
@@ -17,13 +18,20 @@ export default function HelpPage() {
 
   const { title, description } = pageData || {};
 
+  // TO DO: get DATA for HelpSection from API
+  const dataHelpSection = {
+    title: t("help-section.title"),
+    description: t("help-section.description"),
+    items: dataHelpList.map((item) => ({ text: t(item) })),
+  };
+
   return (
     <section className="help__page">
       <header className="help__header">
         <motion.h2 {...slideFromLeft}>{t(title)}</motion.h2>
         <motion.p {...slideFromLeft}>{t(description)}</motion.p>
       </header>
-      <HelpSection />
+      <HelpSection data={dataHelpSection} />
 
       <ul className="help__detailed">
         {items.map((item, index) => (

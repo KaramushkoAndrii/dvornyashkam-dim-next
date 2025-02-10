@@ -1,8 +1,3 @@
-import dogsDB from "@/data/dogsDB";
-import catsDB from "@/data/catsDB";
-import dataAboutList from "@/data/aboutList";
-import dataAboutListItem from "@/data/aboutInfoList";
-
 import { getTranslations } from "next-intl/server";
 
 import HeroSection from "@/components/page-home/heroSection/HeroSection";
@@ -10,6 +5,12 @@ import SearchSection from "@/components/page-home/searchSection/SearchSection";
 import AboutSection from "@/components/page-home/aboutSection/AboutSection";
 import OurAnimals from "@/components/page-home/ourAnimals/OurAnimals";
 import HelpSection from "@/components/common/helpSection/HelpSection";
+
+import dogsDB from "@/data/dogsDB";
+import catsDB from "@/data/catsDB";
+import dataAboutList from "@/data/aboutList";
+import dataAboutListItem from "@/data/aboutInfoList";
+import dataHelpList from "@/data/helpList";
 
 import "./page.scss";
 
@@ -67,13 +68,21 @@ export default async function HomePage() {
     },
   ];
 
+  // TO DO: get DATA for HelpSection from API
+  const dataHelpSection = {
+    title: t("help-section.title"),
+    description: t("help-section.description"),
+    items: dataHelpList.map((item) => ({ text: t(item) })),
+    btn: { title: t("buttons.more"), href: "/help" },
+  };
+
   return (
     <>
       <HeroSection data={dataHeroSection} />
       <SearchSection data={dataSearchSection} />
       <AboutSection data={dataAboutSection} />
       <OurAnimals data={dataOurAnimals} />
-      <HelpSection btnText={"buttons.more"} />
+      <HelpSection data={dataHelpSection} />
     </>
   );
 }
