@@ -1,25 +1,13 @@
-import dogsDB from "@/data/dogsDB";
-import catsDB from "@/data/catsDB";
-
-import AnimalsList from "../../animalsList/AnimalsList";
+import AnimalsList from "@/components/animalsList/AnimalsList";
 
 import "./ourAnimals.scss";
 
-const OurAnimals = () => {
+const OurAnimals = ({ data }) => {
   return (
     <section className="animals">
-      <AnimalsList
-        title={"lists-title.dogs"}
-        dataList={dogsDB}
-        btnText={"buttons.more-dogs"}
-        src={"animals/dogs"}
-      />
-      <AnimalsList
-        title={"lists-title.cats"}
-        dataList={catsDB}
-        btnText={"buttons.more-cats"}
-        src={"animals/cats"}
-      />
+      {Object.entries(data || {}).map(([key, item]) => (
+        <AnimalsList key={key} category={key} dataList={item} />
+      ))}
     </section>
   );
 };
