@@ -13,6 +13,13 @@
   "NotFound": {
     "title": "Page not found"
   },
+  "inputs": {
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "phone": "Phone",
+    "email": "Email",
+    "message": "Message"
+  },
 
   "buttons": {
     "rerol": "(en)Спробувати ще",

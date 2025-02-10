@@ -37,21 +37,21 @@ const Modal = () => {
             type={"text"}
             name={"user_name"}
             id={"user_name"}
-            label={"Введіть ім'я"}
+            label={"inputs.first_name"}
             required
           />
           <Input
             type={"text"}
             name={"user_surname"}
             id={"user_surname"}
-            label={"Ваше прізвище"}
+            label={"inputs.last_name"}
             required
           />
           <Input
             type={"tel"}
             name={"phone"}
             id={"phone"}
-            label={"Номер телефону"}
+            label={"inputs.phone"}
             pattern={"^+?d{10,15}$"}
             autocomplite={"tel"}
             required
@@ -60,7 +60,7 @@ const Modal = () => {
             type={"email"}
             id={"email"}
             name={"email"}
-            label={"Електронна пошта"}
+            label={"inputs.email"}
             autocomplite={"email"}
             required
           />
@@ -69,7 +69,7 @@ const Modal = () => {
             type={"textarea"}
             name={"user_masssge"}
             id={"user_masssge"}
-            label={"Місце для ваших питань"}
+            label={"inputs.message"}
           />
         </div>
       </div>
