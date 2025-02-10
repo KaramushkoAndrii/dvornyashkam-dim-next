@@ -7,8 +7,8 @@ export const getAnimalsCategoryLink = (slug) => `/animals/${slug}`;
 
 /**
  *
- * @param {{category: string; slug: string;}} animal
+ * @param {string} category
+ * @param {string} slug
  * @returns string;
  */
-export const getAnimalLink = (animal) =>
-  `/animals/${animal.category}/${animal.slug}`;
+export const getAnimalLink = (category, slug) => `/animals/${category}/${slug}`;
