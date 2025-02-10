@@ -16,7 +16,7 @@ const Navigation = ({ list }) => {
 
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const location = usePathname();
+  const pathname = usePathname();
 
   const toggleMenu = () => {
     setMenuOpen((prevState) => !prevState);
@@ -24,7 +24,7 @@ const Navigation = ({ list }) => {
 
   useEffect(() => {
     setMenuOpen(false);
-  }, [location]);
+  }, [pathname]);
 
   // console.log(t("navigation.about_us"));
 
