@@ -1,6 +1,6 @@
 import AnimalDetails from "@/components/animalDetails/AnimalDetails";
 
-import animals from "@/app/_data/catsDB";
+import animals from "@/data/catsDB";
 
 import "./page.scss";
 

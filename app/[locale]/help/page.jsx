@@ -7,8 +7,8 @@ import { slideFromLeft } from "@/constants/animations";
 import HelpListItem from "@/components/helpListDetailed/HelpListItem";
 import HelpSection from "@/components/common/helpSection/HelpSection";
 
-import items from "@/app/_data/helpListDetailedData";
-import pageData from "@/app/_data/helpPageData";
+import items from "@/data/helpListDetailedData";
+import pageData from "@/data/helpPageData";
 
 import "./helpPage.scss";
 

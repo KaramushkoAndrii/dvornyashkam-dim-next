@@ -5,7 +5,7 @@ import { Link } from "@/i18n/routing";
 import { motion } from "framer-motion";
 
 import { slideFromRight } from "@/constants/animations";
-import HelpList from "@/app/_data/helpList";
+import HelpList from "@/data/helpList";
 import Button from "@/components/button/Button";
 import { FaPaw } from "react-icons/fa";
 

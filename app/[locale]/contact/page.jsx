@@ -15,10 +15,10 @@ import ContactForm from "@/components/contactForm/ContactForm";
 import VisitedUs from "@/components/visitedUs/VisitedUs";
 import Map from "@/components/map/Map";
 
-import ContactFormData from "@/app/_data/contactFormData";
-import VisitedUsDate from "@/app/_data/visitedUsDate";
-import contactPageData from "@/app/_data/contactPageData";
-import { ContactsSocial } from "@/app/_data/contactsList";
+import ContactFormData from "@/data/contactFormData";
+import VisitedUsDate from "@/data/visitedUsDate";
+import contactPageData from "@/data/contactPageData";
+import { ContactsSocial } from "@/data/contactsList";
 
 import "./contactPage.scss";
 

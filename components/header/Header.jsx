@@ -7,7 +7,7 @@ import { Link } from "@/i18n/routing";
 import Navigation from "@/components/navigation/Navigation";
 import ChangeLng from "@/components/changeLng/ChangeLng";
 
-import { navigationList } from "@/app/_data/navigationList";
+import { navigationList } from "@/data/navigationList";
 
 import "./header.scss";
 

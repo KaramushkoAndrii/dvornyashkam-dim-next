@@ -7,7 +7,7 @@ import Accordion from "@/components/accordion/Accordion";
 import Button from "@/components/button/Button";
 import { slideFromLeft, slideFromBottom } from "@/constants/animations";
 
-import AdviseAccordionData from "@/app/_data/adviseAccordionData";
+import AdviseAccordionData from "@/data/adviseAccordionData";
 
 import "./advisePage.scss";
 

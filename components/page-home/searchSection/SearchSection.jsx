@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 import { slideFromBottom } from "@/constants/animations";
 import AnimalCard from "@/components/AnimalCard/AnimalCard";
-import dogsDB from "@/app/_data/dogsDB";
+import dogsDB from "@/data/dogsDB";
 import Button from "@/components/button/Button";
 
 import "./searchSection.scss";

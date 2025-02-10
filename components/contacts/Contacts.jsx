@@ -1,4 +1,4 @@
-import { ContactsLinks, ContactsSocial } from "@/app/_data/contactsList";
+import { ContactsLinks, ContactsSocial } from "@/data/contactsList";
 
 import SocialList from "@/components/contacts/SocialList";
 

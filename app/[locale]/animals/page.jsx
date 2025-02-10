@@ -10,7 +10,7 @@ import {
   slideFromBottom,
 } from "@/constants/animations";
 
-import AnimalList from "@/app/_data/animalList";
+import AnimalList from "@/data/animalList";
 
 import "./animalsPage.scss";
 

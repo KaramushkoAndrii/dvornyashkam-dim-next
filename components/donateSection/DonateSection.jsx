@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 import { slideFromBottom } from "@/constants/animations";
 
-import DonateList from "@/app/_data/donateList";
+import DonateList from "@/data/donateList";
 
 import "./donateSection.scss";
 

@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 
 import Counter from "@/components/Counter";
 import { slideFromRight, slideFromLeft, scale } from "@/constants/animations";
-import AboutList from "@/app/_data/aboutList";
-import AboutListItem from "@/app/_data/aboutInfoList";
+import AboutList from "@/data/aboutList";
+import AboutListItem from "@/data/aboutInfoList";
 
 import "./aboutSection.scss";
 

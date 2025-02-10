@@ -2,7 +2,7 @@ import { getLocale, getTranslations } from "next-intl/server";
 
 import AnimalsCategory from "@/components/animalsCategory/AnimalsCategory";
 
-import animals from "@/app/_data/catsDB";
+import animals from "@/data/catsDB";
 
 import "./layout.scss";
 

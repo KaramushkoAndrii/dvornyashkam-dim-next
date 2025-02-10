@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { slideFromLeft, slideFromRight } from "@/constants/animations";
 import FigureContainer from "@/components/figureContainer/FigureContainer";
 
-import AboutUsList from "@/app/_data/aboutUsList";
+import AboutUsList from "@/data/aboutUsList";
 
 import "./page.scss";
 

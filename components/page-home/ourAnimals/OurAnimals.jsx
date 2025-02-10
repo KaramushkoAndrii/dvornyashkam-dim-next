@@ -1,5 +1,5 @@
-import dogsDB from "@/app/_data/dogsDB";
-import catsDB from "@/app/_data/catsDB";
+import dogsDB from "@/data/dogsDB";
+import catsDB from "@/data/catsDB";
 
 import AnimalsList from "../../animalsList/AnimalsList";
 
