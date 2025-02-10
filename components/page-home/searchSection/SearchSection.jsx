@@ -1,32 +1,38 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/routing";
 import { motion } from "framer-motion";
 
 import { slideFromBottom } from "@/constants/animations";
 import AnimalCard from "@/components/AnimalCard/AnimalCard";
-import dogsDB from "@/data/dogsDB";
 import Button from "@/components/button/Button";
 
 import "./searchSection.scss";
 
-const SearchSection = () => {
-  const t = useTranslations();
+const SearchSection = ({ data }) => {
+  const { title, btnRerol, btnAbout, items } = data || {};
 
-  const [currentAnimal, setCurrentAnimal] = useState(getRandomAnimal());
+  const [currentAnimal, setCurrentAnimal] = useState(null);
   const [isAnimating, setIsAnimating] = useState(false);
 
+  // TO DO: It's better if you use one type of function (arrow or regular)
   function getRandomAnimal() {
-    const randomAnimalIndex = Math.floor(Math.random() * dogsDB.length);
+    const randomAnimalIndex = Math.floor(Math.random() * (items?.length || 0));
 
-    return dogsDB[randomAnimalIndex];
+    return items?.[randomAnimalIndex];
   }
 
   const animalRerol = () => {
     setIsAnimating(true);
   };
+
+  // The action will run once after the application is built.
+  useEffect(() => {
+    console.log("get first random");
+
+    setCurrentAnimal(getRandomAnimal());
+    setIsAnimating(false);
+  }, []);
 
   useEffect(() => {
     if (isAnimating) {
@@ -41,21 +47,23 @@ const SearchSection = () => {
 
   return (
     <section className="search">
-      <h2 className="search__title">{t("search.title")}</h2>
+      <h2 className="search__title">{title}</h2>
 
       <div className={`card-container ${isAnimating ? "rotate" : ""}`}>
         <AnimalCard animal={currentAnimal} />
       </div>
 
       <motion.div className="search__button-group" {...slideFromBottom}>
-        <Button
-          text={t("buttons.rerol")}
-          onClick={animalRerol}
-          disabled={isAnimating}
-        />
-        <Link href="/about">
-          <Button text={t("buttons.about")} />
-        </Link>
+        {btnRerol?.title && (
+          <Button
+            text={btnRerol.title}
+            onClick={animalRerol}
+            disabled={isAnimating}
+          />
+        )}
+        {btnAbout?.title && btnAbout?.href && (
+          <Button text={btnAbout.title} href={btnAbout.href} />
+        )}
       </motion.div>
     </section>
   );

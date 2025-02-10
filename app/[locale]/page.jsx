@@ -21,6 +21,19 @@ export default async function HomePage() {
     description: t("hero_section.sub-title"),
   };
 
+  // TO DO: get DATA for SearchSection from API
+  const dataSearchSection = {
+    title: t("search.title"),
+    btnAbout: {
+      title: t("buttons.about"),
+      href: "/about",
+    },
+    btnRerol: {
+      title: t("buttons.rerol"),
+    },
+    items: dogsDB,
+  };
+
   // TO DO: get DATA for OurAnimals from API
   const dataOurAnimals = [
     {
@@ -40,7 +53,7 @@ export default async function HomePage() {
   return (
     <>
       <HeroSection data={dataHeroSection} />
-      <SearchSection />
+      <SearchSection data={dataSearchSection} />
       <AboutSection />
       <OurAnimals data={dataOurAnimals} />
       <HelpSection btnText={"buttons.more"} />
