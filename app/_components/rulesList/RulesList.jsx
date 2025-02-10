@@ -1,3 +1,5 @@
+"use client";
+
 import { useTranslations } from "next-intl";
 import Accordion from "@/app/_components/accordion/Accordion";
 

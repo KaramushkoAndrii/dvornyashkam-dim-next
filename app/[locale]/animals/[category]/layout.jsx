@@ -1,3 +1,5 @@
+import { getLocale, getTranslations } from "next-intl/server";
+
 import AnimalsCategory from "@/app/_components/animalsCategory/AnimalsCategory";
 
 import animals from "@/app/_data/catsDB";
@@ -7,7 +9,8 @@ import "./layout.scss";
 export default async function AnimalsCategoryLayout({ params, children }) {
   const { category } = await params;
 
-  const t = useTranslations();
+  const locale = await getLocale();
+  const t = await getTranslations({ locale });
 
   let title = "Category Title";
   let btnMoreTitle = "More Category Items";

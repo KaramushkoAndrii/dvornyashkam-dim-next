@@ -1,10 +1,10 @@
 import { Link } from "@/i18n/routing";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 import "./footer.scss";
 
-const Footer = () => {
-  const t = useTranslations();
+const Footer = async () => {
+  const t = await getTranslations();
 
   return (
     <footer>

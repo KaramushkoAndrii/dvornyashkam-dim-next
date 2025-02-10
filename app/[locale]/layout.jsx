@@ -1,12 +1,12 @@
 // https://github.com/amannn/next-intl/blob/main/examples/example-app-router/src/app/%5Blocale%5D/layout.tsx
 import { notFound } from "next/navigation";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getLocale, getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 
 import BaseLayout from "@/app/_components/base/BaseLayout";
 
-export async function generateMetadata({ params }) {
-  const { locale } = await params;
+export async function generateMetadata() {
+  const locale = await getLocale();
 
   const t = await getTranslations({ locale, namespace: "LocaleLayout" });
 
@@ -19,12 +19,12 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default async function LocaleLayout({ children, params }) {
+export default async function LocaleLayout({ children }) {
   // Locale
-  const { locale } = await params;
+  const locale = await getLocale();
 
   // Ensure that the incoming `locale` is valid
-  if (!routing.locales.includes(locale)) {
+  if (locale !== routing.defaultLocale && !routing.locales.includes(locale)) {
     notFound();
   }
 
