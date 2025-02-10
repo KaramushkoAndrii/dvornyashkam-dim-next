@@ -5,5 +5,12 @@
         "advise": "Поради",
         "help": "Допомога",
         "contacts": "Контакти"
+    },
+    "LocaleLayout": {
+        "title": "Dvoronyshkam dim",
+        "description": "'Dvoronyshkam dim' is an animal shelter in Ukraine"
+    },
+    "NotFound": {
+        "title": "Page not found"
     }
 }
