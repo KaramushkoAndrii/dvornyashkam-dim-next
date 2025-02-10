@@ -9,8 +9,8 @@ const nextConfig = {
   // https://sass-lang.com/documentation/at-rules/use/
   sassOptions: {
     additionalData: `
-            @use "./app/_styles/vars.scss" as *;
-            @use "./app/_styles/mixins.scss" as *;
+            @use "./assets/styles/vars.scss" as *;
+            @use "./assets/styles/mixins.scss" as *;
         `,
   },
 };
