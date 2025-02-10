@@ -12,7 +12,7 @@ import { navigationList } from "@/data/navigationList";
 import "./header.scss";
 
 const Header = () => {
-  const { pathname } = usePathname();
+  const pathname = usePathname();
 
   useEffect(() => {
     window.scrollTo(0, 0);
