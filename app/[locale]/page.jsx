@@ -14,6 +14,13 @@ import "./page.scss";
 export default async function HomePage() {
   const t = await getTranslations();
 
+  // TO DO: get DATA for HeroSection from API
+  const dataHeroSection = {
+    pageTitle: "Притулок для тварин dvornyashkam_dim",
+    title: t("hero_section.title"),
+    description: t("hero_section.sub-title"),
+  };
+
   // TO DO: get DATA for OurAnimals from API
   const dataOurAnimals = [
     {
@@ -32,7 +39,7 @@ export default async function HomePage() {
 
   return (
     <>
-      <HeroSection />
+      <HeroSection data={dataHeroSection} />
       <SearchSection />
       <AboutSection />
       <OurAnimals data={dataOurAnimals} />
