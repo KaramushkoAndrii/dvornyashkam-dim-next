@@ -4,8 +4,8 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
 import { slideFromLeft } from "@/app/_constants/animations";
-import HelpListItem from "@/app/_components/helpListDetailed/HelpListItem";
-import HelpSection from "@/app/_components/common/helpSection/HelpSection";
+import HelpListItem from "@/components/helpListDetailed/HelpListItem";
+import HelpSection from "@/components/common/helpSection/HelpSection";
 
 import items from "@/app/_data/helpListDetailedData";
 import pageData from "@/app/_data/helpPageData";

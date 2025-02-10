@@ -3,8 +3,8 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
-import Accordion from "@/app/_components/accordion/Accordion";
-import Button from "@/app/_components/button/Button";
+import Accordion from "@/components/accordion/Accordion";
+import Button from "@/components/button/Button";
 import { slideFromLeft, slideFromBottom } from "@/app/_constants/animations";
 
 import AdviseAccordionData from "@/app/_data/adviseAccordionData";

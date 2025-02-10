@@ -1,4 +1,4 @@
-import AnimalDetails from "@/app/_components/animalDetails/AnimalDetails";
+import AnimalDetails from "@/components/animalDetails/AnimalDetails";
 
 import animals from "@/app/_data/catsDB";
 

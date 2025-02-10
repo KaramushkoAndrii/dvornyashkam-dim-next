@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { getLocale, getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 
-import BaseLayout from "@/app/_components/base/BaseLayout";
+import BaseLayout from "@/components/base/BaseLayout";
 
 export async function generateMetadata() {
   const locale = await getLocale();
