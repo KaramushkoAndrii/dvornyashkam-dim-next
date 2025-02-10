@@ -1,34 +1,36 @@
-// TO DO: i18n https://next-intl.dev/docs/getting-started/app-router/with-i18n-routing
-// Video Instruction: https://www.youtube.com/watch?v=2Jh9olZXBfw (not checked yet)
-import { useTranslations } from "next-intl";
+"use client";
+
+import { useParams } from "next/navigation";
+
+import { useLocale } from "next-intl";
+import { routing } from "@/i18n/routing";
+import { usePathname, useRouter } from "@/i18n/routing";
 
 import "./changeLng.scss";
 
 const ChangeLng = () => {
-  // TO DO: i18n https://next-intl.dev/docs/getting-started/app-router/with-i18n-routing
-  const { i18n } = {
-    i18n: { resolvedLanguage: "uk", changeLanguage: (x) => x },
-  }; // useTranslation();
+  const locale = useLocale();
+  const pathname = usePathname();
+  const router = useRouter();
+  const params = useParams();
 
-  const locales = {
-    uk: {
-      title: "UA",
-    },
-    en: {
-      title: "EN",
-    },
-  };
-
-  const handleLanguageChange = (event) => {
-    i18n.changeLanguage(event.target.value);
+  // Toggle the locale
+  const handleLanguageChange = (evt) => {
+    router.push(
+      // @ts-expect-error -- TypeScript will validate that only known `params`
+      // are used in combination with a given `pathname`. Since the two will
+      // always match for the current route, we can skip runtime checks.
+      { pathname, params },
+      { locale: evt.target.value }
+    );
   };
 
   return (
     <div className="language_toggle">
-      <select onChange={handleLanguageChange} value={i18n.resolvedLanguage}>
-        {Object.keys(locales).map((locale) => (
-          <option key={locale} value={locale}>
-            {locales[locale].title}
+      <select onChange={handleLanguageChange} value={locale}>
+        {routing.locales.map((l) => (
+          <option key={l} value={l}>
+            {l === "uk" ? "ua" : l}
           </option>
         ))}
       </select>
