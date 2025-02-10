@@ -10,6 +10,8 @@ import { TbVaccine } from "react-icons/tb";
 
 import Button from "@/components/button/Button";
 
+import { getAnimalsCategoryLink } from "@/utils";
+
 import "./AnimalDetails.scss";
 
 export default function AnimalDetails({ animal }) {
@@ -28,7 +30,7 @@ export default function AnimalDetails({ animal }) {
   }, []);
 
   const closeHandler = () => {
-    router.push(`/animals/${animal.category}`);
+    router.push(getAnimalsCategoryLink(animal.category));
   };
 
   return (

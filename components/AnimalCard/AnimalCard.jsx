@@ -8,6 +8,7 @@ import { FaDog } from "react-icons/fa6";
 import { TbVaccine } from "react-icons/tb";
 
 import "./AnimalCard.scss";
+import { getAnimalLink } from "@/utils";
 
 const AnimalCard = ({ animal }) => {
   const { slug, category, img, name, gender, age, vaccine, animals } =
@@ -27,7 +28,7 @@ const AnimalCard = ({ animal }) => {
 
   return (
     <motion.div {...rotateAndScale} className="animal">
-      <Link href={`/animals/${category}/${slug}`} className="animal__link">
+      <Link href={getAnimalLink(category, slug)} className="animal__link">
         <div className="animal__info">
           <div className="animal__picture">
             <img src={img} alt={name} />

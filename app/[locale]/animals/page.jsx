@@ -10,6 +10,8 @@ import {
   slideFromBottom,
 } from "@/constants/animations";
 
+import { getAnimalsCategoryLink } from "@/utils";
+
 import AnimalList from "@/data/animalList";
 
 import "./animalsPage.scss";
@@ -35,7 +37,7 @@ export default function AnimalsPage() {
               key={animal.id}
               className={`animals-content__${animal.id}`}
             >
-              <Link href={`/animals/${animal.src}`}>
+              <Link href={getAnimalsCategoryLink(animal.src)}>
                 <img src={animal.imgSrc} alt={animal.id} />
                 <span>{t(`${animal.titleKey}`)}</span>
               </Link>
