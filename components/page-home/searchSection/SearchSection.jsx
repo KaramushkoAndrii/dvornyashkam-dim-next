@@ -28,8 +28,6 @@ const SearchSection = ({ data }) => {
 
   // The action will run once after the application is built.
   useEffect(() => {
-    console.log("get first random");
-
     setCurrentAnimal(getRandomAnimal());
     setIsAnimating(false);
   }, []);
