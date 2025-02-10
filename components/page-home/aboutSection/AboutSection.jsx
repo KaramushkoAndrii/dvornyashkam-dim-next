@@ -1,50 +1,39 @@
 "use client";
 
-import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
 import Counter from "@/components/Counter";
 import { slideFromRight, slideFromLeft, scale } from "@/constants/animations";
-import AboutList from "@/data/aboutList";
-import AboutListItem from "@/data/aboutInfoList";
 
 import "./aboutSection.scss";
 
-const AboutSection = () => {
-  const t = useTranslations();
+const AboutSection = ({ data }) => {
+  const { title, description, statistics, cards } = data || {};
 
   return (
     <section className="about">
-      <h2 className="about__title">{t("about.title")}</h2>
+      <h2 className="about__title">{title}</h2>
       <motion.p className="about__description" {...slideFromLeft}>
-        {t("about.description")}
+        {description}
       </motion.p>
 
       <div className="about__info">
         <motion.ul {...slideFromRight} className="about__info-list">
-          {AboutListItem.map((item, key) => (
+          {statistics.map((item, key) => (
             <li key={key} className="about__info-list--item">
               {item.symbol ? item.symbol : null}
-              <Counter
-                startValue={0}
-                endValue={parseInt(item.count.replace(/\D/g, ""), 10)}
-                duration={2}
-              />
-              <span>{t(`${item.text}`)}</span>
+              <Counter startValue={0} endValue={+item.count} duration={2} />
+              <span>{item.text}</span>
             </li>
           ))}
         </motion.ul>
       </div>
 
       <motion.ul className="about__list" {...scale}>
-        {AboutList.map((item, key) => (
+        {cards.map((item, key) => (
           <li key={key} className="about__item">
-            <h3 className="about__item--title">
-              {t(`about-list.${item.title}`)}
-            </h3>
-            <p className="about__item--content">
-              {t(`about-list.${item.content}`)}
-            </p>
+            <h3 className="about__item--title">{item.title}</h3>
+            <p className="about__item--content">{item.description}</p>
           </li>
         ))}
       </motion.ul>

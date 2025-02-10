@@ -1,5 +1,7 @@
 import dogsDB from "@/data/dogsDB";
 import catsDB from "@/data/catsDB";
+import dataAboutList from "@/data/aboutList";
+import dataAboutListItem from "@/data/aboutInfoList";
 
 import { getTranslations } from "next-intl/server";
 
@@ -34,6 +36,21 @@ export default async function HomePage() {
     items: dogsDB,
   };
 
+  // TO DO: get DATA for AboutSection from API
+  const dataAboutSection = {
+    title: t("about.title"),
+    description: t("about.description"),
+    statistics: dataAboutListItem.map(({ symbol, count, text }) => ({
+      symbol,
+      count,
+      text: t(text),
+    })),
+    cards: dataAboutList.map(({ title, content }) => ({
+      title: t(`about-list.${title}`),
+      description: t(`about-list.${content}`),
+    })),
+  };
+
   // TO DO: get DATA for OurAnimals from API
   const dataOurAnimals = [
     {
@@ -54,7 +71,7 @@ export default async function HomePage() {
     <>
       <HeroSection data={dataHeroSection} />
       <SearchSection data={dataSearchSection} />
-      <AboutSection />
+      <AboutSection data={dataAboutSection} />
       <OurAnimals data={dataOurAnimals} />
       <HelpSection btnText={"buttons.more"} />
     </>
