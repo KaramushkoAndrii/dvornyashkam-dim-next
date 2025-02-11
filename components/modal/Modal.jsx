@@ -17,13 +17,9 @@ const Modal = () => {
   // https://react-redux.js.org/introduction/getting-started
   // const [isModalOpen] = [false];
 
-  // const closeHandler = () => {
-  //   // TO DO: toggle Modal store (redux, zustand, mobx, etc.) state to false
-  //   // setIsModalOpen(false);
-  //   console.log(
-  //     "// TO DO: toggle Modal store (redux, zustand, mobx, etc.) state to false"
-  //   );
-  // };
+  const closeHandler = () => {
+    closeModal();
+  };
 
   if (!isModalOpen) return null;
 
@@ -32,7 +28,7 @@ const Modal = () => {
       <div className="modal">
         <header className="modal__header">
           <h2>{t("modal.callback")}</h2>
-          <span className="modal__close" onClick={closeModal}>
+          <span className="modal__close" onClick={closeHandler}>
             X
           </span>
         </header>
