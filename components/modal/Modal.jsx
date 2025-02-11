@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 
-import useModalStore from "@/constants/useModalStore";
+import useModalStore from "@/hooks/useModalStore";
 import Input from "@/components/input/Input";
 
 import "./modal.scss";

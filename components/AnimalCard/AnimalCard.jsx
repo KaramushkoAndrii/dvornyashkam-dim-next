@@ -3,7 +3,7 @@ import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
-import useModalStore from "@/constants/useModalStore";
+import useModalStore from "@/hooks/useModalStore";
 import { rotateAndScale } from "@/constants/animations";
 import { FaDog } from "react-icons/fa6";
 import { TbVaccine } from "react-icons/tb";

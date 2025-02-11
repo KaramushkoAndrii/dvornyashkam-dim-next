@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
+import useModalStore from "@/hooks/useModalStore";
 import Accordion from "@/components/accordion/Accordion";
 import Button from "@/components/button/Button";
 import { slideFromLeft, slideFromBottom } from "@/constants/animations";
@@ -13,6 +14,13 @@ import "./advisePage.scss";
 
 export default function AdvisePage() {
   const t = useTranslations();
+
+  const { openModal } = useModalStore();
+
+  const openHandler = (evt) => {
+    evt.preventDefault();
+    openModal();
+  };
 
   return (
     <section className="advise__page">
@@ -26,7 +34,7 @@ export default function AdvisePage() {
         {t("advise-page.content")}
       </motion.p>
 
-      <Button text={t("buttons.call")} onClick={(evt) => console.log(evt)} />
+      <Button text={t("buttons.call")} onClick={openHandler} />
     </section>
   );
 }
