@@ -18,15 +18,10 @@ const AnimalCard = ({ animal }) => {
   const t = useTranslations();
   const { openModal } = useModalStore();
 
-  // const openHandler = (evt) => {
-  //   evt.preventDefault();
-
-  //   // TO DO: toggle Modal store (redux, zustand, mobx, etc.) state to true
-  //   //   setIsModalOpen(true);
-  //   console.log(
-  //     "TO DO: toggle Modal store (redux, zustand, mobx, etc.) state to true"
-  //   );
-  // };
+  const openHandler = (evt) => {
+    evt.preventDefault();
+    openModal();
+  };
 
   return (
     <motion.div {...rotateAndScale} className="animal">
@@ -57,10 +52,10 @@ const AnimalCard = ({ animal }) => {
           </div>
         </div>
         <div className="animal__buttons">
-          <button className="animal__choice" onClick={openModal}>
+          <button className="animal__choice" onClick={openHandler}>
             {t("search.choice")}
           </button>
-          <button className="animal__choice" onClick={openModal}>
+          <button className="animal__choice" onClick={openHandler}>
             {t("search.trustee")}
           </button>
         </div>
