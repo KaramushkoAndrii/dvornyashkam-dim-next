@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, delay } from "framer-motion";
 
 import { slideFromLeft } from "@/constants/animations";
 
@@ -18,7 +18,13 @@ const HeroSection = ({ data }) => {
       <motion.h2 {...slideFromLeft} className="hero__title">
         {title}
       </motion.h2>
-      <h3 className="hero__description">{description}</h3>
+      <motion.h3
+        {...slideFromLeft}
+        transition={{ ...slideFromLeft.transition, delay: 0.5 }}
+        className="hero__description"
+      >
+        {description}
+      </motion.h3>
     </section>
   );
 };

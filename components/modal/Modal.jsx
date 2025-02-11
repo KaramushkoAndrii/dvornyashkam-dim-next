@@ -1,26 +1,27 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+
+import useModalStore from "@/hooks/useModalStore";
 import Input from "@/components/input/Input";
 
 import "./modal.scss";
 
 const Modal = () => {
   const t = useTranslations();
+  const { isModalOpen, closeModal } = useModalStore();
 
   // TO DO: get state from store (redux, zustand, mobx, etc.)
   // https://zustand-demo.pmnd.rs/
   // or
   // https://react-redux.js.org/introduction/getting-started
-  const [isModalOpen] = [false];
+  // const [isModalOpen] = [false];
 
   const closeHandler = () => {
-    // TO DO: toggle Modal store (redux, zustand, mobx, etc.) state to false
-    // setIsModalOpen(false);
-    console.log(
-      "// TO DO: toggle Modal store (redux, zustand, mobx, etc.) state to false"
-    );
+    closeModal();
   };
+
+  if (!isModalOpen) return null;
 
   return (
     <div className={`modal-container ${isModalOpen ? "modal-open" : ""}`}>

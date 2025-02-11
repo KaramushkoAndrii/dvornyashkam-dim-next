@@ -7,8 +7,8 @@ Based on [React.js project](https://github.com/KaramushkoAndrii/dvornyshkam-dim)
 ## TO DO list:
 
 - [x] add `next-intl` package. [Official guide i18n](https://next-intl.dev/docs/getting-started/app-router/with-i18n-routing) and [YouTube video](https://www.youtube.com/watch?v=2Jh9olZXBfw)
-- [ ] add store [zustand](https://zustand-demo.pmnd.rs/), or [redux](https://react-redux.js.org/introduction/getting-started), or [mobx](https://mobx.js.org/README.html), etc.
-- [ ] control Modal open/close state in Store
+- [x] add store [zustand](https://zustand-demo.pmnd.rs/), or [redux](https://react-redux.js.org/introduction/getting-started), or [mobx](https://mobx.js.org/README.html), etc.
+- [x] control Modal open/close state in Store
 - [ ] data for all sections of the page should be obtained from the backend in the page component and then passed to the components through props (see `HomePage.jsx` and her sections components as example)
 - [ ] add `typography.scss` and classes `h1 - h6` for styling titles
 - [ ] `page__title -> title` or better solution is replace it to `h1` SCSS class from `typography.scss`

@@ -4,14 +4,21 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
 import { PiTelegramLogo } from "react-icons/pi";
+import useModalStore from "@/hooks/useModalStore";
 
 import { slideFromBottom } from "@/constants/animations";
 import Button from "@/components/button/Button";
 
 import "./contactForm.scss";
 
-const ContactForm = ({ data, isOpen }) => {
+const ContactForm = ({ data }) => {
   const t = useTranslations();
+  const { openModal } = useModalStore();
+
+  const openHandler = (evt) => {
+    evt.preventDefault();
+    openModal();
+  };
 
   // TO DO: isOpen is may be openHandler like in other components?
   return (
@@ -41,7 +48,7 @@ const ContactForm = ({ data, isOpen }) => {
           )}
         </li>
       ))}
-      <Button text={t("buttons.contact")} onClick={(evt) => console.log(evt)} />
+      <Button text={t("buttons.contact")} onClick={openHandler} />
     </motion.ul>
   );
 };
