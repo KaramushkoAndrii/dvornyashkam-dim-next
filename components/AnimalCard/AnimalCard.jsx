@@ -3,6 +3,7 @@ import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
+import useModalStore from "@/constants/useModalStore";
 import { rotateAndScale } from "@/constants/animations";
 import { FaDog } from "react-icons/fa6";
 import { TbVaccine } from "react-icons/tb";
@@ -15,16 +16,17 @@ const AnimalCard = ({ animal }) => {
     animal || {};
 
   const t = useTranslations();
+  const { openModal } = useModalStore();
 
-  const openHandler = (evt) => {
-    evt.preventDefault();
+  // const openHandler = (evt) => {
+  //   evt.preventDefault();
 
-    // TO DO: toggle Modal store (redux, zustand, mobx, etc.) state to true
-    //   setIsModalOpen(true);
-    console.log(
-      "TO DO: toggle Modal store (redux, zustand, mobx, etc.) state to true"
-    );
-  };
+  //   // TO DO: toggle Modal store (redux, zustand, mobx, etc.) state to true
+  //   //   setIsModalOpen(true);
+  //   console.log(
+  //     "TO DO: toggle Modal store (redux, zustand, mobx, etc.) state to true"
+  //   );
+  // };
 
   return (
     <motion.div {...rotateAndScale} className="animal">
@@ -55,10 +57,10 @@ const AnimalCard = ({ animal }) => {
           </div>
         </div>
         <div className="animal__buttons">
-          <button className="animal__choice" onClick={openHandler}>
+          <button className="animal__choice" onClick={openModal}>
             {t("search.choice")}
           </button>
-          <button className="animal__choice" onClick={openHandler}>
+          <button className="animal__choice" onClick={openModal}>
             {t("search.trustee")}
           </button>
         </div>

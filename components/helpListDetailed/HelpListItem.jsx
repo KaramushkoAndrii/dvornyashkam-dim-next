@@ -1,11 +1,13 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
-import "./HelpListItem.scss";
 import { slideFromLeft, slideFromRight } from "@/constants/animations";
+import useModalStore from "@/constants/useModalStore";
+import "./HelpListItem.scss";
 
 const HelpListItem = ({ data, index, translationGroup }) => {
   const t = useTranslations();
+  const { openModal } = useModalStore();
 
   const { header, description, subDescription, type, src, linkContent } =
     data || {};
@@ -21,7 +23,7 @@ const HelpListItem = ({ data, index, translationGroup }) => {
           {t(`${translationGroup}.${subDescription}`)}
         </p>
         {type === "button" ? (
-          <button onClick={(evt) => console.log(evt)}>{linkContent}</button>
+          <button onClick={openModal}>{linkContent}</button>
         ) : (
           <a href={`${type}:${src}`} target="_blank">
             {linkContent}

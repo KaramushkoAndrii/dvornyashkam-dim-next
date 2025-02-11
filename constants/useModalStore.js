@@ -3,9 +3,9 @@
 import { create } from "zustand";
 
 const useModalStore = create((set) => ({
-  isOpen: false,
-  onOpen: () => set((state) => ({ isOpen: true })),
-  onClose: () => set((state) => ({ isOpen: false })),
+  isModalOpen: false,
+  openModal: () => set((state) => ({ isModalOpen: true })),
+  closeModal: () => set((state) => ({ isModalOpen: false })),
 }));
 
 export default useModalStore;
