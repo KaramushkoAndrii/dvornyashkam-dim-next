@@ -14,8 +14,8 @@ Based on [React.js project](https://github.com/KaramushkoAndrii/dvornyshkam-dim)
 - [ ] `page__title -> title` or better solution is replace it to `h1` SCSS class from `typography.scss`
 - [ ] check all `.scss` and `.jsx` files and change name of BEM blocks and elements from [Camel or Pascal case to Kebab case](https://medium.com/@alivander/camel-pascal-snake-case-%D0%B8-%D0%B4%D1%80%D1%83%D0%B3%D0%B8%D0%B5-%D1%81%D1%82%D0%B8%D0%BB%D0%B8-%D0%BD%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D1%8F-288ec62ca0d0). Example: `/app/about/page.jsx` and `/app/about/page.scss` (compare it with your React page version and make another pages structure and styles similarly)
 - [ ] fix all `.scss` as I described to you in Telegram earlier (2025-02-07).
-- [ ] in folder `components` create subfolders: `common`, `UI` and folders with names like existing Pages (`about`, etc.). In `UI` folder must be moved all components like `Button`. The `common` folder contains components that can used in many places in the project. The `[page]` folders contain components that are used only on a specific page. See `components/page-home/..` folder for example.
-- [ ] - OPTIONAL `<img />` replace to [<Image />](https://nextjs.org/docs/pages/api-reference/components/image)
+- [ ] in folder `components` create subfolders: `common`, `UI` and folders with names like existing Pages (`page-about`, etc.). In `UI` folder must be moved all components like `Button`. The `common` folder contains components that can used in many places in the project. The `[page]` folders contain components that are used only on a specific page. See `components/page-home/..` folder for example.
+- [ ] - OPTIONAL `<img />` replace to [Image](https://nextjs.org/docs/pages/api-reference/components/image)
 - [ ] change the extension from `.jsx` to `.js` in all files in the `data` folder
 - [ ] redo the filters as you did earlier in the Movie API project
 - [ ] delete `// TO DO` comments from code after realization all of them
