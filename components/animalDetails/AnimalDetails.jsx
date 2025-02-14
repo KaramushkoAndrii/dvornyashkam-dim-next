@@ -54,9 +54,9 @@ export default function AnimalDetails({ animal }) {
                 </li>
               ))}
             </ul>
-            <h3>{animal.name}</h3>
-            <h3>{animal.gender}</h3>
-            <h3>{animal.age}</h3>
+            <h3 className="h3">{animal.name}</h3>
+            <h3 className="h3">{animal.gender}</h3>
+            <h3 className="h3">{animal.age}</h3>
             <div>
               <i>
                 {" "}

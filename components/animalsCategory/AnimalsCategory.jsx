@@ -82,7 +82,7 @@ const AnimalsCategory = ({ title, btnMoreTitle, data = [] }) => {
 
   return (
     <section className="animals-category">
-      <h2>{title || "Category"}</h2>
+      <h2 className="h2">{title || "Category"}</h2>
 
       <SearchFilter onFilterChange={handleFilterChange} />
 

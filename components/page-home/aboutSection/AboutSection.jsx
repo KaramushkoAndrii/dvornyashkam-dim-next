@@ -12,7 +12,7 @@ const AboutSection = ({ data }) => {
 
   return (
     <section className="about">
-      <h2 className="about__title">{title}</h2>
+      <h2 className="about__title h2">{title}</h2>
       <motion.p className="about__description" {...slideFromLeft}>
         {description}
       </motion.p>
@@ -32,7 +32,7 @@ const AboutSection = ({ data }) => {
       <motion.ul className="about__list" {...scale}>
         {cards.map((item, key) => (
           <li key={key} className="about__item">
-            <h3 className="about__item--title">{item.title}</h3>
+            <h3 className="about__item--title h3">{item.title}</h3>
             <p className="about__item--content">{item.description}</p>
           </li>
         ))}

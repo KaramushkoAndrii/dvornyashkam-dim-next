@@ -20,7 +20,7 @@ const VisitedUs = ({ data }) => {
   } = data;
   return (
     <motion.section {...appear} className="visitedUs">
-      <h2>{t(title)}</h2>
+      <h2 className="h2">{t(title)}</h2>
       <div className="visitedUs__item">
         <p className="visitedUs__item--header">{t(visitedHeader)}</p>
         <p className="visitedUs__item--content">{t(visitedDate)}</p>

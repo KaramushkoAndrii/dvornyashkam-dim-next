@@ -9,11 +9,6 @@
   cursor: none;
 }
 
-p {
-  font-size: clamp(1.5rem, 2vw, 3.5rem);
-  line-height: 1.6;
-}
-
 span {
   font-size: clamp(1rem, 2vw, 2rem);
 }
@@ -25,7 +20,8 @@ button {
 body {
   font-family: var(--font-first);
   font-weight: normal;
-  font-size: 16px;
+  font-size: clamp(1.5rem, 2vw, 3.5rem);
+  line-height: 1.6;
   color: $white;
   background-color: $secondary;
 }
@@ -40,4 +36,9 @@ main {
 
 .page__title {
   padding-bottom: 2rem;
+}
+
+.hidden {
+  position: absolute;
+  visibility: hidden;
 }

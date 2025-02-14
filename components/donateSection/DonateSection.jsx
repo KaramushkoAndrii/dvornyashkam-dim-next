@@ -18,7 +18,7 @@ const DonateSection = () => {
       viewport={{ once: false }}
       className="donate"
     >
-      <h2 className="donate__title">{t("donate.title")}</h2>
+      <h2 className="donate__title h2">{t("donate.title")}</h2>
 
       <ul className="donate__option">
         {DonateList.map((item, key) => (

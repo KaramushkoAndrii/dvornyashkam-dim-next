@@ -12,7 +12,7 @@ const RulesList = ({ data, accordionData = null }) => {
 
   return (
     <div className="rules">
-      <h2>{t(title)}</h2>
+      <h2 className="h2">{t(title)}</h2>
       <p>{t(description)}</p>
 
       {accordionData ? <Accordion data={accordionData} /> : null}

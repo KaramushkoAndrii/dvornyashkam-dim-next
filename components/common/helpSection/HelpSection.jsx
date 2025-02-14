@@ -15,7 +15,7 @@ const HelpSection = ({ data }) => {
   return (
     <section className="help">
       <motion.div {...slideFromRight} className="help__content">
-        <h2>{title}</h2>
+        <h2 className="h2">{title}</h2>
         <p>{description}</p>
         <ul>
           {items.map((item, key) => (
