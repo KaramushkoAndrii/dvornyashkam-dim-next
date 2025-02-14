@@ -31,7 +31,7 @@ const AnimalCard = ({ animal }) => {
             <img src={img} alt={name} />
           </div>
           <div className="animal__description">
-            <h3 className="animal__name">{name}</h3>
+            <h3 className="animal__name h3">{name}</h3>
             <span className="animal__gender">{gender}</span>
             <span className="animal__age">{age}</span>
           </div>

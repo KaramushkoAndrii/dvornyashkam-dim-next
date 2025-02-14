@@ -11,12 +11,6 @@ const Modal = () => {
   const t = useTranslations();
   const { isModalOpen, closeModal } = useModalStore();
 
-  // TO DO: get state from store (redux, zustand, mobx, etc.)
-  // https://zustand-demo.pmnd.rs/
-  // or
-  // https://react-redux.js.org/introduction/getting-started
-  // const [isModalOpen] = [false];
-
   const closeHandler = () => {
     closeModal();
   };
@@ -27,13 +21,13 @@ const Modal = () => {
     <div className={`modal-container ${isModalOpen ? "modal-open" : ""}`}>
       <div className="modal">
         <header className="modal__header">
-          <h2>{t("modal.callback")}</h2>
+          <h2 className="h2">{t("modal.callback")}</h2>
           <span className="modal__close" onClick={closeHandler}>
             X
           </span>
         </header>
         <div className="modal__body">
-          <h2 className="modal__title">{t("modal.title")}</h2>
+          <h2 className="modal__title h2">{t("modal.title")}</h2>
           <Input
             type={"text"}
             name={"user_name"}

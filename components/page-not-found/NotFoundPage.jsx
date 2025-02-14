@@ -8,7 +8,7 @@ export default function NotFoundPage() {
 
   return (
     <div className="not-found-page">
-      <h1 className="not-found-page__title">
+      <h1 className="not-found-page__title h1">
         <b>404</b> - {t("title")}
       </h1>
     </div>

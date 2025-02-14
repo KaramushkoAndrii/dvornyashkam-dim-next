@@ -21,7 +21,7 @@ const HelpListItem = ({ data, index, translationGroup }) => {
 
   return (
     <motion.li {...oddLi} className="detailed__item">
-      <h3>{t(`${translationGroup}.${header}`)}</h3>
+      <h3 className="h3">{t(`${translationGroup}.${header}`)}</h3>
       <p>{t(`${translationGroup}.${description}`)}</p>
       <footer>
         <p className="sub__text">

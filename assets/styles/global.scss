@@ -9,26 +9,6 @@
   cursor: none;
 }
 
-h1,
-h2,
-h3 {
-  font-family: var(--font-second);
-  font-weight: normal;
-}
-
-h2 {
-  font-size: clamp(2rem, 4vw, 3.5rem);
-}
-
-h3 {
-  font-size: clamp(1.75rem, 2.5vw, 3rem);
-}
-
-p {
-  font-size: clamp(1.5rem, 2vw, 3.5rem);
-  line-height: 1.6;
-}
-
 span {
   font-size: clamp(1rem, 2vw, 2rem);
 }
@@ -40,7 +20,8 @@ button {
 body {
   font-family: var(--font-first);
   font-weight: normal;
-  font-size: 16px;
+  font-size: clamp(1.5rem, 2vw, 3.5rem);
+  line-height: 1.6;
   color: $white;
   background-color: $secondary;
 }
@@ -55,4 +36,9 @@ main {
 
 .page__title {
   padding-bottom: 2rem;
+}
+
+.hidden {
+  position: absolute;
+  visibility: hidden;
 }

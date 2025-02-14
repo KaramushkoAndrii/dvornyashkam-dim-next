@@ -53,7 +53,7 @@ export default function ContactPage() {
       <ContactForm data={ContactFormData} />
 
       <motion.div {...scale} className="contact__info">
-        <h2 className="contact__info--header">
+        <h2 className="contact__info--header h2">
           {t(responseble)}
           <i>{t(sterilaz)}</i>
         </h2>

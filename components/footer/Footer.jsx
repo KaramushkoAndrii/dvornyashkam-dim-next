@@ -12,7 +12,7 @@ const Footer = async () => {
         <Link href="/" className="logo__wrapper">
           <img className="logo" src="/images/logo.png" alt="logo" />
         </Link>
-        <h2 className="hero__title">{t("hero_section.title")}</h2>
+        <h2 className="hero__title h2">{t("hero_section.title")}</h2>
       </div>
     </footer>
   );

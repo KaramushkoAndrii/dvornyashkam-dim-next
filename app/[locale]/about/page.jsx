@@ -15,7 +15,7 @@ export default function AboutPage() {
 
   return (
     <section className="about-page">
-      <h2 {...slideFromLeft} className="page__title">
+      <h2 {...slideFromLeft} className="page__title h2">
         {t("navigation.about_us")}
       </h2>
       <ul className="about-page__list">

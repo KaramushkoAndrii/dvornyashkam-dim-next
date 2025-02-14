@@ -45,7 +45,7 @@ const SearchSection = ({ data }) => {
 
   return (
     <section className="search">
-      <h2 className="search__title">{title}</h2>
+      <h2 className="search__title h2">{title}</h2>
 
       <div className={`card-container ${isAnimating ? "rotate" : ""}`}>
         <AnimalCard animal={currentAnimal} />
