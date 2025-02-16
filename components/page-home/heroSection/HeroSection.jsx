@@ -11,7 +11,7 @@ const HeroSection = ({ data }) => {
 
   return (
     <section className="hero">
-      <h1 className="hidden h1">{pageTitle}</h1>
+      <h1 className="hidden">{pageTitle}</h1>
       <motion.h2 {...slideFromLeft} className="hero__title h2">
         {title}
       </motion.h2>
