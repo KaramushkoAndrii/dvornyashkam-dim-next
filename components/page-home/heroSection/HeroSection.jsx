@@ -11,7 +11,6 @@ const HeroSection = ({ data }) => {
 
   return (
     <section className="hero">
-      {/* // TO DO: move styles to the style file */}
       <h1 className="hidden">{pageTitle}</h1>
       <motion.h2 {...slideFromLeft} className="hero__title h2">
         {title}

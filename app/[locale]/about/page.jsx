@@ -15,9 +15,9 @@ export default function AboutPage() {
 
   return (
     <section className="about-page">
-      <h2 {...slideFromLeft} className="page__title h2">
+      <motion.h2 {...slideFromLeft} className="title h2">
         {t("navigation.about_us")}
-      </h2>
+      </motion.h2>
       <ul className="about-page__list">
         {AboutUsList.map((item, key) => {
           const slideText = key % 2 === 0 ? slideFromRight : slideFromLeft;
