@@ -24,7 +24,7 @@ export default function AdvisePage() {
 
   return (
     <section className="advise__page">
-      <motion.h2 {...slideFromLeft} className="h1 h2">
+      <motion.h2 {...slideFromLeft} className="title h2">
         {t("advise-page.title")}
       </motion.h2>
 

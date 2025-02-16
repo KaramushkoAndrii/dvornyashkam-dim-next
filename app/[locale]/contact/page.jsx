@@ -37,7 +37,7 @@ export default function ContactPage() {
 
   return (
     <section className="contact__page">
-      <motion.h2 {...slideFromLeft} className="h1 h2">
+      <motion.h2 {...slideFromLeft} className="title h2">
         {t(title)}
       </motion.h2>
 
