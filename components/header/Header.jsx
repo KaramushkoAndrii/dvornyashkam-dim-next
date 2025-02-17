@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
-import { usePathname } from "@/i18n/routing";
 import { Link } from "@/i18n/routing";
 
 import Navigation from "@/components/navigation/Navigation";
@@ -12,12 +10,6 @@ import { navigationList } from "@/data/navigationList";
 import "./header.scss";
 
 const Header = () => {
-  const pathname = usePathname();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
   return (
     <header className="header">
       <Navigation list={navigationList} />
