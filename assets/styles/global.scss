@@ -31,14 +31,18 @@ body {
   background-color: $secondary;
 
   overflow-x: hidden;
+
+  transition-property: opacity, background-color, transform, filter;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.5s;
 }
 
 body.modal-open {
   overflow: hidden;
 }
 
-main {
-  margin-top: 10dvh;
+.main {
+  width: 100%;
 }
 
 .hidden {
@@ -48,4 +52,14 @@ main {
 
 .title {
   padding-bottom: 2rem;
+}
+
+.page-transition {
+  opacity: 0;
+
+  // background-color: $yellow-100;
+
+  transform: translateY(40px);
+
+  filter: blur(100px);
 }
