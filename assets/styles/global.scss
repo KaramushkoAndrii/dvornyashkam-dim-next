@@ -6,7 +6,10 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
-  cursor: none;
+
+  @media (hover: hover) {
+    cursor: none;
+  }
 }
 
 span {
@@ -22,8 +25,12 @@ body {
   font-weight: normal;
   font-size: clamp(1.5rem, 2vw, 3.5rem);
   line-height: 1.6;
+
   color: $white;
+
   background-color: $secondary;
+
+  overflow-x: hidden;
 }
 
 body.modal-open {
