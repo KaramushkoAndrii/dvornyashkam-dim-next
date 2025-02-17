@@ -22,6 +22,7 @@ Based on [React.js project](https://github.com/KaramushkoAndrii/dvornyshkam-dim)
 - [ ] change the element sizes from `dvh`, `dvw`, `vh`, `vw` to `px`. The exception is the element's full-screen mode.
 - [ ] use [ReactForm](https://react-hook-form.com/) for the contact form
 - [ ] redo the filters as you did earlier in the Movie API project
+- [ ] fix unstable animation of the first screens on pages after changing the route
 - [ ] delete `// TO DO` comments from code after realization all of them
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
