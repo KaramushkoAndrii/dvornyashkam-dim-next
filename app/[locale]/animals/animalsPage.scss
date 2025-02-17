@@ -1,4 +1,4 @@
-.animals__section {
+.animals-page {
   @include container();
 
   p {
@@ -6,7 +6,7 @@
   }
 }
 
-.animals-content {
+.animals-page__content {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -58,7 +58,7 @@
   }
 }
 
-.animals-content img {
+.animals-page__content img {
   position: relative;
 
   display: block;

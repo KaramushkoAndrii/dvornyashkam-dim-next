@@ -1,15 +1,15 @@
-.contact__page {
+.contact-page {
   @include container();
   overflow: hidden;
 
-  .contact__adres,
-  .contact__social {
+  .contact-page__adres,
+  .contact-page__social {
     display: flex;
     flex-direction: column;
     gap: 1rem;
   }
 
-  .contact__adres {
+  .contact-page__adres {
     margin-bottom: 1.5rem;
   }
 
@@ -17,7 +17,7 @@
     fill: $primary;
   }
 
-  .contact__info {
+  .contact-page__info {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -27,7 +27,7 @@
   }
 
   @media (min-width: $tablet) {
-    .contact__contact {
+    .contact-page__contact {
       display: flex;
       align-items: flex-start;
 

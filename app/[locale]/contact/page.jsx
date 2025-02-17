@@ -36,32 +36,32 @@ export default function ContactPage() {
   const t = useTranslations();
 
   return (
-    <section className="contact__page">
+    <section className="contact-page">
       <motion.h2 {...slideFromLeft} className="title h2">
         {t(title)}
       </motion.h2>
 
-      <motion.div {...slideFromRight} className="contact__adres">
-        <span className="contact__header">{t(header)}</span>
-        <p className="contact__content">{t(headerContent)}</p>
+      <motion.div {...slideFromRight} className="contact-page__adres">
+        <span className="contact-page__header">{t(header)}</span>
+        <p className="contact-page__content">{t(headerContent)}</p>
       </motion.div>
-      <motion.div {...slideFromBottom} className="contact__social">
-        <span className="contact__header">{t(socialHeader)}</span>
+      <motion.div {...slideFromBottom} className="contact-page__social">
+        <span className="contact-page__header">{t(socialHeader)}</span>
         <SocialList data={ContactsSocial} />
       </motion.div>
 
       <ContactForm data={ContactFormData} />
 
-      <motion.div {...scale} className="contact__info">
-        <h2 className="contact__info--header h2">
+      <motion.div {...scale} className="contact-page__info">
+        <h2 className="contact-page__info--header h2">
           {t(responseble)}
           <i>{t(sterilaz)}</i>
         </h2>
-        <p className="contact__info--content">{t(tomuch)}</p>
-        <p className="contact__info--content">{t(slogan)}</p>
+        <p className="contact-page__info--content">{t(tomuch)}</p>
+        <p className="contact-page__info--content">{t(slogan)}</p>
       </motion.div>
 
-      <div className="contact__contact">
+      <div className="contact-page__contact">
         <VisitedUs data={VisitedUsDate} />
 
         <Map data={""} />

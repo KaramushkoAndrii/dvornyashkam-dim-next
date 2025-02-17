@@ -1,8 +1,8 @@
-.advise__page {
+.advise-page {
   @include container();
   padding-bottom: 0;
 
-  .advise__content {
+  .advise-page__content {
     margin: 2rem 0;
     font-size: clamp(1rem, 2.5vw, 4rem);
     text-align: center;

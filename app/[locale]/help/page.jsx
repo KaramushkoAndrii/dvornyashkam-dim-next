@@ -26,14 +26,16 @@ export default function HelpPage() {
   };
 
   return (
-    <section className="help__page">
-      <header className="help__header">
-        <motion.h2 {...slideFromLeft}>{t(title)}</motion.h2>
+    <section className="help-page">
+      <header className="help-page__header">
+        <motion.h2 {...slideFromLeft} className="h2">
+          {t(title)}
+        </motion.h2>
         <motion.p {...slideFromLeft}>{t(description)}</motion.p>
       </header>
       <HelpSection data={dataHelpSection} />
 
-      <ul className="help__detailed">
+      <ul className="help-page__detailed">
         {items.map((item, index) => (
           <HelpListItem
             key={`help-list-detailed-${index}`}
