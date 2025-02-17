@@ -10,7 +10,7 @@ import { slideFromLeft, slideFromBottom } from "@/constants/animations";
 
 import AdviseAccordionData from "@/data/adviseAccordionData";
 
-import "./advisePage.scss";
+import "./page.scss";
 
 export default function AdvisePage() {
   const t = useTranslations();
@@ -23,14 +23,14 @@ export default function AdvisePage() {
   };
 
   return (
-    <section className="advise__page">
+    <section className="advise-page">
       <motion.h2 {...slideFromLeft} className="title h2">
         {t("advise-page.title")}
       </motion.h2>
 
       <Accordion data={AdviseAccordionData} />
 
-      <motion.p {...slideFromBottom} className="advise__content">
+      <motion.p {...slideFromBottom} className="advise-page__content">
         {t("advise-page.content")}
       </motion.p>
 
