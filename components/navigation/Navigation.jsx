@@ -3,11 +3,11 @@
 import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { usePathname } from "@/i18n/routing";
-import { Link } from "@/i18n/routing";
 
 import { FaArrowRightLong } from "react-icons/fa6";
 
 import Contacts from "@/components/contacts/Contacts";
+import TransitionLink from "@/components/utils/TransitionLink";
 
 import "./navigation.scss";
 
@@ -43,10 +43,10 @@ const Navigation = ({ list }) => {
         <ul className="navigation__list">
           {list.map((item, key) => (
             <li key={key} className="navigation__list-item">
-              <Link href={item.href || "/"}>
+              <TransitionLink href={item.href || "/"}>
                 <span>{t(item.title)}</span>
                 <FaArrowRightLong />
-              </Link>
+              </TransitionLink>
             </li>
           ))}
         </ul>

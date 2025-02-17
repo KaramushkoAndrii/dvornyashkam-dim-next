@@ -1,5 +1,3 @@
-import { Link } from "@/i18n/routing";
-
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
@@ -8,8 +6,11 @@ import { rotateAndScale } from "@/constants/animations";
 import { FaDog } from "react-icons/fa6";
 import { TbVaccine } from "react-icons/tb";
 
-import "./AnimalCard.scss";
 import { getAnimalLink } from "@/utils";
+
+import TransitionLink from "@/components/utils/TransitionLink";
+
+import "./AnimalCard.scss";
 
 const AnimalCard = ({ animal }) => {
   const { slug, category, img, name, gender, age, vaccine, animals } =
@@ -25,7 +26,10 @@ const AnimalCard = ({ animal }) => {
 
   return (
     <motion.div {...rotateAndScale} className="animal">
-      <Link href={getAnimalLink(category, slug)} className="animal__link">
+      <TransitionLink
+        href={getAnimalLink(category, slug)}
+        className="animal__link"
+      >
         <div className="animal__info">
           <div className="animal__picture">
             <img src={img} alt={name} />
@@ -59,7 +63,7 @@ const AnimalCard = ({ animal }) => {
             {t("search.trustee")}
           </button>
         </div>
-      </Link>
+      </TransitionLink>
     </motion.div>
   );
 };
