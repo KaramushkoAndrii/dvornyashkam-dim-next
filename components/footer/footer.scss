@@ -1,9 +1,9 @@
-footer {
+.footer {
   @include container();
   background-color: $primary;
   border-radius: $main-border-radius $main-border-radius 0 0;
 
-  .footer__main {
+  &__main {
     display: flex;
     justify-content: space-between;
     align-items: center;

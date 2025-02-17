@@ -8,7 +8,7 @@
 
   background-color: $primary;
 
-  .contactForm__item {
+  &__item {
     min-width: 185px;
 
     svg {
@@ -16,23 +16,24 @@
       height: 1.25rem;
       fill: $secondary;
     }
+
+    div {
+      display: flex;
+      align-items: center;
+
+      gap: 1rem;
+    }
+
+    a {
+      display: flex;
+    }
   }
 
   button {
     flex-grow: 1;
-    min-width: 500px;
-  }
-}
 
-.contactForm__item {
-  div {
-    display: flex;
-    align-items: center;
-
-    gap: 1rem;
-  }
-
-  a {
-    display: flex;
+    @media (min-width: $tablet) {
+      min-width: 600px;
+    }
   }
 }

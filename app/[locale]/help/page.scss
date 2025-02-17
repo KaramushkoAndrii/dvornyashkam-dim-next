@@ -10,21 +10,21 @@
     margin-bottom: 2rem;
     gap: 1.5rem;
   }
-}
 
-.help-page__detailed {
-  display: flex;
-  flex-direction: column;
-  margin-top: 1.5rem;
-  gap: 1.5rem;
+  &__detailed {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+    gap: 1.5rem;
 
-  @media (min-width: $tablet) {
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
+    @media (min-width: $tablet) {
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
 
-    .detailed__item {
-      max-width: 48%;
+      .detailed__item {
+        max-width: 48%;
+      }
     }
   }
 }

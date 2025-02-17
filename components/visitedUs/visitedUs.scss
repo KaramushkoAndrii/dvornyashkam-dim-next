@@ -1,14 +1,14 @@
-.visitedUs {
+.visited-us {
   margin: 2rem 0;
   padding: 1.5rem;
   background-color: $primary;
   border-radius: $main-border-radius;
 
-  h2 {
-    padding-bottom: 1.5rem;
-  }
-
   @media (min-width: $tablet) {
     margin: 0;
+  }
+
+  h2 {
+    padding-bottom: 1.5rem;
   }
 }

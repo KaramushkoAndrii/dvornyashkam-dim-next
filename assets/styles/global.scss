@@ -37,6 +37,10 @@ main {
 .hidden {
   position: absolute;
   visibility: hidden;
+  margin: 0;
+  max-height: 0;
+  max-width: 0;
+  font-size: 0;
 }
 
 .title {

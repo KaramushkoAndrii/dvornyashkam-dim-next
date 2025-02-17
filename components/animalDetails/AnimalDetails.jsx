@@ -41,7 +41,7 @@ export default function AnimalDetails({ animal }) {
     >
       {animal && (
         <div className="animal-details__content">
-          <header>
+          <header className="animal-details__header">
             <button className="animal-details__close" onClick={closeHandler}>
               X
             </button>

@@ -2,10 +2,14 @@
   @include container();
   padding-bottom: 0;
 
-  .advise-page__content {
+  &__content {
     margin: 2rem 0;
     font-size: clamp(1rem, 2.5vw, 4rem);
     text-align: center;
+
+    // @media (min-width: $tablet) {
+
+    // }
   }
 
   .mainButton {
@@ -13,10 +17,4 @@
     display: flex;
     background-color: $primary;
   }
-
-  // @media (min-width: $tablet) {
-  //     .advise__content {
-
-  //     }
-  // }
 }

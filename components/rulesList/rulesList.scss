@@ -6,9 +6,9 @@
 
   .accordion {
     background-color: $primary;
-  }
 
-  .accordion__header {
-    background-color: $secondary;
+    &__header {
+      background-color: $secondary;
+    }
   }
 }

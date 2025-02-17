@@ -48,23 +48,7 @@
   transform: translate(-50%, -50%);
   z-index: 1001;
 
-  h2 {
-    font-size: clamp(1.5rem, 4vw, 3.5rem);
-  }
-
-  &__title {
-    text-align: center;
-  }
-
-  .modal__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding-bottom: 2rem;
-  }
-
-  span {
+  &__close {
     padding: 0.5rem 0.75rem;
 
     background-color: $primary;
@@ -73,5 +57,18 @@
     border-radius: 50%;
 
     text-align: center;
+    aspect-ratio: 1 / 1;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-bottom: 2rem;
   }
 }

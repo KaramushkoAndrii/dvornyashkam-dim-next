@@ -19,11 +19,11 @@ const VisitedUs = ({ data }) => {
     RulesAccordionData,
   } = data;
   return (
-    <motion.section {...appear} className="visitedUs">
+    <motion.section {...appear} className="visited-us">
       <h2 className="h2">{t(title)}</h2>
-      <div className="visitedUs__item">
-        <p className="visitedUs__item--header">{t(visitedHeader)}</p>
-        <p className="visitedUs__item--content">{t(visitedDate)}</p>
+      <div className="visited-us__item">
+        <p className="visited-us__item--header">{t(visitedHeader)}</p>
+        <p className="visited-us__item--content">{t(visitedDate)}</p>
       </div>
 
       <RulesList data={RulesListData} accordionData={RulesAccordionData} />

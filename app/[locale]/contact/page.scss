@@ -2,14 +2,14 @@
   @include container();
   overflow: hidden;
 
-  .contact-page__adres,
-  .contact-page__social {
+  &__adres,
+  &__social {
     display: flex;
     flex-direction: column;
     gap: 1rem;
   }
 
-  .contact-page__adres {
+  &__adres {
     margin-bottom: 1.5rem;
   }
 
@@ -17,7 +17,7 @@
     fill: $primary;
   }
 
-  .contact-page__info {
+  &__info {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -26,8 +26,8 @@
     border-radius: $main-border-radius;
   }
 
-  @media (min-width: $tablet) {
-    .contact-page__contact {
+  &__contact {
+    @media (min-width: $tablet) {
       display: flex;
       align-items: flex-start;
 
