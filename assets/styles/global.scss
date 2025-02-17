@@ -6,7 +6,10 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
-  cursor: none;
+
+  @media (hover: hover) {
+    cursor: none;
+  }
 }
 
 span {
@@ -22,16 +25,24 @@ body {
   font-weight: normal;
   font-size: clamp(1.5rem, 2vw, 3.5rem);
   line-height: 1.6;
+
   color: $white;
+
   background-color: $secondary;
+
+  overflow-x: hidden;
+
+  transition-property: opacity, background-color, transform, filter;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.5s;
 }
 
 body.modal-open {
   overflow: hidden;
 }
 
-main {
-  margin-top: 10dvh;
+.main {
+  width: 100%;
 }
 
 .hidden {
@@ -45,4 +56,14 @@ main {
 
 .title {
   padding-bottom: 2rem;
+}
+
+.page-transition {
+  opacity: 0;
+
+  // background-color: $yellow-100;
+
+  transform: translateY(40px);
+
+  filter: blur(100px);
 }

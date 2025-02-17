@@ -1,7 +1,6 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/routing";
 import { motion } from "framer-motion";
 
 import {
@@ -11,6 +10,8 @@ import {
 } from "@/constants/animations";
 
 import { getAnimalsCategoryLink } from "@/utils";
+
+import TransitionLink from "@/components/utils/TransitionLink";
 
 import AnimalList from "@/data/animalList";
 
@@ -37,10 +38,10 @@ export default function AnimalsPage() {
               key={animal.id}
               className={`animals-content__${animal.id}`}
             >
-              <Link href={getAnimalsCategoryLink(animal.src)}>
+              <TransitionLink href={getAnimalsCategoryLink(animal.src)}>
                 <img src={animal.imgSrc} alt={animal.id} />
                 <span>{t(`${animal.titleKey}`)}</span>
-              </Link>
+              </TransitionLink>
             </motion.li>
           );
         })}

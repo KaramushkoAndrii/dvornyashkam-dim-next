@@ -1,6 +1,6 @@
 "use client";
 
-import { Link } from "@/i18n/routing";
+import TransitionLink from "@/components/utils/TransitionLink";
 
 import "./button.scss";
 
@@ -8,10 +8,10 @@ const Button = ({ text, href, onClick, disabled }) => {
   return (
     <>
       {href && (
-        // TO DO: Replace all <Link href={path}><Button>Text</Button></Link> in project with <Button href={path}>Text</Button>
-        <Link href={href} className="mainButton">
+        // TO DO: Replace all <TransitionLink href={path}><Button>Text</Button></TransitionLink> in project with <Button href={path}>Text</Button>
+        <TransitionLink href={href} className="mainButton">
           {text}
-        </Link>
+        </TransitionLink>
       )}
 
       {!href && (

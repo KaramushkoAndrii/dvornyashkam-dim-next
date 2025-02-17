@@ -123,7 +123,7 @@ export default async function BaseLayout({ children, locale }) {
         <NextIntlClientProvider messages={messages}>
           <Header />
 
-          <main>{children}</main>
+          <main className="main">{children}</main>
 
           <DonateSection />
           <Footer />

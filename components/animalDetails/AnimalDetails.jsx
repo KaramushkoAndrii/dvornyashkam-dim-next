@@ -10,7 +10,7 @@ import { TbVaccine } from "react-icons/tb";
 
 import Button from "@/components/button/Button";
 
-import { getAnimalsCategoryLink } from "@/utils";
+import { getAnimalsCategoryLink, sleep } from "@/utils";
 
 import "./AnimalDetails.scss";
 
@@ -29,7 +29,11 @@ export default function AnimalDetails({ animal }) {
     };
   }, []);
 
-  const closeHandler = () => {
+  const closeHandler = async () => {
+    setIsOpen(false);
+
+    await sleep(300);
+
     router.push(getAnimalsCategoryLink(animal.category));
   };
 

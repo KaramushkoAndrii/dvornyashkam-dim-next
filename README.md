@@ -17,7 +17,12 @@ Based on [React.js project](https://github.com/KaramushkoAndrii/dvornyshkam-dim)
 - [ ] in folder `components` create subfolders: `common`, `UI` and folders with names like existing Pages (`page-about`, etc.). In `UI` folder must be moved all components like `Button`. The `common` folder contains components that can used in many places in the project. The `[page]` folders contain components that are used only on a specific page. See `components/page-home/..` folder for example.
 - [ ] - OPTIONAL `<img />` replace to [Image](https://nextjs.org/docs/pages/api-reference/components/image)
 - [ ] change the extension from `.jsx` to `.js` in all files in the `data` folder
+- [ ] change the element sizes from `rem` to `px`
+- [ ] check all style codes for fixed height. The height of the elements should be flexible. The exception is the element's full-screen mode.
+- [ ] change the element sizes from `dvh`, `dvw`, `vh`, `vw` to `px`. The exception is the element's full-screen mode.
+- [ ] use [ReactForm](https://react-hook-form.com/) for the contact form
 - [ ] redo the filters as you did earlier in the Movie API project
+- [ ] fix unstable animation of the first screens on pages after changing the route
 - [ ] delete `// TO DO` comments from code after realization all of them
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).

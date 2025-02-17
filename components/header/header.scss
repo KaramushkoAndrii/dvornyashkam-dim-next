@@ -1,15 +1,18 @@
 .header {
-  position: fixed;
+  position: sticky;
+
   top: 0;
   left: 0;
 
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  height: $heade-height;
-
   z-index: 900;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-around;
+
+  width: 100%;
+  height: auto;
 
   background-color: $secondary;
 
