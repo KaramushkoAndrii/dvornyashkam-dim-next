@@ -14,7 +14,7 @@ import { getAnimalsCategoryLink } from "@/utils";
 
 import AnimalList from "@/data/animalList";
 
-import "./animalsPage.scss";
+import "./page.scss";
 
 export default function AnimalsPage() {
   const t = useTranslations();

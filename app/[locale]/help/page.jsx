@@ -11,7 +11,7 @@ import items from "@/data/helpListDetailedData";
 import pageData from "@/data/helpPageData";
 import dataHelpList from "@/data/helpList";
 
-import "./helpPage.scss";
+import "./page.scss";
 
 export default function HelpPage() {
   const t = useTranslations();

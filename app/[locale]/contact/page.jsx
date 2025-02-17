@@ -20,7 +20,7 @@ import VisitedUsDate from "@/data/visitedUsDate";
 import contactPageData from "@/data/contactPageData";
 import { ContactsSocial } from "@/data/contactsList";
 
-import "./contactPage.scss";
+import "./page.scss";
 
 export default function ContactPage() {
   const {

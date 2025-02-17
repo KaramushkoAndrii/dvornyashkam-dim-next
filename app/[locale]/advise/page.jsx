@@ -10,7 +10,7 @@ import { slideFromLeft, slideFromBottom } from "@/constants/animations";
 
 import AdviseAccordionData from "@/data/adviseAccordionData";
 
-import "./advisePage.scss";
+import "./page.scss";
 
 export default function AdvisePage() {
   const t = useTranslations();
