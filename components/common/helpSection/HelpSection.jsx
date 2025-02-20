@@ -26,7 +26,9 @@ const HelpSection = ({ data }) => {
           ))}
         </ul>
 
-        {btn?.title && btn?.href && <Button text={btn.title} href={btn.href} />}
+        {btn?.title && btn?.href && (
+          <Button text={btn.title} href={btn.href} variant="help" />
+        )}
       </motion.div>
     </section>
   );

@@ -52,4 +52,8 @@
 
     background-color: transparent;
   }
+
+  @media (min-width: $tablet) {
+    max-width: 48%;
+  }
 }

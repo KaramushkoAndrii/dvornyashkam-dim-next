@@ -33,14 +33,10 @@
     }
   }
 
-  @media (min-width: $tablet) {
-    a {
+  a {
+    @media (min-width: $tablet) {
       display: flex;
       justify-content: center;
-    }
-
-    .mainButton {
-      width: 50%;
     }
   }
 }
