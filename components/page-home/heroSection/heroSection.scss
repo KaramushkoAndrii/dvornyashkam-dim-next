@@ -1,5 +1,5 @@
 .hero {
-  @include container($marginTop: 9vh);
+  @include container();
 
   display: flex;
   flex-direction: column;

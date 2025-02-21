@@ -7,6 +7,10 @@
     width: 65%;
     margin: 0 auto;
 
+    &.rotate {
+      animation: rotate 1s ease-in-out;
+    }
+
     @media (min-width: $tablet) {
       width: 50%;
     }
@@ -14,10 +18,6 @@
     @media (min-width: $large) {
       width: 33%;
       margin: 0;
-    }
-
-    &.rotate {
-      animation: rotate 1s ease-in-out;
     }
   }
 
@@ -40,15 +40,6 @@
     padding: 1rem 0 0;
 
     gap: 1rem;
-
-    .mainButton {
-      border: 1px solid $secondary;
-      background-color: $primary;
-
-      @media (min-width: $tablet) {
-        width: 100%;
-      }
-    }
   }
 
   @media (min-width: $tablet) {

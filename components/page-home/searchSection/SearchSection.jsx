@@ -57,10 +57,11 @@ const SearchSection = ({ data }) => {
             text={btnRerol.title}
             onClick={animalRerol}
             disabled={isAnimating}
+            variant="search"
           />
         )}
         {btnAbout?.title && btnAbout?.href && (
-          <Button text={btnAbout.title} href={btnAbout.href} />
+          <Button text={btnAbout.title} href={btnAbout.href} variant="search" />
         )}
       </motion.div>
     </section>
