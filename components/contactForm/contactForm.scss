@@ -1,4 +1,4 @@
-.contactForm {
+.contact-form {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
@@ -16,24 +16,16 @@
       height: 1.25rem;
       fill: $secondary;
     }
-
-    div {
-      display: flex;
-      align-items: center;
-
-      gap: 1rem;
-    }
-
-    a {
-      display: flex;
-    }
   }
 
-  button {
-    flex-grow: 1;
+  &__content {
+    display: flex;
+    align-items: center;
 
-    @media (min-width: $tablet) {
-      min-width: 600px;
-    }
+    gap: 1rem;
+  }
+
+  &__link {
+    display: flex;
   }
 }

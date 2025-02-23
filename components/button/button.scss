@@ -44,4 +44,12 @@
   &--help-list {
     width: 100%;
   }
+
+  &--contact-form {
+    flex-grow: 1;
+
+    @media (min-width: $tablet) {
+      min-width: 600px;
+    }
+  }
 }

@@ -7,22 +7,16 @@
   padding: 0 $list-padding-x;
   gap: 2.5rem;
 
-  @media (min-width: $large) {
-    flex-direction: row;
-    gap: 1rem;
-    padding: 0;
-  }
-
-  &__links {
+  &__list {
     display: flex;
     flex-direction: column;
     gap: $list-item-padding;
 
     color: $white;
+  }
 
-    a {
-      color: $white;
-    }
+  &__link {
+    color: $white;
   }
 
   &__social {
@@ -45,5 +39,11 @@
 
       fill: $white;
     }
+  }
+
+  @media (min-width: $large) {
+    flex-direction: row;
+    gap: 1rem;
+    padding: 0;
   }
 }
