@@ -23,19 +23,23 @@ const AnimalsList = ({ data }) => {
   };
   return (
     <>
-      <motion.h2 className="animals__title" {...slideFromLeft}>
+      <motion.h2 className="h2 title" {...slideFromLeft}>
         {data.title}
       </motion.h2>
-      <ul className="animals__list">
+      <ul className="animals-list">
         {(data.items || []).map((item) => (
-          <li key={item.slug} className="animal__list--item">
+          <li key={item.slug} className="animal-list__item">
             {<AnimalCard animal={item} />}
           </li>
         ))}
       </ul>
       {data.btnTitle && (
         <div className="animals__more-button">
-          <Button text={data.btnTitle} onClick={toAnimalsCategoryHandler} />
+          <Button
+            text={data.btnTitle}
+            onClick={toAnimalsCategoryHandler}
+            variant="animals"
+          />
         </div>
       )}
     </>

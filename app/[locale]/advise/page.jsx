@@ -34,7 +34,7 @@ export default function AdvisePage() {
         {t("advise-page.content")}
       </motion.p>
 
-      <Button text={t("buttons.call")} onClick={openHandler} />
+      <Button text={t("buttons.call")} onClick={openHandler} variant="advice" />
     </section>
   );
 }

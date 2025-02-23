@@ -1,4 +1,4 @@
-.mainButton {
+.button {
   width: max-content;
   padding: 1rem 1.5rem;
   border: 1px solid $primary;
@@ -13,5 +13,43 @@
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+  }
+
+  &--advice {
+    margin: 0 auto;
+    display: flex;
+    background-color: $primary;
+  }
+
+  &--help {
+    @media (min-width: $tablet) {
+      width: 50%;
+    }
+  }
+
+  &--search {
+    border: 1px solid $secondary;
+    background-color: $primary;
+
+    @media (min-width: $tablet) {
+      width: 100%;
+    }
+  }
+
+  &--animals {
+    border: 1px solid $secondary;
+    background-color: $primary;
+  }
+
+  &--help-list {
+    width: 100%;
+  }
+
+  &--contact-form {
+    flex-grow: 1;
+
+    @media (min-width: $tablet) {
+      min-width: 600px;
+    }
   }
 }

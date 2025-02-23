@@ -1,4 +1,4 @@
-.contactForm {
+.contact-form {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
@@ -8,7 +8,7 @@
 
   background-color: $primary;
 
-  .contactForm__item {
+  &__item {
     min-width: 185px;
 
     svg {
@@ -18,21 +18,14 @@
     }
   }
 
-  button {
-    flex-grow: 1;
-    min-width: 500px;
-  }
-}
-
-.contactForm__item {
-  div {
+  &__content {
     display: flex;
     align-items: center;
 
     gap: 1rem;
   }
 
-  a {
+  &__link {
     display: flex;
   }
 }

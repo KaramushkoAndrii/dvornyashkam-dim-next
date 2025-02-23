@@ -22,18 +22,21 @@ const ContactForm = ({ data }) => {
 
   // TO DO: isOpen is may be openHandler like in other components?
   return (
-    <motion.ul {...slideFromBottom} className="contactForm">
+    <motion.ul {...slideFromBottom} className="contact-form">
       {data.map((item, key) => (
-        <li key={key} className="contactForm__item">
-          <p>{item.name}</p>
+        <li key={key} className="contact-form__item">
+          <p className="contact-form__name">{item.name}</p>
           {(item.key === "phone" || item.key === "telegram") && (
-            <div>
+            <div className="contact-form__content">
               {item.key === "phone" && (
-                <a href={`tel:${item.value}`}>{item.value}</a>
+                <a className="contact-form__link" href={`tel:${item.value}`}>
+                  {item.value}
+                </a>
               )}
 
               {item.key === "telegram" && (
                 <a
+                  className="contact-form__link"
                   href={`https://t.me/${item.value}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -44,11 +47,17 @@ const ContactForm = ({ data }) => {
             </div>
           )}
           {item.key === "email" && (
-            <a href={`mailto:${item.value}`}>{item.value}</a>
+            <a className="contact-form__link" href={`mailto:${item.value}`}>
+              {item.value}
+            </a>
           )}
         </li>
       ))}
-      <Button text={t("buttons.contact")} onClick={openHandler} />
+      <Button
+        text={t("buttons.contact")}
+        onClick={openHandler}
+        variant="contact-form"
+      />
     </motion.ul>
   );
 };

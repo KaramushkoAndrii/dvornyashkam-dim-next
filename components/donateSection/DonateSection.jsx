@@ -20,12 +20,21 @@ const DonateSection = () => {
     >
       <h2 className="donate__title h2">{t("donate.title")}</h2>
 
-      <ul className="donate__option">
+      <ul className="donate__list">
         {DonateList.map((item, key) => (
-          <li key={key}>
-            <a href={item.src} target="_blank" rel="noopener noreferrer">
-              <div className="img__container">
-                <img src={item.logo} alt={`${item.name}logo`} />
+          <li className="donate__item" key={key}>
+            <a
+              className="donate__link"
+              href={item.src}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="donate__img-container">
+                <img
+                  className="donate__img"
+                  src={item.logo}
+                  alt={`${item.name}logo`}
+                />
               </div>
               {item.name}
             </a>

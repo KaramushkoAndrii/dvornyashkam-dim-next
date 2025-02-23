@@ -6,39 +6,31 @@
   align-items: center;
   gap: 2rem;
 
-  & > h2 {
+  &__title {
     text-align: center;
   }
-}
 
-.animals-category__content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  .animal {
+    img {
+      border-radius: 1rem;
+    }
+  }
+
+  &__more {
     width: 35dvw;
+    max-width: 350px;
+    padding: 0.75rem 1rem;
+
+    font-size: clamp(0.8rem, 3vw, 5rem);
+
+    border-radius: $main-border-radius;
+    color: $white;
+    background-color: $primary;
+
+    cursor: pointer;
   }
-
-  img {
-    border-radius: 1rem;
-  }
-
-  & .animal__buttons {
-    display: none;
-  }
-}
-
-.animals-category__more {
-  width: 35dvw;
-  max-width: 350px;
-  padding: 0.75rem 1rem;
-
-  font-size: clamp(0.8rem, 3vw, 5rem);
-
-  border-radius: $main-border-radius;
-  color: $white;
-  background-color: $primary;
-
-  cursor: pointer;
 }

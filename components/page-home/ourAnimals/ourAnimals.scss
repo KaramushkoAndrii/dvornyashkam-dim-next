@@ -1,11 +1,2 @@
 .animals {
-  .animal {
-    width: 55dvw;
-  }
-
-  @media (min-width: $large) {
-    .animal {
-      width: 29dvw;
-    }
-  }
 }

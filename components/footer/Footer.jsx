@@ -8,12 +8,12 @@ const Footer = async () => {
   const t = await getTranslations();
 
   return (
-    <footer>
+    <footer className="footer">
       <div className="footer__main">
         <TransitionLink href="/" className="logo__wrapper">
           <img className="logo" src="/images/logo.png" alt="logo" />
         </TransitionLink>
-        <h2 className="hero__title h2">{t("hero_section.title")}</h2>
+        <h2 className="footer__title h2">{t("hero_section.title")}</h2>
       </div>
     </footer>
   );

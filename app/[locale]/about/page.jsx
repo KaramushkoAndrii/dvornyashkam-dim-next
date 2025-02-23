@@ -31,7 +31,7 @@ export default function AboutPage() {
                 alt={item.alt}
                 text={item.alt}
               />
-              <motion.p {...slideText}>
+              <motion.p className="about-page__text" {...slideText}>
                 {t(`about-us-page.${item.text}`)}
               </motion.p>
             </li>

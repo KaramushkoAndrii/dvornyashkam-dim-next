@@ -7,9 +7,9 @@ import "./allAnimalsList.scss";
 const AllAnimalsList = ({ list }) => {
   return (
     <>
-      <ul className="allAnnimals__list">
+      <ul className="all-animals__list">
         {list.map((item) => (
-          <li key={item.id}>
+          <li key={item.id} className="all-animals__item">
             <AnimalCard animal={item} />
           </li>
         ))}

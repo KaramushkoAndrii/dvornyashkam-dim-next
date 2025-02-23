@@ -47,7 +47,7 @@ const SearchSection = ({ data }) => {
     <section className="search">
       <h2 className="search__title h2">{title}</h2>
 
-      <div className={`card-container ${isAnimating ? "rotate" : ""}`}>
+      <div className={`search__container ${isAnimating ? "rotate" : ""}`}>
         <AnimalCard animal={currentAnimal} />
       </div>
 
@@ -57,10 +57,11 @@ const SearchSection = ({ data }) => {
             text={btnRerol.title}
             onClick={animalRerol}
             disabled={isAnimating}
+            variant="search"
           />
         )}
         {btnAbout?.title && btnAbout?.href && (
-          <Button text={btnAbout.title} href={btnAbout.href} />
+          <Button text={btnAbout.title} href={btnAbout.href} variant="search" />
         )}
       </motion.div>
     </section>
