@@ -26,8 +26,12 @@ const ChangeLng = () => {
   };
 
   return (
-    <div className="language_toggle">
-      <select onChange={handleLanguageChange} value={locale}>
+    <div className="toggle">
+      <select
+        className="toggle__select"
+        onChange={handleLanguageChange}
+        value={locale}
+      >
         {routing.locales.map((l) => (
           <option key={l} value={l}>
             {l === "uk" ? "ua" : l}

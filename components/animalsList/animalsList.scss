@@ -1,8 +1,8 @@
-.animals__title {
-  padding: 0 2rem;
-}
+// .animals__title {
+//   padding: 0 2rem;
+// }
 
-.animals__list {
+.animals-list {
   @include container();
   display: flex;
   gap: 2rem;
@@ -12,6 +12,11 @@
 
   img {
     height: 35vh;
+  }
+
+  @media (min-width: $large) {
+    justify-content: center;
+    scrollbar-width: none;
   }
 }
 
@@ -27,17 +32,5 @@
 
   &:last-of-type {
     padding: 2rem 0;
-  }
-
-  button {
-    border: 1px solid $secondary;
-    background-color: $primary;
-  }
-}
-
-@media (min-width: $large) {
-  .animals__list {
-    justify-content: center;
-    scrollbar-width: none;
   }
 }

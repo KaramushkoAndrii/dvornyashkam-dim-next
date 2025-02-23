@@ -1,7 +1,7 @@
 .animals-page {
   @include container();
 
-  p {
+  &__description {
     padding: 2rem 0;
   }
 
@@ -28,14 +28,6 @@
         color: $white;
       }
 
-      span {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 2;
-      }
-
       &::before {
         position: absolute;
         content: "";
@@ -51,26 +43,32 @@
       }
     }
 
-    img {
-      position: relative;
-
-      display: block;
-      margin: 0 auto;
-
-      width: 100%;
-      height: auto;
-      max-width: 500px;
-
-      object-fit: cover;
-
-      border-radius: $main-border-radius;
-
-      z-index: 0;
-    }
-
     @media (min-width: $tablet) {
       flex-direction: row;
       justify-content: center;
     }
+  }
+
+  &__category {
+    display: flex;
+    justify-content: center;
+    padding-top: 16px;
+  }
+
+  &__img {
+    position: relative;
+
+    display: block;
+    margin: 0 auto;
+
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+
+    object-fit: cover;
+
+    border-radius: $main-border-radius;
+
+    z-index: 0;
   }
 }

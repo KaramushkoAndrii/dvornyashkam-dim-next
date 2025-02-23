@@ -35,4 +35,13 @@
       width: 100%;
     }
   }
+
+  &--animals {
+    border: 1px solid $secondary;
+    background-color: $primary;
+  }
+
+  &--help-list {
+    width: 100%;
+  }
 }

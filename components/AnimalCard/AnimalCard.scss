@@ -3,10 +3,6 @@
 
   border-radius: 2rem;
 
-  @media (min-width: $large) {
-    gap: 2rem;
-  }
-
   &__link {
     display: flex;
     flex-direction: column;
@@ -63,6 +59,14 @@
   &__age {
     width: 100%;
     text-align: center;
+
+    .all-animals__item & {
+      display: none;
+    }
+  }
+
+  .animals-category__content & {
+    width: 35dvw;
   }
 
   &__characteristics {
@@ -100,5 +104,9 @@
 
     color: $white;
     background-color: $secondary;
+  }
+
+  @media (min-width: $large) {
+    gap: 2rem;
   }
 }

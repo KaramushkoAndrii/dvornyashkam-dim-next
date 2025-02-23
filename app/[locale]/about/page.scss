@@ -3,7 +3,7 @@
 
   overflow: hidden;
 
-  p {
+  &__text {
     padding: calc($list-item-padding * 2) 0;
 
     @media (min-width: $large) {
@@ -14,10 +14,6 @@
   &__item {
     &:not(:last-of-type) {
       padding-bottom: 2rem;
-    }
-
-    &:last-child p {
-      padding-bottom: 0;
     }
 
     @media (min-width: $large) {

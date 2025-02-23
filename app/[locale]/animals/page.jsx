@@ -23,8 +23,10 @@ export default function AnimalsPage() {
   return (
     <section className="animals-page">
       <div className="animals-page__header">
-        <motion.h2 {...slideFromBottom}>{t("animals-page.title")}</motion.h2>
-        <motion.p {...slideFromBottom}>
+        <motion.h2 className="title" {...slideFromBottom}>
+          {t("animals-page.title")}
+        </motion.h2>
+        <motion.p className="animals-page__description" {...slideFromBottom}>
           {t("animals-page.description")}
         </motion.p>
       </div>
@@ -39,8 +41,14 @@ export default function AnimalsPage() {
               className={`animals-content__${animal.id}`}
             >
               <TransitionLink href={getAnimalsCategoryLink(animal.src)}>
-                <img src={animal.imgSrc} alt={animal.id} />
-                <span>{t(`${animal.titleKey}`)}</span>
+                <img
+                  className="animals-page__img"
+                  src={animal.imgSrc}
+                  alt={animal.id}
+                />
+                <span className="animals-page__category">
+                  {t(`${animal.titleKey}`)}
+                </span>
               </TransitionLink>
             </motion.li>
           );

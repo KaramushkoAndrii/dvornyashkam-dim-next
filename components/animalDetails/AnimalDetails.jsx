@@ -50,18 +50,22 @@ export default function AnimalDetails({ animal }) {
               X
             </button>
           </header>
-          <section>
+          <section className="animal-details__info">
             <ul className="animal-details__img-container">
               {animal.moreImg.map((img, indx) => (
                 <li key={indx}>
-                  <img src={img} alt={animal.name} />
+                  <img
+                    className="animal-details__img"
+                    src={img}
+                    alt={animal.name}
+                  />
                 </li>
               ))}
             </ul>
             <h3 className="h3">{animal.name}</h3>
             <h3 className="h3">{animal.gender}</h3>
             <h3 className="h3">{animal.age}</h3>
-            <div>
+            <div className="animal-details__characteristic">
               <i>
                 {" "}
                 <FaDog
@@ -78,7 +82,7 @@ export default function AnimalDetails({ animal }) {
                 />{" "}
               </i>
             </div>
-            <footer>
+            <footer className="animal-details__footer">
               <Button
                 className="animal-details__action"
                 text={t("buttons.house")}

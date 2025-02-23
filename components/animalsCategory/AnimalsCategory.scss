@@ -6,7 +6,7 @@
   align-items: center;
   gap: 2rem;
 
-  & > h2 {
+  &__title {
     text-align: center;
   }
 
@@ -14,10 +14,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    .animal {
-      width: 35dvw;
-    }
 
     img {
       border-radius: 1rem;

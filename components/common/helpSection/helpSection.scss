@@ -9,27 +9,27 @@
     display: grid;
     gap: 2rem;
 
-    ul {
-      display: grid;
-      gap: 1rem;
+    button {
+      width: 100%;
     }
+  }
 
-    li {
+  &-list {
+    display: grid;
+    gap: 1rem;
+
+    &__item {
       display: flex;
       align-items: center;
     }
 
-    span {
-      padding-left: 2rem;
-    }
-
-    button {
-      width: 100%;
-    }
-
-    svg {
+    &__icon {
       width: clamp(1rem, 4vw, 4rem);
       height: clamp(1rem, 4vw, 4rem);
+    }
+
+    &__description {
+      padding-left: 2rem;
     }
   }
 
