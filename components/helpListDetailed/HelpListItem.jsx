@@ -20,17 +20,23 @@ const HelpListItem = ({ data, index, translationGroup }) => {
   };
 
   return (
-    <motion.li {...oddLi} className="detailed__item">
+    <motion.li {...oddLi} className="detailed-item">
       <h3 className="h3">{t(`${translationGroup}.${header}`)}</h3>
       <p>{t(`${translationGroup}.${description}`)}</p>
-      <footer>
+      <footer className="detailed-item__footer">
         <p className="sub__text">
           {t(`${translationGroup}.${subDescription}`)}
         </p>
         {type === "button" ? (
-          <button onClick={openHandler}>{linkContent}</button>
+          <button className="detailed-item__button" onClick={openHandler}>
+            {linkContent}
+          </button>
         ) : (
-          <a href={`${type}:${src}`} target="_blank">
+          <a
+            className="detailed-item__link"
+            href={`${type}:${src}`}
+            target="_blank"
+          >
             {linkContent}
           </a>
         )}

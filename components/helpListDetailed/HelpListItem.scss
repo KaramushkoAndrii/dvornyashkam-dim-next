@@ -1,4 +1,4 @@
-.detailed__item {
+.detailed-item {
   display: flex;
   flex-direction: column;
 
@@ -9,7 +9,7 @@
 
   background-color: $purple;
 
-  footer {
+  &__footer {
     position: relative;
 
     display: flex;
@@ -39,8 +39,8 @@
     }
   }
 
-  button,
-  a {
+  &__button,
+  &__link {
     display: flex;
     justify-content: center;
 
