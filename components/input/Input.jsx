@@ -16,14 +16,15 @@ const Input = ({ type, name, id, label, ...rest }) => {
 
   return (
     <>
-      <div className="input-group">
+      <div className="input">
         <label
           htmlFor={id}
-          className={`input-label ${isFocus ? "filled" : ""}`}
+          className={`input__label ${isFocus ? "filled" : ""}`}
         >
           {t(label)}
         </label>
         <input
+          className="input__field"
           id={id}
           type={type}
           name={name}

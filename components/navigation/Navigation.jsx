@@ -30,13 +30,10 @@ const Navigation = ({ list }) => {
 
   return (
     <div className="nav__wrapper">
-      <div
-        className={`burger__menu menu ${menuOpen ? "close" : ""}`}
-        onClick={toggleMenu}
-      >
-        <span className="burger__bar"></span>
-        <span className="burger__bar"></span>
-        <span className="burger__bar"></span>
+      <div className={`menu ${menuOpen ? "close" : ""}`} onClick={toggleMenu}>
+        <span className="menu__bar"></span>
+        <span className="menu__bar"></span>
+        <span className="menu__bar"></span>
       </div>
 
       <nav className={`navigation ${menuOpen ? "open" : ""}`}>
