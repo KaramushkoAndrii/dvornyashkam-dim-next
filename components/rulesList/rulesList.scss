@@ -3,12 +3,4 @@
   flex-direction: column;
   gap: 1.5rem;
   margin-top: 2rem;
-
-  .accordion {
-    background-color: $primary;
-
-    &__header {
-      background-color: $secondary;
-    }
-  }
 }
