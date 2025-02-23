@@ -3,12 +3,11 @@
   padding: 1.5rem;
   background-color: $primary;
   border-radius: $main-border-radius;
+  &__title {
+    padding-bottom: 1.5rem;
+  }
 
   @media (min-width: $tablet) {
     margin: 0;
-  }
-
-  &__title {
-    padding-bottom: 1.5rem;
   }
 }
