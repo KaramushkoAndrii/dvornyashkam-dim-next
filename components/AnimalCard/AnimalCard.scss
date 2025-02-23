@@ -109,4 +109,12 @@
   @media (min-width: $large) {
     gap: 2rem;
   }
+
+  .animals & {
+    width: 55dvw;
+
+    @media (min-width: $large) {
+      width: 29dvw;
+    }
+  }
 }
