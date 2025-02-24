@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import Accordion from "@/components/accordion/Accordion";
+import Accordion from "@/components/UI/accordion/Accordion";
 
 import "./rulesList.scss";
 

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 import { slideFromBottom } from "@/constants/animations";
 import AnimalCard from "@/components/AnimalCard/AnimalCard";
-import Button from "@/components/button/Button";
+import Button from "@/components/UI/button/Button";
 
 import "./searchSection.scss";
 

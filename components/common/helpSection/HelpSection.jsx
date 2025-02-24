@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 import { slideFromRight } from "@/constants/animations";
 
-import Button from "@/components/button/Button";
+import Button from "@/components/UI/button/Button";
 import { FaPaw } from "react-icons/fa";
 
 import "./helpSection.scss";
