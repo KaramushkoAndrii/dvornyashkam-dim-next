@@ -1,6 +1,6 @@
 import { memo } from "react";
 
-import AnimalCard from "@/components/AnimalCard/AnimalCard";
+import AnimalCard from "@/components/UI/AnimalCard/AnimalCard";
 
 import "./allAnimalsList.scss";
 

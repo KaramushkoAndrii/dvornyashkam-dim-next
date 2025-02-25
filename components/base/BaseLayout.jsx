@@ -4,10 +4,10 @@ import { Roboto, Lora } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 
-import Header from "@/components/header/Header";
-import Footer from "@/components/footer/Footer";
-import DonateSection from "@/components/donateSection/DonateSection";
-import CustomCursor from "@/components/customCursor/CustomCursor";
+import Header from "@/components/base/header/Header";
+import Footer from "@/components/base/footer/Footer";
+import DonateSection from "@/components/base/donateSection/DonateSection";
+import CustomCursor from "@/components/base/customCursor/CustomCursor";
 import Modal from "@/components/UI/modal/Modal";
 
 // Init Fonts

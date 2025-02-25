@@ -1,6 +1,6 @@
 import { ContactsLinks, ContactsSocial } from "@/data/contactsList";
 
-import SocialList from "@/components/contacts/SocialList";
+import SocialList from "@/components/common/contacts/SocialList";
 
 import "./contacts.scss";
 

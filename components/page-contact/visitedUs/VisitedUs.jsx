@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
 import { appear } from "@/constants/animations";
-import RulesList from "@/components/rulesList/RulesList";
+import RulesList from "@/components/page-contact/rulesList/RulesList";
 
 import "./visitedUs.scss";
 

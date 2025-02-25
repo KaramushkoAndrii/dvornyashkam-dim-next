@@ -1,7 +1,7 @@
 "use client";
 
-import Navigation from "@/components/navigation/Navigation";
-import ChangeLng from "@/components/changeLng/ChangeLng";
+import Navigation from "@/components/base/navigation/Navigation";
+import ChangeLng from "@/components/base/changeLng/ChangeLng";
 
 import { navigationList } from "@/data/navigationList";
 

@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
 import { slideFromLeft, slideFromRight } from "@/constants/animations";
-import FigureContainer from "@/components/figureContainer/FigureContainer";
+import FigureContainer from "@/components/UI/figureContainer/FigureContainer";
 
 import AboutUsList from "@/data/aboutUsList";
 

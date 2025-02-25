@@ -10,10 +10,10 @@ import {
   scale,
 } from "@/constants/animations";
 
-import SocialList from "@/components/contacts/SocialList";
-import ContactForm from "@/components/contactForm/ContactForm";
-import VisitedUs from "@/components/visitedUs/VisitedUs";
-import Map from "@/components/map/Map";
+import SocialList from "@/components/common/contacts/SocialList";
+import ContactForm from "@/components/page-contact/contactForm/ContactForm";
+import VisitedUs from "@/components/page-contact/visitedUs/VisitedUs";
+import Map from "@/components/page-contact/map/Map";
 
 import ContactFormData from "@/data/contactFormData";
 import VisitedUsDate from "@/data/visitedUsDate";

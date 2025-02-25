@@ -10,8 +10,10 @@ const FigureContainer = ({ src, alt, text, ...props }) => {
 
   return (
     <motion.figure {...props} className="figure-container">
-      <img className="figure__img" src={src} alt={alt} />
-      <figcaption className="figure__figcaption">{t(`${text}`)}</figcaption>
+      <img className="figure-container__img" src={src} alt={alt} />
+      <figcaption className="figure-container__figcaption">
+        {t(`${text}`)}
+      </figcaption>
     </motion.figure>
   );
 };

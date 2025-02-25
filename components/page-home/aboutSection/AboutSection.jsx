@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-import Counter from "@/components/Counter";
+import Counter from "@/components/page-home/Counter";
 import { slideFromRight, slideFromLeft, scale } from "@/constants/animations";
 
 import "./aboutSection.scss";
