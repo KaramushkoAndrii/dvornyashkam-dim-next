@@ -12,9 +12,9 @@ const Contacts = () => {
           <a
             className="contacts__link"
             target="_blank"
-            href={`mailto:${contactsLinks.eamil}`}
+            href={`mailto:${contactsLinks.email}`}
           >
-            {contactsLinks.eamil}
+            {contactsLinks.email}
           </a>
         </li>
         <li className="contacts__links-item">

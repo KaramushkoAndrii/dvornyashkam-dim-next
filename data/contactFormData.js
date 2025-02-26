@@ -14,7 +14,7 @@ const contactFormData = [
   {
     name: "Мейл",
     key: "email",
-    value: contactsLinks.eamil,
+    value: contactsLinks.email,
   },
 ];
 

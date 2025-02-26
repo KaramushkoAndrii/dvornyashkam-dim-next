@@ -1,5 +1,5 @@
 export const contactsLinks = {
-  eamil: "Dvor.nyashke.dom@gmail.com",
+  email: "Dvor.nyashke.dom@gmail.com",
   phone: "+380631033737",
 };
 
