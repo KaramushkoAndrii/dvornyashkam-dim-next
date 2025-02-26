@@ -4,11 +4,11 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
 import useModalStore from "@/hooks/useModalStore";
-import Accordion from "@/components/accordion/Accordion";
-import Button from "@/components/button/Button";
+import Accordion from "@/components/UI/accordion/Accordion";
+import Button from "@/components/UI/button/Button";
 import { slideFromLeft, slideFromBottom } from "@/constants/animations";
 
-import AdviseAccordionData from "@/data/adviseAccordionData";
+import adviseAccordionData from "@/data/adviseAccordionData";
 
 import "./page.scss";
 
@@ -28,7 +28,7 @@ export default function AdvisePage() {
         {t("advise-page.title")}
       </motion.h2>
 
-      <Accordion data={AdviseAccordionData} />
+      <Accordion data={adviseAccordionData} />
 
       <motion.p {...slideFromBottom} className="advise-page__content">
         {t("advise-page.content")}

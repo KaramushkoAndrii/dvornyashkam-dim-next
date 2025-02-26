@@ -10,15 +10,15 @@ import {
   scale,
 } from "@/constants/animations";
 
-import SocialList from "@/components/contacts/SocialList";
-import ContactForm from "@/components/contactForm/ContactForm";
-import VisitedUs from "@/components/visitedUs/VisitedUs";
-import Map from "@/components/map/Map";
+import SocialList from "@/components/common/contacts/SocialList";
+import ContactForm from "@/components/page-contact/contactForm/ContactForm";
+import VisitedUs from "@/components/page-contact/visitedUs/VisitedUs";
+import Map from "@/components/page-contact/map/Map";
 
-import ContactFormData from "@/data/contactFormData";
-import VisitedUsDate from "@/data/visitedUsDate";
+import contactFormData from "@/data/contactFormData";
+import visitedUsDate from "@/data/visitedUsDate";
 import contactPageData from "@/data/contactPageData";
-import { ContactsSocial } from "@/data/contactsList";
+import { contactsSocial } from "@/data/contactsList";
 
 import "./page.scss";
 
@@ -47,10 +47,10 @@ export default function ContactPage() {
       </motion.div>
       <motion.div {...slideFromBottom} className="contact-page__social">
         <span className="contact-page__header">{t(socialHeader)}</span>
-        <SocialList data={ContactsSocial} />
+        <SocialList data={contactsSocial} />
       </motion.div>
 
-      <ContactForm data={ContactFormData} />
+      <ContactForm data={contactFormData} />
 
       <motion.div {...scale} className="contact-page__info">
         <h2 className="contact-page__info--header h2">
@@ -62,7 +62,7 @@ export default function ContactPage() {
       </motion.div>
 
       <div className="contact-page__contact">
-        <VisitedUs data={VisitedUsDate} />
+        <VisitedUs data={visitedUsDate} />
 
         <Map data={""} />
       </div>

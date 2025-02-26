@@ -1,6 +1,6 @@
 import { getLocale, getTranslations } from "next-intl/server";
 
-import AnimalsCategory from "@/components/animalsCategory/AnimalsCategory";
+import AnimalsCategory from "@/components/page-animals-category/animalsCategory/AnimalsCategory";
 
 import animals from "@/data/catsDB";
 

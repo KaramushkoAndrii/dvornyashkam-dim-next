@@ -1,9 +1,9 @@
-export const ContactsLinks = {
-  eamil: "Dvor.nyashke.dom@gmail.com",
+export const contactsLinks = {
+  email: "Dvor.nyashke.dom@gmail.com",
   phone: "+380631033737",
 };
 
-export const ContactsSocial = [
+export const contactsSocial = [
   { key: "instagram", href: "https://www.instagram.com/dvor_nyashkam_dim/#" },
   { key: "telegram", href: "https://t.me/+u3FWhOFlhwhkOGQ6" },
 ];

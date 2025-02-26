@@ -1,6 +1,6 @@
-const HelpPageData = {
+const helpPageData = {
   title: "help-page.title",
   description: "help-page.description",
 };
 
-export default HelpPageData;
+export default helpPageData;

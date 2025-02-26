@@ -1,12 +1,11 @@
-import { RulesListData, RulesAccordionData } from "./rulesListData";
+import { rulesListData, rulesAccordionData } from "./rulesListData";
 
+const visitedUsDate = {
+  title: "visited-us.title",
+  visitedHeader: "visited-us.header",
+  visitedDate: "visited-us.content",
+  rulesListData,
+  rulesAccordionData,
+};
 
-const VisitedUsDate = {
-    "title": "visited-us.title",
-    "visitedHeader": "visited-us.header",
-    "visitedDate": "visited-us.content",
-    RulesListData,
-    RulesAccordionData
-}
-
-export default VisitedUsDate;
+export default visitedUsDate;

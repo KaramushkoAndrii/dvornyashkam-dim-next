@@ -7,7 +7,7 @@ import { PiTelegramLogo } from "react-icons/pi";
 import useModalStore from "@/hooks/useModalStore";
 
 import { slideFromBottom } from "@/constants/animations";
-import Button from "@/components/button/Button";
+import Button from "@/components/UI/button/Button";
 
 import "./contactForm.scss";
 

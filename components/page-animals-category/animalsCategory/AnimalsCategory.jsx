@@ -2,8 +2,8 @@
 
 import { useState, useCallback, useMemo } from "react";
 
-import AllAnimalsList from "@/components/allAnimalsList/AllAnimalsList";
-import SearchFilter from "@/components/searchFilter/SearchFilter";
+import AllAnimalsList from "@/components/page-animals-category/allAnimalsList/AllAnimalsList";
+import SearchFilter from "@/components/page-animals-category/searchFilter/SearchFilter";
 
 import "./AnimalsCategory.scss";
 

@@ -4,12 +4,12 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
 import { slideFromLeft } from "@/constants/animations";
-import HelpListItem from "@/components/helpListDetailed/HelpListItem";
+import HelpListItem from "@/components/page-help/helpListDetailed/HelpListItem";
 import HelpSection from "@/components/common/helpSection/HelpSection";
 
 import items from "@/data/helpListDetailedData";
 import pageData from "@/data/helpPageData";
-import dataHelpList from "@/data/helpList";
+import helpList from "@/data/helpList";
 
 import "./page.scss";
 
@@ -22,7 +22,7 @@ export default function HelpPage() {
   const dataHelpSection = {
     title: t("help-section.title"),
     description: t("help-section.description"),
-    items: dataHelpList.map((item) => ({ text: t(item) })),
+    items: helpList.map((item) => ({ text: t(item) })),
   };
 
   return (

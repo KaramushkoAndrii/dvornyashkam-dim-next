@@ -8,7 +8,7 @@ import { useTranslations } from "next-intl";
 import { FaDog } from "react-icons/fa6";
 import { TbVaccine } from "react-icons/tb";
 
-import Button from "@/components/button/Button";
+import Button from "@/components/UI/button/Button";
 
 import { getAnimalsCategoryLink, sleep } from "@/utils";
 

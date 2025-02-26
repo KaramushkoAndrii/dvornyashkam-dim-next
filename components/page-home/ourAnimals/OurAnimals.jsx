@@ -1,4 +1,4 @@
-import AnimalsList from "@/components/animalsList/AnimalsList";
+import AnimalsList from "@/components/page-home/animalsList/AnimalsList";
 
 import "./ourAnimals.scss";
 

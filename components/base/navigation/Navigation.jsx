@@ -6,7 +6,7 @@ import { usePathname } from "@/i18n/routing";
 
 import { FaArrowRightLong } from "react-icons/fa6";
 
-import Contacts from "@/components/contacts/Contacts";
+import Contacts from "@/components/common/contacts/Contacts";
 import TransitionLink from "@/components/utils/TransitionLink";
 
 import "./navigation.scss";

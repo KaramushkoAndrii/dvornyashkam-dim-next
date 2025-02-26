@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
 import { appear } from "@/constants/animations";
-import RulesList from "@/components/rulesList/RulesList";
+import RulesList from "@/components/page-contact/rulesList/RulesList";
 
 import "./visitedUs.scss";
 
@@ -15,7 +15,7 @@ const VisitedUs = ({ data }) => {
     title,
     visitedHeader,
     visitedDate,
-    RulesListData,
+    rulesListData,
     RulesAccordionData,
   } = data;
   return (
@@ -26,7 +26,7 @@ const VisitedUs = ({ data }) => {
         <p className="visited-us__item--content">{t(visitedDate)}</p>
       </div>
 
-      <RulesList data={RulesListData} accordionData={RulesAccordionData} />
+      <RulesList data={rulesListData} accordionData={RulesAccordionData} />
     </motion.section>
   );
 };
