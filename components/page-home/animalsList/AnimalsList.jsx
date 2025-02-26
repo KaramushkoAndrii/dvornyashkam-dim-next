@@ -6,7 +6,7 @@ import { useRouter } from "@/i18n/routing";
 import { motion } from "framer-motion";
 
 import { slideFromLeft } from "@/constants/animations";
-import AnimalCard from "@/components/UI/AnimalCard/AnimalCard";
+import AnimalCard from "@/components/common/AnimalCard/AnimalCard";
 import Button from "@/components/UI/button/Button";
 
 import { getAnimalsCategoryLink } from "@/utils";
