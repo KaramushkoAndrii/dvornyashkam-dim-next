@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { slideFromLeft, slideFromRight } from "@/constants/animations";
 import FigureContainer from "@/components/UI/figureContainer/FigureContainer";
 
-import AboutUsList from "@/data/aboutUsList";
+import aboutUsList from "@/data/aboutUsList";
 
 import "./page.scss";
 
@@ -19,7 +19,7 @@ export default function AboutPage() {
         {t("navigation.about_us")}
       </motion.h2>
       <ul className="about-page__list">
-        {AboutUsList.map((item, key) => {
+        {aboutUsList.map((item, key) => {
           const slideText = key % 2 === 0 ? slideFromRight : slideFromLeft;
           const slideImg = key % 2 === 0 ? slideFromLeft : slideFromRight;
 

@@ -1,6 +1,6 @@
-import { ContactsLinks } from "./contactsList";
+import { contactsLinks } from "./contactsList";
 
-const ContactFormData = [
+const contactFormData = [
   {
     name: "Телефон",
     key: "phone",
@@ -14,8 +14,8 @@ const ContactFormData = [
   {
     name: "Мейл",
     key: "email",
-    value: ContactsLinks.eamil,
+    value: contactsLinks.eamil,
   },
 ];
 
-export default ContactFormData;
+export default contactFormData;

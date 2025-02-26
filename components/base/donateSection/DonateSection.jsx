@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 import { slideFromBottom } from "@/constants/animations";
 
-import DonateList from "@/data/donateList";
+import donateList from "@/data/donateList";
 
 import "./donateSection.scss";
 
@@ -21,7 +21,7 @@ const DonateSection = () => {
       <h2 className="donate__title h2">{t("donate.title")}</h2>
 
       <ul className="donate__list">
-        {DonateList.map((item, key) => (
+        {donateList.map((item, key) => (
           <li className="donate__item" key={key}>
             <a
               className="donate__link"

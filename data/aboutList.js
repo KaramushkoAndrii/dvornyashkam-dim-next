@@ -1,21 +1,18 @@
+const aboutList = [
+  {
+    title: "save",
+    content: "save-description",
+  },
 
+  {
+    title: "family",
+    content: "family-description",
+  },
 
-const AboutList = [
-    {
-        title: "save",
-        content: "save-description"
-    },
+  {
+    title: "recovery",
+    content: "recovery-description",
+  },
+];
 
-    {
-        title: "family",
-        content: "family-description"
-    },
-
-    {
-        title: "recovery",
-        content: "recovery-description"
-    }
-]
-
-
-export default AboutList;
+export default aboutList;

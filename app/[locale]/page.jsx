@@ -8,9 +8,9 @@ import HelpSection from "@/components/common/helpSection/HelpSection";
 
 import dogsDB from "@/data/dogsDB";
 import catsDB from "@/data/catsDB";
-import dataAboutList from "@/data/aboutList";
-import dataAboutListItem from "@/data/aboutInfoList";
-import dataHelpList from "@/data/helpList";
+import aboutList from "@/data/aboutList";
+import aboutListItem from "@/data/aboutInfoList";
+import helpList from "@/data/helpList";
 
 import "./page.scss";
 
@@ -41,12 +41,12 @@ export default async function HomePage() {
   const dataAboutSection = {
     title: t("about.title"),
     description: t("about.description"),
-    statistics: dataAboutListItem.map(({ symbol, count, text }) => ({
+    statistics: aboutListItem.map(({ symbol, count, text }) => ({
       symbol,
       count,
       text: t(text),
     })),
-    cards: dataAboutList.map(({ title, content }) => ({
+    cards: aboutList.map(({ title, content }) => ({
       title: t(`about-list.${title}`),
       description: t(`about-list.${content}`),
     })),
@@ -72,7 +72,7 @@ export default async function HomePage() {
   const dataHelpSection = {
     title: t("help-section.title"),
     description: t("help-section.description"),
-    items: dataHelpList.map((item) => ({ text: t(item) })),
+    items: helpList.map((item) => ({ text: t(item) })),
     btn: { title: t("buttons.more"), href: "/help" },
   };
 

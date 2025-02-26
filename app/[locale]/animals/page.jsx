@@ -13,7 +13,7 @@ import { getAnimalsCategoryLink } from "@/utils";
 
 import TransitionLink from "@/components/utils/TransitionLink";
 
-import AnimalList from "@/data/animalList";
+import animalList from "@/data/animalList";
 
 import "./page.scss";
 
@@ -31,7 +31,7 @@ export default function AnimalsPage() {
         </motion.p>
       </div>
       <ul className="animals-page__content">
-        {AnimalList.map((animal, i) => {
+        {animalList.map((animal, i) => {
           const animation = i === 0 ? slideFromLeft : slideFromRight;
 
           return (

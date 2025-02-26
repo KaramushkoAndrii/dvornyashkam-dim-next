@@ -1,4 +1,4 @@
-const DonateList = [
+const donateList = [
   {
     name: "payPal",
     logo: "/images/paypalLogo.svg",
@@ -11,4 +11,4 @@ const DonateList = [
   },
 ];
 
-export default DonateList;
+export default donateList;
