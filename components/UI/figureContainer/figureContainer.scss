@@ -19,11 +19,11 @@
   }
 
   &__figcaption {
-    padding: 0.5rem 0;
+    padding: 8px 0;
     text-align: center;
 
     @media (min-width: $large) {
-      padding: 1.5rem 0;
+      padding: 24px 0;
       text-align: center;
     }
   }

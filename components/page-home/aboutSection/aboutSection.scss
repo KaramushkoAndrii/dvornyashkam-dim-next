@@ -4,13 +4,13 @@
   text-align: center;
 
   &__description {
-    padding: 2rem 0;
+    padding: 32px 0;
 
     font-size: clamp(1rem, 2.5vw, 6rem);
   }
 
   &__info {
-    padding: 0 1rem;
+    padding: 0 16px;
     overflow: hidden;
   }
 
@@ -19,10 +19,10 @@
     flex-direction: column;
 
     margin: 0 auto;
-    padding: 3rem 1rem;
+    padding: 48px 16px;
     max-width: $tablet;
 
-    gap: 2rem;
+    gap: 32px;
 
     border-radius: $main-border-radius;
 
@@ -47,7 +47,7 @@
       &:not(:last-of-type):before {
         position: absolute;
         content: "";
-        bottom: calc(-1rem - 2px);
+        bottom: calc(-16px - 2px);
         height: 1px;
         width: 100%;
         background-color: $secondary;
@@ -59,8 +59,8 @@
   &__list {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
-    padding-top: 4rem;
+    gap: 32px;
+    padding-top: 64px;
   }
 
   &__item {
@@ -78,14 +78,14 @@
     background-size: contain;
 
     &--title {
-      padding: 1rem 0;
+      padding: 16px 0;
 
       font-size: clamp(1.25rem, 3.5vw, 10rem);
     }
 
     &--content {
       max-width: 75%;
-      padding-bottom: 1.5rem;
+      padding-bottom: 24px;
 
       font-size: clamp(0.75rem, 1.75vw, 5rem);
     }
@@ -125,7 +125,7 @@
     }
 
     &__info-list {
-      margin-top: 2rem;
+      margin-top: 32px;
     }
 
     &__list {

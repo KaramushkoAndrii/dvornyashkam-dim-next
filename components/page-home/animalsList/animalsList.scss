@@ -1,11 +1,7 @@
-// .animals__title {
-//   padding: 0 2rem;
-// }
-
 .animals-list {
   @include container();
   display: flex;
-  gap: 2rem;
+  gap: 32px;
 
   overflow-x: scroll;
   scroll-behavior: smooth;
@@ -28,9 +24,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem 0 4rem;
+  padding: 32px 0 64px;
 
   &:last-of-type {
-    padding: 2rem 0;
+    padding: 32px 0;
   }
 }

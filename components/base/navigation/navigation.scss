@@ -5,7 +5,7 @@
 
   width: 100%;
   height: calc(100vh - 10dvh);
-  gap: 5rem;
+  gap: 80px;
 
   background-color: $secondary;
   z-index: 999;
@@ -49,21 +49,21 @@
 
     span {
       text-transform: uppercase;
-      letter-spacing: 0.1rem;
+      letter-spacing: 2px;
     }
 
     a {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.5rem calc($list-padding-x - 2.5rem);
+      padding: 8px calc($list-padding-x - 40px);
 
       color: $white;
     }
 
     svg {
-      width: 1.5rem;
-      height: 1.5rem;
+      width: 24px;
+      height: 24px;
     }
 
     @media (min-width: $large) {
@@ -75,7 +75,7 @@
       }
 
       a {
-        padding: 0.5rem calc($list-padding-x - 3rem);
+        padding: 8px calc($list-padding-x - 48px);
       }
 
       svg {
@@ -89,7 +89,7 @@
     top: 0;
     left: 0;
 
-    padding: 0 1rem;
+    padding: 0 16px;
 
     display: flex;
     gap: 0;
@@ -108,14 +108,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 3rem;
-  height: calc(100% - 1rem);
+  width: 48px;
+  height: calc(100% - 16px);
 
-  gap: 0.5rem;
+  gap: 8px;
 
   &__bar {
     width: 100%;
-    height: 0.2rem;
+    height: 3px;
     background-color: $primary;
 
     transition: transform 0.3s ease, opacity 0.3s ease;
