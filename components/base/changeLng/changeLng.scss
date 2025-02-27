@@ -9,5 +9,15 @@
     text-transform: uppercase;
 
     appearance: none;
+
+    font-size: $text-sm;
+
+    @media (min-width: $tablet) {
+      font-size: $text-md;
+    }
+
+    @media (min-width: $large) {
+      font-size: $text-lg;
+    }
   }
 }

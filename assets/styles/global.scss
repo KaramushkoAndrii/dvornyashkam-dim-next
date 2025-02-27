@@ -13,11 +13,27 @@
 }
 
 span {
-  font-size: clamp(1rem, 2vw, 2rem);
+  font-size: $text-sm;
+
+  @media (min-width: $tablet) {
+    font-size: $text-md;
+  }
+
+  @media (min-width: $large) {
+    font-size: $text-lg;
+  }
 }
 
 button {
-  font-size: clamp(0.75rem, 2vw, 1.5rem);
+  font-size: $text-sm;
+
+  @media (min-width: $tablet) {
+    font-size: $text-md;
+  }
+
+  @media (min-width: $large) {
+    font-size: $text-lg;
+  }
 }
 
 body {

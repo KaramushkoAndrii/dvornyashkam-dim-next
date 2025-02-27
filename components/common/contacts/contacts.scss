@@ -13,6 +13,16 @@
     gap: $list-item-padding;
 
     color: $white;
+
+    font-size: $text-sm;
+
+    @media (min-width: $tablet) {
+      font-size: $text-md;
+    }
+
+    @media (min-width: $large) {
+      font-size: $text-lg;
+    }
   }
 
   &__link {
