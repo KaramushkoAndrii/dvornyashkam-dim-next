@@ -1,2 +1,3 @@
 .animals {
+  @include container($paddingY: 0, $marginTop: 0);
 }

@@ -71,6 +71,7 @@
 
       span {
         white-space: nowrap;
+        font-size: clamp($text-sm, 1.25vw, $text-2xl);
       }
 
       a {

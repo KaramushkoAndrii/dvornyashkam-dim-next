@@ -13,33 +13,17 @@
 }
 
 span {
-  font-size: $text-sm;
-
-  @media (min-width: $tablet) {
-    font-size: $text-md;
-  }
-
-  @media (min-width: $large) {
-    font-size: $text-lg;
-  }
+  font-size: clamp($text-sm, 1.5vw, $text-2xl);
 }
 
 button {
-  font-size: $text-sm;
-
-  @media (min-width: $tablet) {
-    font-size: $text-md;
-  }
-
-  @media (min-width: $large) {
-    font-size: $text-lg;
-  }
+  font-size: clamp($text-sm, 1.25vw, $text-2xl);
 }
 
 body {
   font-family: var(--font-first);
   font-weight: normal;
-  font-size: clamp(1.5rem, 2vw, 3.5rem);
+  font-size: clamp(24px, 2vw, 48px);
   line-height: 1.6;
 
   color: $white;

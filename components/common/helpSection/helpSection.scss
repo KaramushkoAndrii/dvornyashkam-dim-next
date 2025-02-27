@@ -1,10 +1,11 @@
 .help {
+  @include container();
   background-color: $primary;
   border-radius: $main-border-radius;
   overflow: hidden;
 
   &__content {
-    @include container($marginBottom: 2rem);
+    @include container($marginBottom: 32px);
 
     display: grid;
     gap: 32px;
@@ -20,8 +21,8 @@
     }
 
     &__icon {
-      width: clamp(1rem, 4vw, 4rem);
-      height: clamp(1rem, 4vw, 4rem);
+      width: clamp($text-md, 4vw, $text-2xl);
+      height: clamp($text-md, 4vw, $text-2xl);
     }
 
     &__description {
