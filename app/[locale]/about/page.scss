@@ -13,12 +13,12 @@
 
   &__item {
     &:not(:last-of-type) {
-      padding-bottom: 2rem;
+      padding-bottom: 32px;
     }
 
     @media (min-width: $large) {
       display: flex;
-      gap: 2rem;
+      gap: 32px;
 
       &:nth-child(even) {
         flex-direction: row-reverse;
