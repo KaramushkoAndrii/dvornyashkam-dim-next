@@ -1,7 +1,7 @@
 .animal {
   background-color: $primary;
 
-  border-radius: 2rem;
+  border-radius: 32px;
 
   &__link {
     display: flex;
@@ -32,7 +32,7 @@
     width: 100%;
     max-height: 60dvh;
 
-    border-radius: 2rem 2rem 1rem 1rem;
+    border-radius: 32px 32px 16px 16px;
 
     object-fit: cover;
   }
@@ -45,12 +45,12 @@
 
     height: fit-content;
 
-    padding: 0.5rem 0;
+    padding: 8px 0;
   }
 
   &__name {
     width: 100%;
-    padding-bottom: 0.25rem;
+    padding-bottom: 4px;
 
     text-align: center;
   }
@@ -71,11 +71,11 @@
 
   &__characteristics {
     display: none;
-    gap: 1rem;
+    gap: 16px;
 
     svg {
-      width: 2rem;
-      height: 2rem;
+      width: 32px;
+      height: 32px;
     }
 
     @media (min-width: $large) {
@@ -89,9 +89,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
+    gap: 8px;
 
-    padding-bottom: 1rem;
+    padding-bottom: 16px;
 
     .animals-category__content & {
       display: none;
@@ -99,15 +99,15 @@
   }
 
   &__choice {
-    padding: 1rem 1.5rem;
-    border-radius: 1rem;
+    padding: 16px 24px;
+    border-radius: 16px;
 
     color: $white;
     background-color: $secondary;
   }
 
   @media (min-width: $large) {
-    gap: 2rem;
+    gap: 32px;
   }
 
   .animals & {
