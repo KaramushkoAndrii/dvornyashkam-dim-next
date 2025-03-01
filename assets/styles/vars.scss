@@ -17,8 +17,14 @@ $primary: #79583a;
 $secondary: #87c7b2;
 
 //padding
-$list-item-padding: 0.5rem;
-$list-padding-x: 4rem;
+$list-item-padding: 8px;
+$list-padding-x: 64px;
 
 //border-radius
 $main-border-radius: 20px;
+
+//text
+$text-sm: 12px;
+$text-md: 14px;
+$text-lg: 16px;
+$text-2xl: 20px;

@@ -42,11 +42,11 @@ export default function ContactPage() {
       </motion.h2>
 
       <motion.div {...slideFromRight} className="contact-page__adres">
-        <span className="contact-page__header">{t(header)}</span>
-        <p className="contact-page__content">{t(headerContent)}</p>
+        <h3 className="contact-page__header h3">{t(header)}</h3>
+        <span className="contact-page__content">{t(headerContent)}</span>
       </motion.div>
       <motion.div {...slideFromBottom} className="contact-page__social">
-        <span className="contact-page__header">{t(socialHeader)}</span>
+        <h3 className="contact-page__header h3">{t(socialHeader)}</h3>
         <SocialList data={contactsSocial} />
       </motion.div>
 

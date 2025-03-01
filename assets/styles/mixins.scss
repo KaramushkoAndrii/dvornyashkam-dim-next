@@ -1,7 +1,7 @@
 @mixin container(
-  $paddingX: 2rem,
-  $paddingY: 2rem,
-  $max-width: auto,
+  $paddingX: 32px,
+  $paddingY: 32px,
+  $max-width: 1920px,
   $marginTop: 0,
   $marginX: auto,
   $marginBottom: 0

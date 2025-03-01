@@ -5,13 +5,14 @@
   align-items: center;
   width: 100%;
   padding: 0 $list-padding-x;
-  gap: 2.5rem;
+  gap: 40px;
 
   &__list {
     display: flex;
     flex-direction: column;
     gap: $list-item-padding;
 
+    font-size: clamp($text-sm, 1.25vw, $text-2xl);
     color: $white;
   }
 
@@ -21,16 +22,16 @@
 
   &__social {
     display: flex;
-    gap: 1.5rem;
+    gap: 24px;
 
     @media (min-width: $large) {
-      gap: 0.5rem;
+      gap: 8px;
     }
   }
 
   &__social-item {
-    width: clamp(1.5rem, 1.5vw, 2rem);
-    height: clamp(1.5rem, 2vw, 2rem);
+    width: clamp($text-sm, 5vw, 32px);
+    // height: clamp($text-sm, 2vw, $text-2xl);
 
     svg {
       display: flex;
@@ -43,7 +44,7 @@
 
   @media (min-width: $large) {
     flex-direction: row;
-    gap: 1rem;
+    gap: 16px;
     padding: 0;
   }
 }

@@ -1,31 +1,31 @@
 .input {
   position: relative;
-  margin: 1rem 0;
+  margin: 16px 0;
 
   &__label {
     position: absolute;
     top: 50%;
-    left: 1rem;
+    left: 16px;
     transform: translateY(-50%);
-    font-size: 1rem;
+    font-size: 16px;
     color: $primary;
     transition: all 0.3s ease;
     pointer-events: none;
 
     &.filled {
-      top: -0.8rem;
+      top: -13px;
       left: 0;
-      font-size: clamp(1rem, 3vw, 2.5rem);
+      font-size: clamp($text-sm, 3vw, 40px);
       color: $white;
     }
   }
 
   &__field {
     width: 100%;
-    padding: 1rem;
+    padding: 16px;
     border: 1px solid $white;
-    border-radius: 0.5rem;
-    font-size: 1rem;
+    border-radius: 8px;
+    font-size: 16px;
 
     &:focus {
       outline: none;

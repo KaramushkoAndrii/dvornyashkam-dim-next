@@ -4,15 +4,15 @@
   overflow: hidden;
 
   &__content {
-    @include container($marginBottom: 2rem);
+    @include container($marginBottom: 32px);
 
     display: grid;
-    gap: 2rem;
+    gap: 32px;
   }
 
   &-list {
     display: grid;
-    gap: 1rem;
+    gap: 16px;
 
     &__item {
       display: flex;
@@ -20,12 +20,12 @@
     }
 
     &__icon {
-      width: clamp(1rem, 4vw, 4rem);
-      height: clamp(1rem, 4vw, 4rem);
+      width: clamp($text-md, 4vw, $text-2xl);
+      height: clamp($text-md, 4vw, $text-2xl);
     }
 
     &__description {
-      padding-left: 2rem;
+      padding-left: 32px;
     }
   }
 

@@ -13,17 +13,17 @@
 }
 
 span {
-  font-size: clamp(1rem, 2vw, 2rem);
+  font-size: clamp($text-sm, 1.5vw, $text-2xl);
 }
 
 button {
-  font-size: clamp(0.75rem, 2vw, 1.5rem);
+  font-size: clamp($text-sm, 1.25vw, $text-2xl);
 }
 
 body {
   font-family: var(--font-first);
   font-weight: normal;
-  font-size: clamp(1.5rem, 2vw, 3.5rem);
+  font-size: clamp(24px, 2vw, 48px);
   line-height: 1.6;
 
   color: $white;
@@ -55,7 +55,11 @@ body.modal-open {
 }
 
 .title {
-  padding-bottom: 2rem;
+  padding-bottom: 32px;
+
+  .animals & {
+    padding-left: 16px;
+  }
 }
 
 .page-transition {
@@ -78,7 +82,7 @@ body.modal-open {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 4rem;
+  width: 64px;
   aspect-ratio: 1;
 
   overflow: hidden;

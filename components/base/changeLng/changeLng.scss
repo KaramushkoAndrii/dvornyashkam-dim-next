@@ -1,11 +1,12 @@
 .toggle {
   &__select {
-    padding: 0.5rem 1rem;
+    padding: 8px 16px;
 
     border-radius: $main-border-radius;
 
     color: $primary;
 
+    font-size: clamp($text-sm, 1.25vw, $text-2xl);
     text-transform: uppercase;
 
     appearance: none;

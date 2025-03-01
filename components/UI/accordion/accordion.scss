@@ -1,12 +1,12 @@
 .accordion {
   margin: 0 auto;
-  max-width: 30rem;
+  max-width: 480px;
 
   background-color: $secondary;
   border-radius: $main-border-radius;
 
   &__item {
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
     background-color: $white;
     border-radius: $main-border-radius;
 
@@ -18,17 +18,17 @@
   &__header {
     position: relative;
     width: 100%;
-    padding: 1rem 3rem 1rem 2rem;
+    padding: 16px 48px 16px 32px;
     background-color: $primary;
     border: 0;
     border-radius: $main-border-radius;
-    font-size: clamp(1.1rem, 2vw, 4rem);
+    font-size: clamp($text-md, 2vw, 64px);
     text-align: center;
     cursor: pointer;
 
     svg {
-      width: clamp(1.5rem, 4vw, 3.5rem);
-      height: clamp(1.5rem, 4vw, 3.5rem);
+      width: clamp(24px, 4vw, 56px);
+      height: clamp(24px, 4vw, 56px);
     }
   }
 
@@ -43,11 +43,11 @@
   }
 
   &__body {
-    padding: 2rem 1rem;
+    padding: 32px 16px;
     background-color: $white;
     border-bottom-left-radius: $main-border-radius;
     border-bottom-right-radius: $main-border-radius;
-    font-size: clamp(1rem, 1.75vw, 3.5rem);
+    font-size: clamp($text-md, 1.75vw, 46px);
     color: $primary;
   }
 
@@ -57,7 +57,7 @@
     right: 20px;
     display: block;
     width: 30px;
-    height: 1rem;
+    height: 16px;
     fill: $secondary;
     transform: translateY(-50%);
   }

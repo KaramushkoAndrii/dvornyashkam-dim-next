@@ -1,9 +1,9 @@
 .contact-form {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
-  padding: 1.5rem;
-  margin: 2rem 0;
+  gap: 24px;
+  padding: 24px;
+  margin: 32px 0;
   border-radius: $main-border-radius;
 
   background-color: $primary;
@@ -12,8 +12,8 @@
     min-width: 185px;
 
     svg {
-      width: 1.25rem;
-      height: 1.25rem;
+      width: 20px;
+      height: 20px;
       fill: $secondary;
     }
   }
@@ -22,10 +22,11 @@
     display: flex;
     align-items: center;
 
-    gap: 1rem;
+    gap: 16px;
   }
 
   &__link {
     display: flex;
+    font-size: clamp($text-sm, 3vw, $text-2xl);
   }
 }
