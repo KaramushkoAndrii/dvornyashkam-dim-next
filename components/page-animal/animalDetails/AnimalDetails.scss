@@ -35,7 +35,7 @@
 
     flex-direction: column;
 
-    gap: 1rem;
+    gap: 16px;
 
     width: 70%;
     height: 100%;
@@ -59,13 +59,13 @@
 
     justify-content: end;
 
-    padding: 1rem 1rem 0;
+    padding: 16px 16px 0;
 
     background-color: inherit;
   }
 
   &__close {
-    padding: 0.5rem 0.75rem;
+    padding: 8px 12px;
     background-color: $secondary;
     color: $white;
     border-radius: $main-border-radius;
@@ -76,14 +76,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 8px;
   }
 
   &__img-container {
     display: flex;
     width: 100%;
-    padding: 0 1rem;
-    gap: 1rem;
+    padding: 0 16px;
+    gap: 16px;
 
     overflow-x: scroll;
     scroll-behavior: smooth;
@@ -92,15 +92,15 @@
 
   &__characteristic {
     display: flex;
-    gap: 1rem;
+    gap: 16px;
   }
 
   &__footer {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    padding: 0.5rem 1rem 0;
-    margin-bottom: 1rem;
+    gap: 16px;
+    padding: 8px 16px 0;
+    margin-bottom: 16px;
     width: 100%;
   }
 
