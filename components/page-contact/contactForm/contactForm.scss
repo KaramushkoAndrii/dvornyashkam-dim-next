@@ -27,5 +27,6 @@
 
   &__link {
     display: flex;
+    font-size: clamp($text-sm, 3vw, $text-2xl);
   }
 }

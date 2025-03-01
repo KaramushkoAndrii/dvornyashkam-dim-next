@@ -30,8 +30,8 @@
   }
 
   &__social-item {
-    width: clamp($text-sm, 1.5vw, $text-2xl);
-    height: clamp($text-sm, 2vw, $text-2xl);
+    width: clamp($text-sm, 5vw, 32px);
+    // height: clamp($text-sm, 2vw, $text-2xl);
 
     svg {
       display: flex;
