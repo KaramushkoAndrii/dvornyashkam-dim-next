@@ -2,13 +2,13 @@
   @include container();
 
   &__description {
-    padding: 2rem 0;
+    padding: 32px 0;
   }
 
   &__content {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 32px;
 
     &__dogs,
     &__cats {
