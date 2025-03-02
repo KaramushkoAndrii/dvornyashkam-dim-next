@@ -6,7 +6,11 @@ import { motion } from "framer-motion";
 import useModalStore from "@/hooks/useModalStore";
 import Accordion from "@/components/UI/accordion/Accordion";
 import Button from "@/components/UI/button/Button";
-import { slideFromLeft, slideFromBottom } from "@/constants/animations";
+import {
+  slideFromLeft,
+  slideFromBottom,
+  heroAnimationX,
+} from "@/constants/animations";
 
 import adviseAccordionData from "@/data/adviseAccordionData";
 
@@ -24,7 +28,7 @@ export default function AdvisePage() {
 
   return (
     <section className="advise-page">
-      <motion.h2 {...slideFromLeft} className="title h2">
+      <motion.h2 {...slideFromLeft} {...heroAnimationX} className="title h2">
         {t("advise-page.title")}
       </motion.h2>
 

@@ -7,6 +7,8 @@ import {
   slideFromLeft,
   slideFromRight,
   slideFromBottom,
+  heroAnimationY,
+  heroAnimationX,
 } from "@/constants/animations";
 
 import { getAnimalsCategoryLink } from "@/utils";
@@ -23,10 +25,14 @@ export default function AnimalsPage() {
   return (
     <section className="animals-page">
       <div className="animals-page__header">
-        <motion.h2 className="title" {...slideFromBottom}>
+        <motion.h2 className="title" {...slideFromBottom} {...heroAnimationY}>
           {t("animals-page.title")}
         </motion.h2>
-        <motion.p className="animals-page__description" {...slideFromBottom}>
+        <motion.p
+          className="animals-page__description"
+          {...slideFromBottom}
+          {...heroAnimationY}
+        >
           {t("animals-page.description")}
         </motion.p>
       </div>
@@ -36,6 +42,7 @@ export default function AnimalsPage() {
 
           return (
             <motion.li
+              {...heroAnimationX}
               {...animation}
               key={animal.id}
               className={`animals-content__${animal.id}`}

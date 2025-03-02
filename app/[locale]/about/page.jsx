@@ -3,7 +3,11 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
-import { slideFromLeft, slideFromRight } from "@/constants/animations";
+import {
+  slideFromLeft,
+  slideFromRight,
+  heroAnimationX,
+} from "@/constants/animations";
 import FigureContainer from "@/components/UI/figureContainer/FigureContainer";
 
 import aboutUsList from "@/data/aboutUsList";
@@ -15,26 +19,32 @@ export default function AboutPage() {
 
   return (
     <section className="about-page">
-      <motion.h2 {...slideFromLeft} className="title h2">
+      <motion.h2 {...slideFromLeft} {...heroAnimationX} className="title h2">
         {t("navigation.about_us")}
       </motion.h2>
       <ul className="about-page__list">
         {aboutUsList.map((item, key) => {
+          const heroItem = key === 0 ? heroAnimationX : null;
           const slideText = key % 2 === 0 ? slideFromRight : slideFromLeft;
           const slideImg = key % 2 === 0 ? slideFromLeft : slideFromRight;
 
           return (
-            <li key={key} className="about-page__item">
+            <motion.li key={key} className="about-page__item">
               <FigureContainer
                 {...slideImg}
+                {...heroItem}
                 src={item.img}
                 alt={item.alt}
                 text={item.alt}
               />
-              <motion.p className="about-page__text" {...slideText}>
+              <motion.p
+                className="about-page__text"
+                {...slideText}
+                {...heroItem}
+              >
                 {t(`about-us-page.${item.text}`)}
               </motion.p>
-            </li>
+            </motion.li>
           );
         })}
       </ul>

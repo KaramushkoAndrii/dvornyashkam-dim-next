@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { PiTelegramLogo } from "react-icons/pi";
 import useModalStore from "@/hooks/useModalStore";
 
-import { slideFromBottom } from "@/constants/animations";
+import { slideFromBottom, heroAnimationY } from "@/constants/animations";
 import Button from "@/components/UI/button/Button";
 
 import "./contactForm.scss";
@@ -22,7 +22,11 @@ const ContactForm = ({ data }) => {
 
   // TO DO: isOpen is may be openHandler like in other components?
   return (
-    <motion.ul {...slideFromBottom} className="contact-form">
+    <motion.ul
+      {...slideFromBottom}
+      {...heroAnimationY}
+      className="contact-form"
+    >
       {data.map((item, key) => (
         <li key={key} className="contact-form__item">
           <p className="contact-form__name">{item.name}</p>

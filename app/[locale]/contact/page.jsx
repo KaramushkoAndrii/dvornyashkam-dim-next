@@ -7,6 +7,8 @@ import {
   slideFromLeft,
   slideFromRight,
   slideFromBottom,
+  heroAnimationX,
+  heroAnimationY,
   scale,
 } from "@/constants/animations";
 
@@ -37,15 +39,23 @@ export default function ContactPage() {
 
   return (
     <section className="contact-page">
-      <motion.h2 {...slideFromLeft} className="title h2">
+      <motion.h2 {...slideFromLeft} {...heroAnimationX} className="title h2">
         {t(title)}
       </motion.h2>
 
-      <motion.div {...slideFromRight} className="contact-page__adres">
+      <motion.div
+        {...slideFromRight}
+        {...heroAnimationX}
+        className="contact-page__adres"
+      >
         <h3 className="contact-page__header h3">{t(header)}</h3>
         <span className="contact-page__content">{t(headerContent)}</span>
       </motion.div>
-      <motion.div {...slideFromBottom} className="contact-page__social">
+      <motion.div
+        {...slideFromBottom}
+        {...heroAnimationY}
+        className="contact-page__social"
+      >
         <h3 className="contact-page__header h3">{t(socialHeader)}</h3>
         <SocialList data={contactsSocial} />
       </motion.div>
