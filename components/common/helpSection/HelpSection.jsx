@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-import { slideFromRight } from "@/constants/animations";
+import { slideFromRight, heroAnimationX } from "@/constants/animations";
 
 import Button from "@/components/UI/button/Button";
 import { FaPaw } from "react-icons/fa";
@@ -14,7 +14,11 @@ const HelpSection = ({ data }) => {
 
   return (
     <section className="help">
-      <motion.div {...slideFromRight} className="help__content">
+      <motion.div
+        {...slideFromRight}
+        {...heroAnimationX}
+        className="help__content"
+      >
         <h2 className="h2">{title}</h2>
         <p>{description}</p>
         <ul className="help-list">

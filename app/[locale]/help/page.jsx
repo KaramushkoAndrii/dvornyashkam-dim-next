@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
-import { slideFromLeft } from "@/constants/animations";
+import { slideFromLeft, heroAnimationX } from "@/constants/animations";
 import HelpListItem from "@/components/page-help/helpListDetailed/HelpListItem";
 import HelpSection from "@/components/common/helpSection/HelpSection";
 
@@ -28,10 +28,12 @@ export default function HelpPage() {
   return (
     <section className="help-page">
       <header className="help-page__header">
-        <motion.h2 {...slideFromLeft} className="h2">
+        <motion.h2 {...slideFromLeft} {...heroAnimationX} className="h2">
           {t(title)}
         </motion.h2>
-        <motion.p {...slideFromLeft}>{t(description)}</motion.p>
+        <motion.p {...slideFromLeft} {...heroAnimationX}>
+          {t(description)}
+        </motion.p>
       </header>
       <HelpSection data={dataHelpSection} />
 
