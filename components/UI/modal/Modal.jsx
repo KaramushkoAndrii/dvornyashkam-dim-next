@@ -54,7 +54,7 @@ const Modal = () => {
             id={"user_name"}
             label={"inputs.first_name"}
             register={register("user_name", {
-              required: "Required",
+              required: "You must write your name",
               minLength: {
                 value: 2,
                 message: "Name isn`t correct",
@@ -69,7 +69,7 @@ const Modal = () => {
             id={"user_surname"}
             label={"inputs.last_name"}
             register={register("user_surname", {
-              required: t("validation.required"),
+              required: "You must write your surname",
               minLength: {
                 value: 2,
                 message: "Surname isn`t correct",
@@ -86,7 +86,7 @@ const Modal = () => {
             pattern={"^\\+?\\d{10,15}$"}
             autocomplite={"tel"}
             register={register("phone", {
-              required: t("validation.required"),
+              required: "You must write your phone",
               pattern: {
                 value: /^\+?\d{10,15}$/,
                 message: "number isn`t correct",
@@ -101,7 +101,7 @@ const Modal = () => {
             label={"inputs.email"}
             autocomplite={"email"}
             register={register("email", {
-              required: t("validation.required"),
+              required: "You must write your email",
               pattern: {
                 value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
                 message: "Email isn`t correct",
