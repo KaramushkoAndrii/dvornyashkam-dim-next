@@ -32,6 +32,7 @@ const Modal = () => {
 
   const closeHandler = () => {
     closeModal();
+    reset();
   };
 
   if (!isModalOpen) return null;
@@ -56,7 +57,8 @@ const Modal = () => {
               required: "Required",
               minLength: {
                 value: 2,
-                message: t("validation.minLength", { length: 2 }),
+                message: "Name isn`t correct",
+                length: 2,
               },
             })}
             error={errors.user_name?.message}
@@ -70,7 +72,8 @@ const Modal = () => {
               required: t("validation.required"),
               minLength: {
                 value: 2,
-                message: t("validation.minLength", { length: 2 }),
+                message: "Surname isn`t correct",
+                length: 2,
               },
             })}
             error={errors.user_surname?.message}
@@ -86,7 +89,7 @@ const Modal = () => {
               required: t("validation.required"),
               pattern: {
                 value: /^\+?\d{10,15}$/,
-                message: t("validation.phone"),
+                message: "number isn`t correct",
               },
             })}
             error={errors.phone?.message}
@@ -101,7 +104,7 @@ const Modal = () => {
               required: t("validation.required"),
               pattern: {
                 value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                message: t("validation.email"),
+                message: "Email isn`t correct",
               },
             })}
             error={errors.email?.message}
