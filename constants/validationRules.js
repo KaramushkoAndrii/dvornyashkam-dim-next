@@ -1,26 +1,26 @@
 export const validationRules = {
-  user_name: {
+  name: {
     required: "You must write your name",
     minLength: {
       value: 2,
       message: "Name isn`t correct",
     },
   },
-  user_surname: {
+  surname: {
     required: "You must write your surname",
     minLength: {
       value: 2,
       message: "Surname isn`t correct",
     },
   },
-  user_phone: {
+  phone: {
     required: "Phone number is required",
     pattern: {
       value: /^\+?\d{10,15}$/,
       message: "Phone number isn’t correct",
     },
   },
-  user_email: {
+  email: {
     required: "Email is required",
     pattern: {
       value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,

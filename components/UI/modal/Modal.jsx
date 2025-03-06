@@ -54,7 +54,7 @@ const Modal = () => {
             name={"user_name"}
             id={"user_name"}
             label={"inputs.first_name"}
-            register={register("user_name", validationRules.user_name)}
+            register={register("user_name", validationRules.name)}
             error={errors.user_name?.message}
           />
           <Input
@@ -62,7 +62,7 @@ const Modal = () => {
             name={"user_surname"}
             id={"user_surname"}
             label={"inputs.last_name"}
-            register={register("user_surname", validationRules.user_surname)}
+            register={register("user_surname", validationRules.surname)}
             error={errors.user_surname?.message}
           />
           <Input
@@ -72,7 +72,7 @@ const Modal = () => {
             label={"inputs.phone"}
             pattern={"^\\+?\\d{10,15}$"}
             autocomplite={"tel"}
-            register={register("phone", validationRules.user_phone)}
+            register={register("phone", validationRules.phone)}
             error={errors.phone?.message}
           />
           <Input
@@ -81,7 +81,7 @@ const Modal = () => {
             name={"email"}
             label={"inputs.email"}
             autocomplite={"email"}
-            register={register("email", validationRules.user_email)}
+            register={register("email", validationRules.email)}
             error={errors.email?.message}
           />
 
