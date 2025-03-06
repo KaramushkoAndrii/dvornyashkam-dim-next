@@ -1,4 +1,7 @@
 .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: max-content;
   padding: 16px 24px;
   border: 1px solid $primary;
@@ -51,8 +54,8 @@
     }
   }
 
-  &--modal {
-    display: flex;
-    margin: 0 auto;
-  }
+  // &--modal {
+  //   display: flex;
+  //   margin: 0 auto;
+  // }
 }

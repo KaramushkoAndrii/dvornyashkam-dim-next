@@ -3,8 +3,9 @@
 import { useForm } from "react-hook-form";
 import { useTranslations } from "next-intl";
 
+import { validationRules } from "@/constants/validationRules";
 import useModalStore from "@/hooks/useModalStore";
-import Button from "../button/Button";
+import Button from "@/components/Ui/button/Button";
 import Input from "@/components/UI/input/Input";
 
 import "./modal.scss";
@@ -53,14 +54,7 @@ const Modal = () => {
             name={"user_name"}
             id={"user_name"}
             label={"inputs.first_name"}
-            register={register("user_name", {
-              required: "You must write your name",
-              minLength: {
-                value: 2,
-                message: "Name isn`t correct",
-                length: 2,
-              },
-            })}
+            register={register("user_name", validationRules.user_name)}
             error={errors.user_name?.message}
           />
           <Input
@@ -68,14 +62,7 @@ const Modal = () => {
             name={"user_surname"}
             id={"user_surname"}
             label={"inputs.last_name"}
-            register={register("user_surname", {
-              required: "You must write your surname",
-              minLength: {
-                value: 2,
-                message: "Surname isn`t correct",
-                length: 2,
-              },
-            })}
+            register={register("user_surname", validationRules.user_surname)}
             error={errors.user_surname?.message}
           />
           <Input
@@ -85,13 +72,7 @@ const Modal = () => {
             label={"inputs.phone"}
             pattern={"^\\+?\\d{10,15}$"}
             autocomplite={"tel"}
-            register={register("phone", {
-              required: "You must write your phone",
-              pattern: {
-                value: /^\+?\d{10,15}$/,
-                message: "number isn`t correct",
-              },
-            })}
+            register={register("phone", validationRules.user_phone)}
             error={errors.phone?.message}
           />
           <Input
@@ -100,13 +81,7 @@ const Modal = () => {
             name={"email"}
             label={"inputs.email"}
             autocomplite={"email"}
-            register={register("email", {
-              required: "You must write your email",
-              pattern: {
-                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                message: "Email isn`t correct",
-              },
-            })}
+            register={register("email", validationRules.user_email)}
             error={errors.email?.message}
           />
 
@@ -117,7 +92,7 @@ const Modal = () => {
             label={"inputs.message"}
             register={register("user_message")}
           />
-          <Button text="Click me" variant="modal" />
+          <Button text="Click me" className="modal__button" />
         </form>
       </div>
     </div>
