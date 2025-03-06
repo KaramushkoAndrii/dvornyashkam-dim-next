@@ -7,6 +7,10 @@
   font-family: var(--font-second);
   font-weight: normal;
   font-size: clamp(32px, 3vw, 48px);
+
+  .modal & {
+    font-size: clamp(28px, 3vw, 48px);
+  }
 }
 
 .h3 {

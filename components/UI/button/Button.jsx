@@ -4,8 +4,13 @@ import TransitionLink from "@/components/utils/TransitionLink";
 
 import "./button.scss";
 
-const Button = ({ text, href, onClick, disabled, variant }) => {
-  const classes = `button ${variant ? `button--${variant}` : ""}`;
+const Button = ({ text, href, onClick, disabled, variant, className }) => {
+  console.log(className);
+  const classes = `button ${variant ? `button--${variant}` : ""} ${
+    className || ""
+  }`;
+
+  console.log(className);
   return (
     <>
       {href && (

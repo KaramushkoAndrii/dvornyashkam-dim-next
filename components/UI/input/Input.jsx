@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 
 import "./input.scss";
 
-const Input = ({ type, name, id, label, ...rest }) => {
+const Input = ({ type, name, id, label, register, error, ...rest }) => {
   const [isFocus, setIsFocus] = useState(false);
 
   const t = useTranslations();
@@ -30,8 +30,10 @@ const Input = ({ type, name, id, label, ...rest }) => {
           name={name}
           onBlur={handleBlur}
           onFocus={() => setIsFocus(true)}
+          {...register}
           {...rest}
         />
+        {error && <p className="error-text">{error}</p>}
       </div>
     </>
   );
