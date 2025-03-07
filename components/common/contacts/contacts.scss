@@ -23,6 +23,7 @@
   &__social {
     display: flex;
     gap: 24px;
+    fill: $primary;
 
     @media (min-width: $large) {
       gap: 8px;
