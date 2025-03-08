@@ -24,7 +24,9 @@
   }
 
   &__img {
-    width: 50dvw;
+    width: clamp(200px, 55vw, 450px);
+    aspect-ratio: 3 / 4;
+    border-radius: $main-border-radius;
   }
 
   &__content {
@@ -87,6 +89,10 @@
     overflow-x: scroll;
     scroll-behavior: smooth;
     scrollbar-width: none;
+
+    @media (min-width: $large) {
+      scrollbar-width: auto;
+    }
   }
 
   &__characteristic {
