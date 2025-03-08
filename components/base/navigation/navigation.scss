@@ -1,10 +1,10 @@
 .navigation {
   position: fixed;
-  top: 10dvh;
+  top: 90px;
   left: 0;
 
   width: 100%;
-  height: calc(100vh - 10dvh);
+  height: calc(100% - 90px);
   gap: 80px;
 
   background-color: $secondary;
@@ -89,7 +89,7 @@
     top: 0;
     left: 0;
 
-    padding: 0 16px;
+    // padding: 0 16px;
 
     display: flex;
     gap: 0;
