@@ -30,7 +30,8 @@
 
   img {
     width: 100%;
-    max-height: 60dvh;
+    max-height: 300px;
+    aspect-ratio: 2 / 3;
 
     border-radius: 32px 32px 16px 16px;
 
@@ -65,9 +66,9 @@
     }
   }
 
-  .animals-category__content & {
-    width: 35dvw;
-  }
+  // .animals-category__content & {
+  //   width: 35dvw;
+  // }
 
   &__characteristics {
     display: none;
@@ -111,10 +112,10 @@
   }
 
   .animals & {
-    width: 55dvw;
+    width: clamp(200px, 55vw, 450px);
 
-    @media (min-width: $large) {
-      width: 29dvw;
-    }
+    // @media (min-width: $large) {
+    //   width: 29dvw;
+    // }
   }
 }

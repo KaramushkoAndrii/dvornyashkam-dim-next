@@ -18,7 +18,7 @@ Based on [React.js project](https://github.com/KaramushkoAndrii/dvornyshkam-dim)
 - [ ] - OPTIONAL `<img />` replace to [Image](https://nextjs.org/docs/pages/api-reference/components/image)
 - [x] change the extension from `.jsx` to `.js` in all files in the `data` folder
 - [x] change the element sizes from `rem` to `px`
-- [ ] check all style codes for fixed height. The height of the elements should be flexible. The exception is the element's full-screen mode.
+- [x] check all style codes for fixed height. The height of the elements should be flexible. The exception is the element's full-screen mode.
 - [ ] change the element sizes from `dvh`, `dvw`, `vh`, `vw` to `px`. The exception is the element's full-screen mode.
 - [x] use [ReactForm](https://react-hook-form.com/) for the contact form
 - [ ] redo the filters as you did earlier in the Movie API project

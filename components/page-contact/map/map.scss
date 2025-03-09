@@ -13,6 +13,6 @@
 
   @media (min-width: $large) {
     width: 75%;
-    max-height: 75dvh;
+    aspect-ratio: 3 / 2;
   }
 }

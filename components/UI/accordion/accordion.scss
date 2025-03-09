@@ -28,7 +28,6 @@
 
     svg {
       width: clamp(24px, 4vw, 56px);
-      // height: clamp(24px, 4vw, 56px);
       height: 100%;
     }
   }
@@ -58,7 +57,6 @@
     right: 20px;
     display: block;
     width: 30px;
-    // height: 16px;
     fill: $secondary;
     transform: translateY(-50%);
   }
