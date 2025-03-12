@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "@/i18n/routing";
 
 import useModalStore from "@/hooks/useModalStore";
+import ModalForm from "@/components/UI/modalForm/ModalForm";
 import { rotateAndScale } from "@/constants/animations";
 import { FaDog } from "react-icons/fa6";
 import { TbVaccine } from "react-icons/tb";
@@ -20,7 +21,7 @@ const AnimalCard = ({ animal }) => {
 
   const openHandler = (evt) => {
     evt.preventDefault();
-    openModal();
+    openModal(<ModalForm />);
   };
 
   return (
