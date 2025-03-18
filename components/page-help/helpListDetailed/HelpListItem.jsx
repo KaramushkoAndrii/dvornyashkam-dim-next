@@ -4,12 +4,10 @@ import { motion } from "framer-motion";
 import { slideFromLeft, slideFromRight } from "@/constants/animations";
 import useModalStore from "@/hooks/useModalStore";
 import "./HelpListItem.scss";
-// import Modal from "@/components/UI/modal/Modal";
-// import ModalForm from "@/components/UI/modalForm/ModalForm";
 
 const HelpListItem = ({ data, index, translationGroup }) => {
   const t = useTranslations();
-  const { openModal, isModalOpen } = useModalStore();
+  const { openModal } = useModalStore();
 
   const { header, description, subDescription, type, src, linkContent } =
     data || {};
@@ -45,12 +43,6 @@ const HelpListItem = ({ data, index, translationGroup }) => {
           )}
         </footer>
       </motion.li>
-
-      {/* {isModalOpen && (
-        <Modal>
-          <ModalForm />
-        </Modal>
-      )} */}
     </>
   );
 };

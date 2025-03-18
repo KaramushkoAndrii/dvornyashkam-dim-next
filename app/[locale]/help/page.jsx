@@ -1,7 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
+import useModalStore from "@/hooks/useModalStore";
 
 import { slideFromLeft, heroAnimationX } from "@/constants/animations";
 import HelpListItem from "@/components/page-help/helpListDetailed/HelpListItem";
@@ -12,9 +14,13 @@ import pageData from "@/data/helpPageData";
 import helpList from "@/data/helpList";
 
 import "./page.scss";
+import Modal from "@/components/UI/modal/Modal";
+import ModalForm from "@/components/UI/modalForm/ModalForm";
 
 export default function HelpPage() {
   const t = useTranslations();
+
+  const { isModalOpen } = useModalStore();
 
   const { title, description } = pageData || {};
 
@@ -47,6 +53,12 @@ export default function HelpPage() {
           />
         ))}
       </ul>
+
+      {isModalOpen && (
+        <Modal>
+          <ModalForm />
+        </Modal>
+      )}
     </section>
   );
 }
