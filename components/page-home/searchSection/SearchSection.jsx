@@ -6,6 +6,9 @@ import { motion } from "framer-motion";
 import { slideFromBottom } from "@/constants/animations";
 import AnimalCard from "@/components/common/AnimalCard/AnimalCard";
 import Button from "@/components/UI/button/Button";
+import Modal from "@/components/UI/modal/Modal";
+import ModalForm from "@/components/UI/modalForm/ModalForm";
+import useModalStore from "@/hooks/useModalStore";
 
 import "./searchSection.scss";
 
@@ -14,6 +17,8 @@ const SearchSection = ({ data }) => {
 
   const [currentAnimal, setCurrentAnimal] = useState(null);
   const [isAnimating, setIsAnimating] = useState(false);
+
+  const { isModalOpen } = useModalStore();
 
   // TO DO: It's better if you use one type of function (arrow or regular)
   function getRandomAnimal() {
@@ -64,6 +69,12 @@ const SearchSection = ({ data }) => {
           <Button text={btnAbout.title} href={btnAbout.href} variant="search" />
         )}
       </motion.div>
+
+      {isModalOpen && (
+        <Modal>
+          <ModalForm />
+        </Modal>
+      )}
     </section>
   );
 };
