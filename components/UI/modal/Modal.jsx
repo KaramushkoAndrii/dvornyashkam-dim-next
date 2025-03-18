@@ -1,4 +1,6 @@
 "use client";
+import React from "react";
+import ReactDOM from "react-dom";
 
 import { useTranslations } from "next-intl";
 
@@ -8,16 +10,20 @@ import "./modal.scss";
 
 const Modal = ({ children }) => {
   const t = useTranslations();
-  const { isModalOpen, closeModal, modalContent } = useModalStore();
+  const { isModalOpen, closeModal } = useModalStore();
 
-  const closeHandler = () => {
+  const closeHandler = (e) => {
+    e.preventDefault();
     closeModal();
   };
 
   if (!isModalOpen) return null;
 
-  return (
-    <div className={`modal-container ${isModalOpen ? "modal-open" : ""}`}>
+  return ReactDOM.createPortal(
+    <div
+      className={`modal-container ${isModalOpen ? "modal-open" : ""}`}
+      onClick={closeHandler}
+    >
       <div className="modal">
         <header className="modal__header">
           <h2 className="h2">{t("modal.callback")}</h2>
@@ -25,9 +31,10 @@ const Modal = ({ children }) => {
             X
           </span>
         </header>
-        {modalContent}
+        {children}
       </div>
-    </div>
+    </div>,
+    document.getElementById("root-modal")
   );
 };
 

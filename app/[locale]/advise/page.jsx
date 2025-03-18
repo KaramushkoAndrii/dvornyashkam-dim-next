@@ -4,6 +4,8 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
 import useModalStore from "@/hooks/useModalStore";
+import Modal from "@/components/UI/modal/Modal";
+import ModalForm from "@/components/UI/modalForm/ModalForm";
 import Accordion from "@/components/UI/accordion/Accordion";
 import Button from "@/components/UI/button/Button";
 import {
@@ -19,7 +21,7 @@ import "./page.scss";
 export default function AdvisePage() {
   const t = useTranslations();
 
-  const { openModal } = useModalStore();
+  const { openModal, isModalOpen } = useModalStore();
 
   const openHandler = (evt) => {
     evt.preventDefault();
@@ -39,6 +41,12 @@ export default function AdvisePage() {
       </motion.p>
 
       <Button text={t("buttons.call")} onClick={openHandler} variant="advice" />
+
+      {isModalOpen && (
+        <Modal>
+          <ModalForm />
+        </Modal>
+      )}
     </section>
   );
 }
