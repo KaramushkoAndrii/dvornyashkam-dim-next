@@ -8,16 +8,16 @@ import useModalStore from "@/hooks/useModalStore";
 
 import "./modal.scss";
 
-const Modal = ({ children }) => {
+const Modal = ({ id, children }) => {
   const t = useTranslations();
   const { isModalOpen, closeModal } = useModalStore();
 
   const closeHandler = (e) => {
     e.preventDefault();
-    closeModal();
+    closeModal(id);
   };
 
-  if (!isModalOpen) return null;
+  if (!isModalOpen(id)) return null;
 
   return ReactDOM.createPortal(
     <div

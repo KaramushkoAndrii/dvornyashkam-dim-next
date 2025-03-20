@@ -18,8 +18,6 @@ const SearchSection = ({ data }) => {
   const [currentAnimal, setCurrentAnimal] = useState(null);
   const [isAnimating, setIsAnimating] = useState(false);
 
-  const { isModalOpen } = useModalStore();
-
   // TO DO: It's better if you use one type of function (arrow or regular)
   function getRandomAnimal() {
     const randomAnimalIndex = Math.floor(Math.random() * (items?.length || 0));

@@ -1,10 +1,12 @@
 import { getTranslations } from "next-intl/server";
 import Modal from "@/components/UI/modal/Modal";
 import ModalForm from "@/components/UI/modalForm/ModalForm";
+ModalFormTest;
 
 import TransitionLink from "@/components/utils/TransitionLink";
 
 import "./footer.scss";
+import ModalFormTest from "@/components/UI/modalFormTest/ModalFormTest";
 
 const Footer = async () => {
   const t = await getTranslations();
@@ -18,8 +20,12 @@ const Footer = async () => {
         <h2 className="footer__title h2">{t("hero_section.title")}</h2>
       </div>
 
-      <Modal>
+      <Modal id="modal-form">
         <ModalForm />
+      </Modal>
+
+      <Modal id="test">
+        <ModalFormTest />
       </Modal>
     </footer>
   );

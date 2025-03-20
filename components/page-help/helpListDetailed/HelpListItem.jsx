@@ -16,7 +16,7 @@ const HelpListItem = ({ data, index, translationGroup }) => {
 
   const openHandler = (evt) => {
     evt.preventDefault();
-    openModal();
+    openModal("modal-form");
   };
 
   return (

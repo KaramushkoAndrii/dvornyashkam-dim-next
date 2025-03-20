@@ -21,11 +21,11 @@ import "./page.scss";
 export default function AdvisePage() {
   const t = useTranslations();
 
-  const { openModal, isModalOpen } = useModalStore();
+  const { openModal } = useModalStore();
 
   const openHandler = (evt) => {
     evt.preventDefault();
-    openModal();
+    openModal("modal-form");
   };
 
   return (
@@ -41,10 +41,6 @@ export default function AdvisePage() {
       </motion.p>
 
       <Button text={t("buttons.call")} onClick={openHandler} variant="advice" />
-
-      {/* <Modal>
-        <ModalForm />
-      </Modal> */}
     </section>
   );
 }

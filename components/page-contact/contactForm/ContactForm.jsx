@@ -15,11 +15,11 @@ import ModalForm from "@/components/UI/modalForm/ModalForm";
 
 const ContactForm = ({ data }) => {
   const t = useTranslations();
-  const { openModal, isModalOpen } = useModalStore();
+  const { openModal } = useModalStore();
 
   const openHandler = (evt) => {
     evt.preventDefault();
-    openModal();
+    openModal("test");
   };
 
   // TO DO: isOpen is may be openHandler like in other components?

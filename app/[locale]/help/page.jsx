@@ -14,13 +14,9 @@ import pageData from "@/data/helpPageData";
 import helpList from "@/data/helpList";
 
 import "./page.scss";
-import Modal from "@/components/UI/modal/Modal";
-import ModalForm from "@/components/UI/modalForm/ModalForm";
 
 export default function HelpPage() {
   const t = useTranslations();
-
-  const { isModalOpen } = useModalStore();
 
   const { title, description } = pageData || {};
 
