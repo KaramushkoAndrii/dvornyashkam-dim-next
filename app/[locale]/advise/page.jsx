@@ -4,6 +4,8 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
 import useModalStore from "@/hooks/useModalStore";
+import Modal from "@/components/UI/modal/Modal";
+import ModalForm from "@/components/UI/modalForm/ModalForm";
 import Accordion from "@/components/UI/accordion/Accordion";
 import Button from "@/components/UI/button/Button";
 import {
@@ -23,7 +25,7 @@ export default function AdvisePage() {
 
   const openHandler = (evt) => {
     evt.preventDefault();
-    openModal();
+    openModal("modal-form");
   };
 
   return (

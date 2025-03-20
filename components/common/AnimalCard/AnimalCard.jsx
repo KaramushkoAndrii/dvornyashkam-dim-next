@@ -20,47 +20,49 @@ const AnimalCard = ({ animal }) => {
 
   const openHandler = (evt) => {
     evt.preventDefault();
-    openModal();
+    openModal("modal-form");
   };
 
   return (
-    <motion.div {...rotateAndScale} className="animal">
-      <Link href={getAnimalLink(category, slug)} className="animal__link">
-        <div className="animal__info">
-          <div className="animal__picture">
-            <img src={img} alt={name} />
+    <>
+      <motion.div {...rotateAndScale} className="animal">
+        <Link href={getAnimalLink(category, slug)} className="animal__link">
+          <div className="animal__info">
+            <div className="animal__picture">
+              <img src={img} alt={name} />
+            </div>
+            <div className="animal__description">
+              <h3 className="animal__name h3">{name}</h3>
+              <span className="animal__gender">{gender}</span>
+              <span className="animal__age">{age}</span>
+            </div>
           </div>
-          <div className="animal__description">
-            <h3 className="animal__name h3">{name}</h3>
-            <span className="animal__gender">{gender}</span>
-            <span className="animal__age">{age}</span>
+          <div className="animal__characteristics">
+            <div className="animal__animals">
+              {/* // TO DO: what is 'animals'? May be need add title or select another key word for 'green'/'red' values. */}{" "}
+              <FaDog style={{ fill: animals ? "green" : "red" }} />{" "}
+            </div>
+            <div className="animal__vaccine">
+              {" "}
+              <TbVaccine
+                style={{
+                  fill: vaccine ? "green" : "red",
+                  stroke: vaccine ? "green" : "red",
+                }}
+              />{" "}
+            </div>
           </div>
-        </div>
-        <div className="animal__characteristics">
-          <div className="animal__animals">
-            {/* // TO DO: what is 'animals'? May be need add title or select another key word for 'green'/'red' values. */}{" "}
-            <FaDog style={{ fill: animals ? "green" : "red" }} />{" "}
+          <div className="animal__buttons">
+            <button className="animal__choice" onClick={openHandler}>
+              {t("search.choice")}
+            </button>
+            <button className="animal__choice" onClick={openHandler}>
+              {t("search.trustee")}
+            </button>
           </div>
-          <div className="animal__vaccine">
-            {" "}
-            <TbVaccine
-              style={{
-                fill: vaccine ? "green" : "red",
-                stroke: vaccine ? "green" : "red",
-              }}
-            />{" "}
-          </div>
-        </div>
-        <div className="animal__buttons">
-          <button className="animal__choice" onClick={openHandler}>
-            {t("search.choice")}
-          </button>
-          <button className="animal__choice" onClick={openHandler}>
-            {t("search.trustee")}
-          </button>
-        </div>
-      </Link>
-    </motion.div>
+        </Link>
+      </motion.div>
+    </>
   );
 };
 

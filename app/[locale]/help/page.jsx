@@ -1,7 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
+import useModalStore from "@/hooks/useModalStore";
 
 import { slideFromLeft, heroAnimationX } from "@/constants/animations";
 import HelpListItem from "@/components/page-help/helpListDetailed/HelpListItem";

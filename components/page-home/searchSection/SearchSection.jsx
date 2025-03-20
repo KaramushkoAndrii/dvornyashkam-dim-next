@@ -6,6 +6,9 @@ import { motion } from "framer-motion";
 import { slideFromBottom } from "@/constants/animations";
 import AnimalCard from "@/components/common/AnimalCard/AnimalCard";
 import Button from "@/components/UI/button/Button";
+import Modal from "@/components/UI/modal/Modal";
+import ModalForm from "@/components/UI/modalForm/ModalForm";
+import useModalStore from "@/hooks/useModalStore";
 
 import "./searchSection.scss";
 
