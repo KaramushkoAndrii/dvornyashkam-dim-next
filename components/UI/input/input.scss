@@ -15,7 +15,7 @@
     &.filled {
       top: -13px;
       left: 0;
-      font-size: clamp($text-sm, 3vw, 40px);
+      font-size: clamp($text-sm, 3vw, $text-2xl);
       color: $white;
     }
   }

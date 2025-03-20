@@ -53,12 +53,6 @@ export default function HelpPage() {
           />
         ))}
       </ul>
-
-      {isModalOpen && (
-        <Modal>
-          <ModalForm />
-        </Modal>
-      )}
     </section>
   );
 }

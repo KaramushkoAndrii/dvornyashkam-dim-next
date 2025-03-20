@@ -1,3 +1,5 @@
+"use client";
+
 import { useForm } from "react-hook-form";
 import { useTranslations } from "next-intl";
 import { validationRules } from "@/constants/validationRules";
@@ -28,7 +30,7 @@ const ModalForm = () => {
     reset();
   };
 
-  console.log(watch("example"));
+  // console.log(watch("example"));
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="modal__body">

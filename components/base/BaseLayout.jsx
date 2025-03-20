@@ -128,7 +128,6 @@ export default async function BaseLayout({ children, locale }) {
           <DonateSection />
           <Footer />
           <CustomCursor />
-          {/* <Modal /> */}
           <div id="root-modal"></div>
         </NextIntlClientProvider>
       </body>

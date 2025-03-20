@@ -66,12 +66,6 @@ const ContactForm = ({ data }) => {
           variant="contact-form"
         />
       </motion.ul>
-
-      {isModalOpen && (
-        <Modal>
-          <ModalForm />
-        </Modal>
-      )}
     </>
   );
 };

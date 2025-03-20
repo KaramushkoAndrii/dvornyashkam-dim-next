@@ -69,12 +69,6 @@ const SearchSection = ({ data }) => {
           <Button text={btnAbout.title} href={btnAbout.href} variant="search" />
         )}
       </motion.div>
-
-      {isModalOpen && (
-        <Modal>
-          <ModalForm />
-        </Modal>
-      )}
     </section>
   );
 };

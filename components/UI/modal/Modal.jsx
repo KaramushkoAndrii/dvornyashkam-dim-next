@@ -24,7 +24,7 @@ const Modal = ({ children }) => {
       className={`modal-container ${isModalOpen ? "modal-open" : ""}`}
       onClick={closeHandler}
     >
-      <div className="modal">
+      <div className="modal" onClick={(e) => e.stopPropagation()}>
         <header className="modal__header">
           <h2 className="h2">{t("modal.callback")}</h2>
           <span className="modal__close" onClick={closeHandler}>

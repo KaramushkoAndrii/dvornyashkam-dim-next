@@ -42,11 +42,9 @@ export default function AdvisePage() {
 
       <Button text={t("buttons.call")} onClick={openHandler} variant="advice" />
 
-      {isModalOpen && (
-        <Modal>
-          <ModalForm />
-        </Modal>
-      )}
+      {/* <Modal>
+        <ModalForm />
+      </Modal> */}
     </section>
   );
 }
