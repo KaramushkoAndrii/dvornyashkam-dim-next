@@ -27,7 +27,7 @@
     border-radius: $main-border-radius;
 
     color: $white;
-    background-color: $primary;
+    background-color: $secondary;
 
     &--item {
       position: relative;
@@ -51,7 +51,7 @@
         bottom: calc(-16px - 2px);
         height: 1px;
         width: 100%;
-        background-color: $secondary;
+        background-color: $white;
         opacity: 0.7;
       }
     }
