@@ -1,6 +1,6 @@
 .footer {
   @include container();
-  background-color: $primary;
+  background-color: $secondary;
   border-radius: $main-border-radius $main-border-radius 0 0;
 
   &__main {
@@ -11,5 +11,6 @@
 
   &__title {
     max-width: 75%;
+    color: $white;
   }
 }
