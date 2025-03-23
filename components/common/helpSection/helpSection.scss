@@ -1,7 +1,9 @@
 .help {
-  background-color: $primary;
+  background-color: $secondary;
   border-radius: $main-border-radius;
   overflow: hidden;
+
+  color: white;
 
   &__content {
     @include container($marginBottom: 32px);
@@ -21,7 +23,6 @@
 
     &__icon {
       width: clamp($text-md, 4vw, $text-2xl);
-      // height: clamp($text-md, 4vw, $text-2xl);
     }
 
     &__description {
