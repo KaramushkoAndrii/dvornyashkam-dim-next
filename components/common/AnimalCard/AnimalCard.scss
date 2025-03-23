@@ -1,5 +1,5 @@
 .animal {
-  background-color: $primary;
+  background-color: $secondary;
 
   border-radius: 32px;
 
@@ -47,6 +47,8 @@
     height: fit-content;
 
     padding: 8px 0;
+
+    color: $white;
   }
 
   &__name {
@@ -102,9 +104,10 @@
   &__choice {
     padding: 16px 24px;
     border-radius: 16px;
+    border: 1px solid $white;
 
     color: $white;
-    background-color: $secondary;
+    background-color: transparent;
   }
 
   @media (min-width: $large) {
