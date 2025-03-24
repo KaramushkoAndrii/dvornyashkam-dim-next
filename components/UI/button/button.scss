@@ -47,6 +47,7 @@
 
   &--contact-form {
     flex-grow: 1;
+    border: 3px solid $white;
 
     @media (min-width: $tablet) {
       min-width: 600px;

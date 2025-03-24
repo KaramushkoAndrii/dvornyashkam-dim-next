@@ -13,16 +13,12 @@
     margin-bottom: 24px;
   }
 
-  // svg {
-  //   fill: $primary;
-  // }
-
   &__info {
     display: flex;
     flex-direction: column;
     gap: 16px;
     padding: 24px;
-    background-color: $primary;
+    background-color: $secondary;
     border-radius: $main-border-radius;
   }
 

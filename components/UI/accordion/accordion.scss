@@ -66,9 +66,9 @@
     transform: translateY(-50%) rotate(180deg);
   }
 
-  .rules & {
-    background-color: $primary;
-  }
+  // .rules & {
+  //   // background-color: $primary;
+  // }
 
   .rules &__header {
     background-color: $secondary;
