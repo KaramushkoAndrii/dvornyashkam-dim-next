@@ -2,7 +2,7 @@
   margin: 0 auto;
   max-width: 480px;
 
-  background-color: $secondary;
+  // background-color: $secondary;
   border-radius: $main-border-radius;
 
   &__item {
@@ -19,7 +19,8 @@
     position: relative;
     width: 100%;
     padding: 16px 48px 16px 32px;
-    background-color: $primary;
+    color: $white;
+    background-color: $secondary;
     border: 0;
     border-radius: $main-border-radius;
     font-size: clamp($text-md, 2vw, 64px);
@@ -48,7 +49,7 @@
     border-bottom-left-radius: $main-border-radius;
     border-bottom-right-radius: $main-border-radius;
     font-size: clamp($text-md, 1.75vw, 46px);
-    color: $primary;
+    color: black;
   }
 
   &__arrow {
@@ -57,7 +58,7 @@
     right: 20px;
     display: block;
     width: 30px;
-    fill: $secondary;
+    fill: $white;
     transform: translateY(-50%);
   }
 
@@ -65,9 +66,9 @@
     transform: translateY(-50%) rotate(180deg);
   }
 
-  .rules & {
-    background-color: $primary;
-  }
+  // .rules & {
+  //   // background-color: $primary;
+  // }
 
   .rules &__header {
     background-color: $secondary;

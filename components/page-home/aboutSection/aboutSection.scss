@@ -26,7 +26,8 @@
 
     border-radius: $main-border-radius;
 
-    background-color: $primary;
+    color: $white;
+    background-color: $secondary;
 
     &--item {
       position: relative;
@@ -50,7 +51,7 @@
         bottom: calc(-16px - 2px);
         height: 1px;
         width: 100%;
-        background-color: $secondary;
+        background-color: $white;
         opacity: 0.7;
       }
     }
@@ -72,6 +73,7 @@
     width: 100%;
     aspect-ratio: 3 / 2;
 
+    color: $white;
     background-image: url(/images/aboutBg.png);
     background-position: center;
     background-repeat: no-repeat;

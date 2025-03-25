@@ -6,16 +6,20 @@
   margin: 32px 0;
   border-radius: $main-border-radius;
 
-  background-color: $primary;
+  background-color: $secondary;
 
   &__item {
     min-width: 185px;
 
     svg {
-      width: 20px;
+      width: 30px;
       height: 100%;
-      fill: $secondary;
+      fill: $white;
     }
+  }
+
+  &__name {
+    color: black;
   }
 
   &__content {
@@ -28,5 +32,6 @@
   &__link {
     display: flex;
     font-size: clamp($text-sm, 3vw, $text-2xl);
+    color: $white;
   }
 }

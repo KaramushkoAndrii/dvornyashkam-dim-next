@@ -7,7 +7,8 @@
 
   border-radius: $main-border-radius;
 
-  background-color: $purple;
+  color: $white;
+  background-color: $secondary;
 
   &__footer {
     position: relative;
@@ -22,7 +23,7 @@
 
     border-radius: none;
 
-    background-color: $purple;
+    background-color: $secondary;
 
     &::after {
       position: absolute;
@@ -47,10 +48,11 @@
     padding: 8px 64px;
     max-width: max-content;
 
-    border: 1px solid $secondary;
+    border: 3px solid $white;
     border-radius: $main-border-radius;
 
-    background-color: transparent;
+    color: black;
+    background-color: $white;
   }
 
   @media (min-width: $tablet) {

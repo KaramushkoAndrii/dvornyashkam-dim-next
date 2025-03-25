@@ -1,7 +1,7 @@
 .donate {
   @include container($marginTop: 160px, $marginBottom: 64px);
   position: relative;
-  background-color: $primary;
+  background-color: $secondary;
 
   border-radius: $main-border-radius;
 
@@ -28,6 +28,7 @@
 
   &__title {
     text-align: center;
+    color: $white;
   }
 
   &__list {
@@ -66,7 +67,6 @@
     display: flex;
 
     width: 80px;
-    // height: 80px;
   }
 
   &__img {

@@ -1,8 +1,6 @@
 .search {
   @include container($paddingY: 0, $marginTop: 0);
 
-  background-color: $secondary;
-
   &__container {
     width: 65%;
     margin: 0 auto;
