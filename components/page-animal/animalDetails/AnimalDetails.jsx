@@ -7,6 +7,7 @@ import { useTranslations } from "next-intl";
 
 import { FaDog } from "react-icons/fa6";
 import { TbVaccine } from "react-icons/tb";
+import useModalStore from "@/hooks/useModalStore";
 
 import Button from "@/components/UI/button/Button";
 
@@ -19,6 +20,8 @@ export default function AnimalDetails({ animal }) {
 
   const t = useTranslations();
 
+  const { openModal } = useModalStore();
+
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -29,6 +32,11 @@ export default function AnimalDetails({ animal }) {
     };
   }, []);
 
+  const openHandler = (evt) => {
+    evt.preventDefault();
+    openModal("modal-form");
+  };
+
   const closeHandler = async () => {
     setIsOpen(false);
 
@@ -38,11 +46,7 @@ export default function AnimalDetails({ animal }) {
   };
 
   return (
-    <dialog
-      className={`animal-details ${isOpen ? "open" : ""}`}
-      open
-      onClick={closeHandler}
-    >
+    <dialog className={`animal-details ${isOpen ? "open" : ""}`} open>
       {animal && (
         <div className="animal-details__content">
           <header className="animal-details__header">
@@ -86,12 +90,12 @@ export default function AnimalDetails({ animal }) {
               <Button
                 className="animal-details__action"
                 text={t("buttons.house")}
-                onClick={(evt) => console.log(evt)}
+                onClick={openHandler}
               />
               <Button
                 className="animal-details__action"
                 text={t("buttons.guard")}
-                onClick={(evt) => console.log(evt)}
+                onClick={openHandler}
               />
             </footer>
           </section>
