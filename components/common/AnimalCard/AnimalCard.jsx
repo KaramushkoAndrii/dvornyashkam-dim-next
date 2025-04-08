@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "@/i18n/routing";
 
 import useModalStore from "@/hooks/useModalStore";
-import { rotateAndScale } from "@/constants/animations";
+import { slideFromBottom } from "@/constants/animations";
 import { FaDog } from "react-icons/fa6";
 import { TbVaccine } from "react-icons/tb";
 
@@ -25,7 +25,7 @@ const AnimalCard = ({ animal }) => {
 
   return (
     <>
-      <motion.div {...rotateAndScale} className="animal">
+      <motion.div {...slideFromBottom} className="animal">
         <Link href={getAnimalLink(category, slug)} className="animal__link">
           <div className="animal__info">
             <div className="animal__picture">
