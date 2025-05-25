@@ -40,6 +40,11 @@
     background-color: $primary;
 
     overflow: auto;
+
+    @media (min-width: $laptop) {
+      max-width: 80%;
+      padding: 0 20px;
+    }
   }
 
   &__header {
@@ -70,6 +75,10 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
+
+    @media (min-width: $laptop) {
+      flex-direction: row;
+    }
   }
 
   &__img-container {
@@ -85,6 +94,13 @@
     @media (min-width: $large) {
       scrollbar-width: auto;
     }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   &__characteristic {

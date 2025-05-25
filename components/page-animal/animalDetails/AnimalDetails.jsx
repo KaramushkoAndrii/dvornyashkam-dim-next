@@ -68,38 +68,40 @@ export default function AnimalDetails({ animal }) {
               ))}
             </ul> */}
             <Slider data={animal.moreImg} />
-            <h3 className="h3">{animal.name}</h3>
-            <h3 className="h3">{animal.gender}</h3>
-            <h3 className="h3">{animal.age}</h3>
-            <div className="animal-details__characteristic">
-              <i>
-                {" "}
-                <FaDog
-                  style={{ fill: animal.animals ? "green" : "red" }}
-                />{" "}
-              </i>
-              <i>
-                {" "}
-                <TbVaccine
-                  style={{
-                    fill: animal.vaccine ? "green" : "red",
-                    stroke: animal.vaccine ? "green" : "red",
-                  }}
-                />{" "}
-              </i>
+            <div className="animal-details__wrapper">
+              <h3 className="h3">{animal.name}</h3>
+              <h3 className="h3">{animal.gender}</h3>
+              <h3 className="h3">{animal.age}</h3>
+              <div className="animal-details__characteristic">
+                <i>
+                  {" "}
+                  <FaDog
+                    style={{ fill: animal.animals ? "green" : "red" }}
+                  />{" "}
+                </i>
+                <i>
+                  {" "}
+                  <TbVaccine
+                    style={{
+                      fill: animal.vaccine ? "green" : "red",
+                      stroke: animal.vaccine ? "green" : "red",
+                    }}
+                  />{" "}
+                </i>
+              </div>
+              <footer className="animal-details__footer">
+                <Button
+                  className="animal-details__action"
+                  text={t("buttons.house")}
+                  onClick={openHandler}
+                />
+                <Button
+                  className="animal-details__action"
+                  text={t("buttons.guard")}
+                  onClick={openHandler}
+                />
+              </footer>
             </div>
-            <footer className="animal-details__footer">
-              <Button
-                className="animal-details__action"
-                text={t("buttons.house")}
-                onClick={openHandler}
-              />
-              <Button
-                className="animal-details__action"
-                text={t("buttons.guard")}
-                onClick={openHandler}
-              />
-            </footer>
           </section>
         </div>
       )}
