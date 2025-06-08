@@ -15,8 +15,7 @@ const HeroSection = ({ data }) => {
       <h1 className="hidden">{pageTitle}</h1>
       <div className="hero__wrapper">
         <video className="hero__video" autoPlay muted loop playsInline>
-          <source src="/videos/IMG_0350.mp4" type="video/mp4" />
-          <source src="/videos/IMG_0350.webm" type="video/webm" />
+          <source src="/videos/hero.mp4" type="video/mp4" />
         </video>
       </div>
 
