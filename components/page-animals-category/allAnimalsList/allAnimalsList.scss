@@ -8,3 +8,14 @@
     gap: 50px;
   }
 }
+
+.all-animals__item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: scale(1);
+  box-sizing: border-box;
+  border-radius: 35px;
+  &--active {
+    transform: scale(1.02);
+    box-shadow: 0px 20px 24px $secondary;
+  }
+}
