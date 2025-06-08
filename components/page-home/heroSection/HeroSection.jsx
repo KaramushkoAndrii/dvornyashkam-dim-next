@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, delay } from "framer-motion";
+// import YouTube from "react-youtube";
 
 import { slideFromLeft } from "@/constants/animations";
 
@@ -12,16 +13,25 @@ const HeroSection = ({ data }) => {
   return (
     <section className="hero">
       <h1 className="hidden">{pageTitle}</h1>
-      <motion.h2 {...slideFromLeft} className="hero__title h2">
-        {title}
-      </motion.h2>
-      <motion.h3
-        {...slideFromLeft}
-        transition={{ ...slideFromLeft.transition, delay: 0.5 }}
-        className="hero__description h3"
-      >
-        {description}
-      </motion.h3>
+      <div className="hero__wrapper">
+        <video className="hero__video" autoPlay muted loop playsInline>
+          <source src="/videos/IMG_0350.mp4" type="video/mp4" />
+          <source src="/videos/IMG_0350.webm" type="video/webm" />
+        </video>
+      </div>
+
+      <div className="hero__content">
+        <motion.h2 {...slideFromLeft} className="hero__title h2">
+          {title}
+        </motion.h2>
+        <motion.h3
+          {...slideFromLeft}
+          transition={{ ...slideFromLeft.transition, delay: 0.5 }}
+          className="hero__description h3"
+        >
+          {description}
+        </motion.h3>
+      </div>
     </section>
   );
 };
