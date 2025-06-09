@@ -6,6 +6,7 @@ import { useRouter } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 
 import Slider from "@/components/UI/slider/Slider";
+import Tooltip from "@/components/UI/tooltip/Tooltip";
 import { FaDog } from "react-icons/fa6";
 import { TbVaccine } from "react-icons/tb";
 import useModalStore from "@/hooks/useModalStore";
@@ -56,23 +57,12 @@ export default function AnimalDetails({ animal }) {
             </button>
           </header>
           <section className="animal-details__info">
-            {/* <ul className="animal-details__img-container">
-              {animal.moreImg.map((img, indx) => (
-                <li key={indx}>
-                  <img
-                    className="animal-details__img"
-                    src={img}
-                    alt={animal.name}
-                  />
-                </li>
-              ))}
-            </ul> */}
             <Slider data={animal.moreImg} />
             <div className="animal-details__wrapper">
               <h3 className="h3">{animal.name}</h3>
               <h3 className="h3">{animal.gender}</h3>
               <h3 className="h3">{animal.age}</h3>
-              <div className="animal-details__characteristic">
+              {/* <div className="animal-details__characteristic">
                 <i>
                   {" "}
                   <FaDog
@@ -88,6 +78,27 @@ export default function AnimalDetails({ animal }) {
                     }}
                   />{" "}
                 </i>
+              </div> */}
+              <div className="animal-details__characteristic">
+                <Tooltip
+                  text={
+                    animal.animals
+                      ? "Дружит с животными"
+                      : "Не дружит с животными"
+                  }
+                >
+                  <FaDog style={{ fill: animal.animals ? "green" : "red" }} />
+                </Tooltip>
+                <Tooltip
+                  text={animal.vaccine ? "Вакцинирован" : "Не вакцинирован"}
+                >
+                  <TbVaccine
+                    style={{
+                      fill: animal.vaccine ? "green" : "red",
+                      stroke: animal.vaccine ? "green" : "red",
+                    }}
+                  />
+                </Tooltip>
               </div>
               <footer className="animal-details__footer">
                 <Button
