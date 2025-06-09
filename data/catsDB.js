@@ -17,6 +17,7 @@ const catsDB = [
     ],
     vaccine: true,
     animals: true,
+    castration: true,
   },
   {
     id: 12,
@@ -33,6 +34,7 @@ const catsDB = [
     ],
     vaccine: true,
     animals: true,
+    castration: false,
   },
   {
     id: 13,

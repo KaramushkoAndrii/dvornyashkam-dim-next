@@ -9,6 +9,7 @@ import Slider from "@/components/UI/slider/Slider";
 import Tooltip from "@/components/UI/tooltip/Tooltip";
 import { FaDog } from "react-icons/fa6";
 import { TbVaccine } from "react-icons/tb";
+import { FaNotesMedical } from "react-icons/fa";
 import useModalStore from "@/hooks/useModalStore";
 
 import Button from "@/components/UI/button/Button";
@@ -62,23 +63,6 @@ export default function AnimalDetails({ animal }) {
               <h3 className="h3">{animal.name}</h3>
               <h3 className="h3">{animal.gender}</h3>
               <h3 className="h3">{animal.age}</h3>
-              {/* <div className="animal-details__characteristic">
-                <i>
-                  {" "}
-                  <FaDog
-                    style={{ fill: animal.animals ? "green" : "red" }}
-                  />{" "}
-                </i>
-                <i>
-                  {" "}
-                  <TbVaccine
-                    style={{
-                      fill: animal.vaccine ? "green" : "red",
-                      stroke: animal.vaccine ? "green" : "red",
-                    }}
-                  />{" "}
-                </i>
-              </div> */}
               <div className="animal-details__characteristic">
                 <Tooltip
                   text={
@@ -97,6 +81,13 @@ export default function AnimalDetails({ animal }) {
                       fill: animal.vaccine ? "green" : "red",
                       stroke: animal.vaccine ? "green" : "red",
                     }}
+                  />
+                </Tooltip>
+                <Tooltip
+                  text={animal.castration ? "Кастрирован" : "Не кастрирован"}
+                >
+                  <FaNotesMedical
+                    style={{ fill: animal.castration ? "green" : "red" }}
                   />
                 </Tooltip>
               </div>
