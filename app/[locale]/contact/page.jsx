@@ -74,7 +74,8 @@ export default function ContactPage() {
       <div className="contact-page__contact">
         <VisitedUs data={visitedUsDate} />
 
-        <Map data={""} />
+        {/* <Map data={""} /> */}
+        <Map position={[50.510228483551636, 30.41187174733428]} />
       </div>
     </section>
   );
