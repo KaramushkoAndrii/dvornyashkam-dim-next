@@ -17,11 +17,34 @@ import "./page.scss";
 export default async function HomePage() {
   const t = await getTranslations();
 
+  const res = await fetch("http://localhost:1337/api/hero-section", {
+    next: { revalidate: 60 },
+  });
+
+  if (!res.ok) {
+    throw new Error("Faliet to fetch");
+  }
+
+  const json = await res.json();
+
+  const aboutData = await fetch(
+    "http://localhost:1337/api/about-section?populate=*",
+    {
+      next: { revalidate: 60 },
+    }
+  );
+
+  if (!aboutData.ok) {
+    throw new Error("About failed to frtch");
+  }
+
+  const aboutJson = await aboutData.json();
+
   // TO DO: get DATA for HeroSection from API
   const dataHeroSection = {
-    pageTitle: "Притулок для тварин dvornyashkam_dim",
-    title: t("hero_section.title"),
-    description: t("hero_section.sub-title"),
+    pageTitle: json.data?.pageTitle || "",
+    title: json.data?.title || "",
+    description: json.data?.description || "",
   };
 
   // TO DO: get DATA for SearchSection from API
@@ -39,13 +62,18 @@ export default async function HomePage() {
 
   // TO DO: get DATA for AboutSection from API
   const dataAboutSection = {
-    title: t("about.title"),
-    description: t("about.description"),
-    statistics: aboutListItem.map(({ symbol, count, text }) => ({
-      symbol,
-      count,
-      text: t(text),
-    })),
+    // title: t("about.title"),
+    title: aboutJson.data?.title || "",
+    // description: t("about.description"),
+    description: aboutJson.data?.description || "",
+
+    statistics: aboutJson.data?.statistic.map(
+      ({ symbol, count, description }) => ({
+        symbol,
+        count,
+        description,
+      })
+    ),
     cards: aboutList.map(({ title, content }) => ({
       title: t(`about-list.${title}`),
       description: t(`about-list.${content}`),
