@@ -40,6 +40,23 @@ export default async function HomePage() {
 
   const aboutJson = await aboutData.json();
 
+  //GET DOGSDB
+
+  const resDogs = await fetch(
+    "http://localhost:1337/api/dogs?populate=img&populate=moreImg",
+    {
+      next: { revalidate: 60 },
+    }
+  );
+
+  if (!resDogs.ok) {
+    throw new Error("Error with get DB");
+  }
+
+  const dogsDB2 = await resDogs.json();
+
+  // console.log(dogsDB2);
+
   const dataHeroSection = {
     pageTitle: json.data?.pageTitle || "",
     title: json.data?.title || "",
@@ -90,7 +107,7 @@ export default async function HomePage() {
       slug: "dogs",
       title: t("lists-title.dogs"),
       btnTitle: t("buttons.more-dogs"),
-      items: dogsDB.slice(0, 3),
+      items: dogsDB2.data.slice(0, 3),
     },
   ];
 

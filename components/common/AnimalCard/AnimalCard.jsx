@@ -17,6 +17,7 @@ const AnimalCard = ({ animal }) => {
 
   const t = useTranslations();
   const { openModal } = useModalStore();
+  const API_URL = "http://localhost:1337";
 
   const openHandler = (evt) => {
     evt.preventDefault();
@@ -29,7 +30,7 @@ const AnimalCard = ({ animal }) => {
         <Link href={getAnimalLink(category, slug)} className="animal__link">
           <div className="animal__info">
             <div className="animal__picture">
-              <img src={img} alt={name} />
+              <img src={`${API_URL}${img?.url}`} alt={name} />
             </div>
             <div className="animal__description">
               <h3 className="animal__name h3">{name}</h3>
