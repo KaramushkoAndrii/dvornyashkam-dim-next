@@ -40,7 +40,6 @@ export default async function HomePage() {
 
   const aboutJson = await aboutData.json();
 
-  // TO DO: get DATA for HeroSection from API
   const dataHeroSection = {
     pageTitle: json.data?.pageTitle || "",
     title: json.data?.title || "",
@@ -60,11 +59,10 @@ export default async function HomePage() {
     items: dogsDB,
   };
 
-  // TO DO: get DATA for AboutSection from API
+  // GET data for About from API
+
   const dataAboutSection = {
-    // title: t("about.title"),
     title: aboutJson.data?.title || "",
-    // description: t("about.description"),
     description: aboutJson.data?.description || "",
 
     statistics: aboutJson.data?.statistic.map(
@@ -74,9 +72,9 @@ export default async function HomePage() {
         description,
       })
     ),
-    cards: aboutList.map(({ title, content }) => ({
-      title: t(`about-list.${title}`),
-      description: t(`about-list.${content}`),
+    cards: aboutJson.data?.aboutItem.map(({ header, description }) => ({
+      title: header,
+      description,
     })),
   };
 
@@ -96,11 +94,25 @@ export default async function HomePage() {
     },
   ];
 
-  // TO DO: get DATA for HelpSection from API
+  // Get data for helpSectionFrom API
+
+  const resHelp = await fetch(
+    "http://localhost:1337/api/help-section?populate=*",
+    {
+      next: { revalidate: 60 },
+    }
+  );
+
+  if (!resHelp.ok) {
+    throw new Error("Faliet to feth HelpSection");
+  }
+
+  const dataHelp = await resHelp.json();
+
   const dataHelpSection = {
-    title: t("help-section.title"),
-    description: t("help-section.description"),
-    items: helpList.map((item) => ({ text: t(item) })),
+    title: dataHelp.data?.title || "",
+    description: dataHelp.data?.description || "",
+    items: dataHelp.data.HelpListItem.map((item) => item),
     btn: { title: t("buttons.more"), href: "/help" },
   };
 
