@@ -55,6 +55,10 @@ export default async function HomePage() {
 
   const dogsDB2 = await resDogs.json();
 
+  const catsData = dogsDB2.data
+    .filter((item) => item.category != "dogs")
+    .slice(0, 3);
+
   // console.log(dogsDB2);
 
   const dataHeroSection = {
@@ -101,7 +105,8 @@ export default async function HomePage() {
       slug: "cats",
       title: t("lists-title.cats"),
       btnTitle: t("buttons.more-cats"),
-      items: catsDB.slice(0, 3),
+      items: catsData,
+      // items: catsDB.slice(0, 3),
     },
     {
       slug: "dogs",
