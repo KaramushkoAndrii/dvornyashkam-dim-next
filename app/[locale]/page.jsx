@@ -6,135 +6,148 @@ import AboutSection from "@/components/page-home/aboutSection/AboutSection";
 import OurAnimals from "@/components/page-home/ourAnimals/OurAnimals";
 import HelpSection from "@/components/common/helpSection/HelpSection";
 
-import dogsDB from "@/data/dogsDB";
-import catsDB from "@/data/catsDB";
-import aboutList from "@/data/aboutList";
-import aboutListItem from "@/data/aboutInfoList";
-import helpList from "@/data/helpList";
+// import dogsDB from "@/data/dogsDB";
+// import catsDB from "@/data/catsDB";
+// import aboutList from "@/data/aboutList";
+// import aboutListItem from "@/data/aboutInfoList";
+// import helpList from "@/data/helpList";
 
 import "./page.scss";
+import next from "next";
 
 export default async function HomePage() {
   const t = await getTranslations();
 
-  const res = await fetch("http://localhost:1337/api/hero-section", {
+  const heroData = await fetch("http://localhost:1337/api/hero-section", {
     next: { revalidate: 60 },
-  });
-
-  if (!res.ok) {
-    throw new Error("Faliet to fetch");
-  }
-
-  const json = await res.json();
+  })
+    .then((res) => {
+      if (!res.ok) throw new Error("Error with fetch hero-section");
+      return res.json();
+    })
+    .catch((e) => console.error(e));
 
   const aboutData = await fetch(
     "http://localhost:1337/api/about-section?populate=*",
     {
       next: { revalidate: 60 },
     }
-  );
+  )
+    .then((res) => {
+      if (!res.ok) throw new Error("Error with fetch about-section");
+      return res.json();
+    })
+    .catch((e) => console.error(e));
 
-  if (!aboutData.ok) {
-    throw new Error("About failed to frtch");
-  }
-
-  const aboutJson = await aboutData.json();
-
-  //GET DOGSDB
-
-  const resDogs = await fetch(
+  //GET AnimalsDB
+  const animalsDB = await fetch(
     "http://localhost:1337/api/dogs?populate=img&populate=moreImg",
     {
       next: { revalidate: 60 },
     }
-  );
+  )
+    .then((res) => {
+      if (!res.ok) throw new Error("Error with get data from animalsDB");
+      return res.json();
+    })
+    .catch((e) => console.error(e));
 
-  if (!resDogs.ok) {
-    throw new Error("Error with get DB");
-  }
-
-  const dogsDB2 = await resDogs.json();
-
-  const catsData = dogsDB2.data
+  //CREATE DB ONLY FOR CATS
+  const catsData = animalsDB.data
     .filter((item) => item.category != "dogs")
     .slice(0, 3);
 
-  // console.log(dogsDB2);
-
   const dataHeroSection = {
-    pageTitle: json.data?.pageTitle || "",
-    title: json.data?.title || "",
-    description: json.data?.description || "",
+    pageTitle: heroData.data?.pageTitle || "",
+    title: heroData.data?.title || "",
+    description: heroData.data?.description || "",
   };
 
-  // TO DO: get DATA for SearchSection from API
+  // Get DATA for SearchSection from API
+  const searchData = await fetch("http://localhost:1337/api/search-section", {
+    next: { revalidate: 60 },
+  })
+    .then((res) => {
+      if (!res.ok) throw new Error("Error with searc-section");
+      return res.json();
+    })
+    .catch((e) => console.error(e));
+
   const dataSearchSection = {
-    title: t("search.title"),
+    title: searchData.data?.title,
     btnAbout: {
-      title: t("buttons.about"),
+      title: searchData.data?.btnAbout,
       href: "/about",
     },
     btnRerol: {
-      title: t("buttons.rerol"),
+      title: searchData.data?.btnRerol,
     },
-    items: dogsDB,
+    items: animalsDB,
   };
 
   // GET data for About from API
-
   const dataAboutSection = {
-    title: aboutJson.data?.title || "",
-    description: aboutJson.data?.description || "",
+    title: aboutData.data?.title || "",
+    description: aboutData.data?.description || "",
 
-    statistics: aboutJson.data?.statistic.map(
+    statistics: aboutData.data?.statistic.map(
       ({ symbol, count, description }) => ({
         symbol,
         count,
         description,
       })
     ),
-    cards: aboutJson.data?.aboutItem.map(({ header, description }) => ({
+    cards: aboutData.data?.aboutItem.map(({ header, description }) => ({
       title: header,
       description,
     })),
   };
 
   // TO DO: get DATA for OurAnimals from API
+  const ourAnimalsData = await fetch(
+    "http://localhost:1337/api/our-animal?populate=dogs&populate=cats",
+    {
+      next: { revalidate: 60 },
+    }
+  )
+    .then((res) => {
+      if (!res.ok) throw new Error("Failed with animals data");
+      return res.json();
+    })
+    .catch((e) => console.error(e));
+
   const dataOurAnimals = [
     {
-      slug: "cats",
-      title: t("lists-title.cats"),
-      btnTitle: t("buttons.more-cats"),
+      slug: ourAnimalsData.data?.cats[0]?.slug || "",
+      title: ourAnimalsData.data?.cats[0]?.title || "",
+      btnTitle: ourAnimalsData.data?.cats[0]?.btnTitle || "",
       items: catsData,
-      // items: catsDB.slice(0, 3),
     },
     {
-      slug: "dogs",
-      title: t("lists-title.dogs"),
-      btnTitle: t("buttons.more-dogs"),
-      items: dogsDB2.data.slice(0, 3),
+      slug: ourAnimalsData.data?.dogs[0]?.slug || "",
+      title: ourAnimalsData.data?.dogs[0]?.title || "",
+      btnTitle: ourAnimalsData.data?.dogs[0]?.btnTitle || "",
+      items: animalsDB.data.slice(0, 3),
     },
   ];
 
   // Get data for helpSectionFrom API
-
-  const resHelp = await fetch(
+  const helpData = await fetch(
     "http://localhost:1337/api/help-section?populate=*",
     {
       next: { revalidate: 60 },
     }
-  );
-
-  if (!resHelp.ok) {
-    throw new Error("Faliet to feth HelpSection");
-  }
-
-  const dataHelp = await resHelp.json();
+  )
+    .then((res) => {
+      if (!res.ok) throw new Error("Error with help-data");
+      return res.json();
+    })
+    .catch((e) => console.error(e));
 
   const dataHelpSection = {
-    title: dataHelp.data?.title || "",
-    description: dataHelp.data?.description || "",
-    items: dataHelp.data.HelpListItem.map((item) => item),
+    title: helpData.data?.title || "",
+    description: helpData.data?.description || "",
+    items: helpData.data.HelpListItem.map((item) => item),
     btn: { title: t("buttons.more"), href: "/help" },
   };
 
