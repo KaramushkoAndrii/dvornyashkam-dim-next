@@ -18,7 +18,7 @@ const AccordionItem = ({ data, onClick, isOpen }) => {
         }
       >
         <div className="accordion__body" ref={itemRef}>
-          {data.content}
+          {data.description}
         </div>
       </div>
     </li>

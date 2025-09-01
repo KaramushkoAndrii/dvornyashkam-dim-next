@@ -7,12 +7,6 @@ import OurAnimals from "@/components/page-home/ourAnimals/OurAnimals";
 import HelpSection from "@/components/common/helpSection/HelpSection";
 import { fetchApi } from "@/lib/api";
 
-// import dogsDB from "@/data/dogsDB";
-// import catsDB from "@/data/catsDB";
-// import aboutList from "@/data/aboutList";
-// import aboutListItem from "@/data/aboutInfoList";
-// import helpList from "@/data/helpList";
-
 import "./page.scss";
 import next from "next";
 
