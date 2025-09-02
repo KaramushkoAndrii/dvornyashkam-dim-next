@@ -1,4 +1,3 @@
-import { getTranslations } from "next-intl/server";
 import { fetchApi } from "@/lib/api";
 import AdvicePage from "@/components/page-advice/AdvicePage";
 
