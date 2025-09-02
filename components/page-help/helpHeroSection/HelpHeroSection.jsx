@@ -12,10 +12,14 @@ const HelpHeroSection = ({ content, helpData, items }) => {
   //   console.log(helpData);
 
   return (
-    <>
+    <section className="help-page">
       <header className="help-page__header">
-        <h2 className="h2">{title}</h2>
-        <p>{description}</p>
+        <motion.h2 {...slideFromLeft} {...heroAnimationX} className="h2">
+          {title}
+        </motion.h2>
+        <motion.p {...slideFromLeft} {...heroAnimationX}>
+          {description}
+        </motion.p>
       </header>
       <HelpSection data={helpData} />
 
@@ -29,7 +33,7 @@ const HelpHeroSection = ({ content, helpData, items }) => {
           />
         ))}
       </ul>
-    </>
+    </section>
   );
 };
 
