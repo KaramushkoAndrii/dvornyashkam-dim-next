@@ -4,6 +4,9 @@ const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    domains: ["localhost"],
+  },
   // Instructions:
   // https://nextjs.org/docs/app/building-your-application/styling/sass#customizing-sass-options
   // https://sass-lang.com/documentation/at-rules/use/

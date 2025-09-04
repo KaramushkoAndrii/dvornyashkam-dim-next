@@ -13,7 +13,12 @@ import useModalStore from "@/hooks/useModalStore";
 import "./searchSection.scss";
 
 const SearchSection = ({ data }) => {
-  const { title, btnRerol, btnAbout, items } = data || {};
+  const {
+    title,
+    btnRerol,
+    btnAbout,
+    items: { data: items = [] } = {},
+  } = data || {};
 
   const [currentAnimal, setCurrentAnimal] = useState(null);
   const [isAnimating, setIsAnimating] = useState(false);

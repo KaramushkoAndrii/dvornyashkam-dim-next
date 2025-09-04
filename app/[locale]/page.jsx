@@ -5,74 +5,88 @@ import SearchSection from "@/components/page-home/searchSection/SearchSection";
 import AboutSection from "@/components/page-home/aboutSection/AboutSection";
 import OurAnimals from "@/components/page-home/ourAnimals/OurAnimals";
 import HelpSection from "@/components/common/helpSection/HelpSection";
-
-import dogsDB from "@/data/dogsDB";
-import catsDB from "@/data/catsDB";
-import aboutList from "@/data/aboutList";
-import aboutListItem from "@/data/aboutInfoList";
-import helpList from "@/data/helpList";
+import { fetchApi } from "@/lib/api";
 
 import "./page.scss";
+import next from "next";
 
 export default async function HomePage() {
   const t = await getTranslations();
 
-  // TO DO: get DATA for HeroSection from API
+  //GET AnimalsDB
+  const animalsDB = await fetchApi("/dogs?populate=img&populate=moreImg");
+
+  //CREATE DB ONLY FOR CATS
+  const catsData = animalsDB.data
+    .filter((item) => item.category != "dogs")
+    .slice(0, 3);
+
+  //GET DATA FOR HERO SECTION FROM API
+  const heroData = await fetchApi("/hero-section");
   const dataHeroSection = {
-    pageTitle: "Притулок для тварин dvornyashkam_dim",
-    title: t("hero_section.title"),
-    description: t("hero_section.sub-title"),
+    pageTitle: heroData.data?.pageTitle || "",
+    title: heroData.data?.title || "",
+    description: heroData.data?.description || "",
   };
 
-  // TO DO: get DATA for SearchSection from API
+  //GET DATA FOR SEARCH SECTION FROM API
+  const searchData = await fetchApi("/search-section");
   const dataSearchSection = {
-    title: t("search.title"),
+    title: searchData.data?.title,
     btnAbout: {
-      title: t("buttons.about"),
+      title: searchData.data?.btnAbout,
       href: "/about",
     },
     btnRerol: {
-      title: t("buttons.rerol"),
+      title: searchData.data?.btnRerol,
     },
-    items: dogsDB,
+    items: animalsDB,
   };
 
-  // TO DO: get DATA for AboutSection from API
+  //GET DATA FOR ABOUT SECTION FROM API
+  const aboutData = await fetchApi("/about-section?populate=*");
   const dataAboutSection = {
-    title: t("about.title"),
-    description: t("about.description"),
-    statistics: aboutListItem.map(({ symbol, count, text }) => ({
-      symbol,
-      count,
-      text: t(text),
-    })),
-    cards: aboutList.map(({ title, content }) => ({
-      title: t(`about-list.${title}`),
-      description: t(`about-list.${content}`),
+    title: aboutData.data?.title || "",
+    description: aboutData.data?.description || "",
+
+    statistics: aboutData.data?.statistic.map(
+      ({ symbol, count, description }) => ({
+        symbol,
+        count,
+        description,
+      })
+    ),
+    cards: aboutData.data?.aboutItem.map(({ header, description }) => ({
+      title: header,
+      description,
     })),
   };
 
-  // TO DO: get DATA for OurAnimals from API
+  //GET DATA FOR ANIMALS LIST FROM API
+  const ourAnimalsData = await fetchApi(
+    "/our-animal?populate=dogs&populate=cats"
+  );
   const dataOurAnimals = [
     {
-      slug: "cats",
-      title: t("lists-title.cats"),
-      btnTitle: t("buttons.more-cats"),
-      items: catsDB.slice(0, 3),
+      slug: ourAnimalsData.data?.cats[0]?.slug || "",
+      title: ourAnimalsData.data?.cats[0]?.title || "",
+      btnTitle: ourAnimalsData.data?.cats[0]?.btnTitle || "",
+      items: catsData,
     },
     {
-      slug: "dogs",
-      title: t("lists-title.dogs"),
-      btnTitle: t("buttons.more-dogs"),
-      items: dogsDB.slice(0, 3),
+      slug: ourAnimalsData.data?.dogs[0]?.slug || "",
+      title: ourAnimalsData.data?.dogs[0]?.title || "",
+      btnTitle: ourAnimalsData.data?.dogs[0]?.btnTitle || "",
+      items: animalsDB.data.slice(0, 3),
     },
   ];
 
-  // TO DO: get DATA for HelpSection from API
+  //GET DATA FOR HELP SECTION FROM API
+  const helpData = await fetchApi("/help-section?populate=helpListItem");
   const dataHelpSection = {
-    title: t("help-section.title"),
-    description: t("help-section.description"),
-    items: helpList.map((item) => ({ text: t(item) })),
+    title: helpData.data?.title || "",
+    description: helpData.data?.description || "",
+    items: helpData.data.helpListItem.map((item) => item),
     btn: { title: t("buttons.more"), href: "/help" },
   };
 

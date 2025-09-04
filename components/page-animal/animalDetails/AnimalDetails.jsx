@@ -59,6 +59,7 @@ export default function AnimalDetails({ animal }) {
           </header>
           <section className="animal-details__info">
             <Slider data={animal.moreImg} />
+            {console.log(animal.moreImg)}
             <div className="animal-details__wrapper">
               <h3 className="h3">{animal.name}</h3>
               <h3 className="h3">{animal.gender}</h3>

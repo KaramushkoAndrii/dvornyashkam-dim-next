@@ -23,7 +23,7 @@ const AboutSection = ({ data }) => {
             <li key={key} className="about__info-list--item">
               {item.symbol ? item.symbol : null}
               <Counter startValue={0} endValue={+item.count} duration={2} />
-              <span>{item.text}</span>
+              <span>{item.description}</span>
             </li>
           ))}
         </motion.ul>

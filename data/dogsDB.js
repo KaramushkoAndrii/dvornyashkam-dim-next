@@ -1,3 +1,3 @@
-import catsDB from "./catsDB.js";
+// import catsDB from "./catsDB.js";
 
-export default catsDB;
+// export default catsDB;

@@ -9,6 +9,7 @@ import "swiper/css/pagination";
 import "./slider.scss";
 
 const Slider = ({ data, ...rest }) => {
+  // const {url} = data
   return (
     <div className="slider">
       <Swiper
@@ -21,7 +22,7 @@ const Slider = ({ data, ...rest }) => {
             <Image
               width={500}
               height={300}
-              src={slide}
+              src={`http://localhost:1337${slide.url}`}
               alt={slide}
               className="slide-image"
               {...rest}
