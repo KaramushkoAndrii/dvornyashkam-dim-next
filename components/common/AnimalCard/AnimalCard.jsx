@@ -17,12 +17,14 @@ const AnimalCard = ({ animal }) => {
 
   const t = useTranslations();
   const { openModal } = useModalStore();
-  const API_URL = "http://localhost:1337";
+  const API_URL = "https://dvornyshki-cms.onrender.com";
 
   const openHandler = (evt) => {
     evt.preventDefault();
     openModal("modal-form");
   };
+
+  console.log(animal);
 
   return (
     <>

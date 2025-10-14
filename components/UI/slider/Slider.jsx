@@ -22,7 +22,7 @@ const Slider = ({ data, ...rest }) => {
             <Image
               width={500}
               height={300}
-              src={`http://localhost:1337${slide.url}`}
+              src={`https://dvornyshki-cms.onrender.com${slide.url}`}
               alt={slide}
               className="slide-image"
               {...rest}

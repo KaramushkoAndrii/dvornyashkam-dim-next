@@ -3,12 +3,14 @@ import AnimalDetails from "@/components/page-animal/animalDetails/AnimalDetails"
 import "./page.scss";
 
 export default async function AnimalPage({ params }) {
-  const { slug } = await params;
+  const { slug, category } = await params;
 
   //Get request to server and take data
   //used filters is Search this is option of Strapi for filter collection
+
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
   const res = await fetch(
-    `http://localhost:1337/api/dogs?filters[slug][$eq]=${slug}&populate=moreImg`,
+    `${API_URL}/dogs?filters[slug][$eq]=${slug}&filters[category][$eq]=${category}&populate=moreImg`,
     {
       cache: "no-store",
     }
@@ -19,6 +21,7 @@ export default async function AnimalPage({ params }) {
 
   //Change format of data
   const { data } = await res.json();
+  console.log(data);
 
   //search current animal
   const animal = data[0];
