@@ -17,14 +17,14 @@ const AnimalCard = ({ animal }) => {
 
   const t = useTranslations();
   const { openModal } = useModalStore();
-  const API_URL = "https://dvornyshki-cms.onrender.com";
+  // const API_URL = "https://dvornyshki-cms.onrender.com";
 
   const openHandler = (evt) => {
     evt.preventDefault();
     openModal("modal-form");
   };
 
-  console.log(animal);
+  console.log(animal, "Вывод с AnimalCard");
 
   return (
     <>
@@ -32,7 +32,7 @@ const AnimalCard = ({ animal }) => {
         <Link href={getAnimalLink(category, slug)} className="animal__link">
           <div className="animal__info">
             <div className="animal__picture">
-              <img src={`${API_URL}${img?.url}`} alt={name} />
+              <img src={`${img?.url}`} alt={name} />
             </div>
             <div className="animal__description">
               <h3 className="animal__name h3">{name}</h3>
