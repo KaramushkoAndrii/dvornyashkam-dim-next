@@ -24,7 +24,7 @@ const AnimalCard = ({ animal }) => {
     openModal("modal-form");
   };
 
-  console.log(animal, "Вывод с AnimalCard");
+  // console.log(animal, "Вывод с AnimalCard");
 
   return (
     <>
