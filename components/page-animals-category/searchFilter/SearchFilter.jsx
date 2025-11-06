@@ -31,7 +31,7 @@ const SearchFilter = ({ onFilterChange }) => {
     { label: "Выберите размер", value: "" },
     { label: "До 15 кг (маленький)", value: "0-15" },
     { label: "15 - 25кг (Средний)", value: "15-25" },
-    { label: "От 25кг (Большой)", value: "25" },
+    { label: "От 25кг (Большой)", value: "25+" },
   ];
 
   const genderSelect = [
