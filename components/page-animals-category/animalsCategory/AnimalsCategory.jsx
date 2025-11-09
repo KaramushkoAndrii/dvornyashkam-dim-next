@@ -41,13 +41,13 @@ const AnimalsCategory = ({ title, btnMoreTitle, data = [] }) => {
 
       .filter((animal) => {
         if (filters.size) {
-          const weight = parseInt(animal.size, 10);
+          const weight = parseInt(animal.weight, 10);
           switch (filters.size) {
             case "0-15":
               return weight <= 15;
             case "15-25":
               return weight > 15 && weight <= 25;
-            case "25":
+            case "25+":
               return weight > 25;
             default:
               return true;
