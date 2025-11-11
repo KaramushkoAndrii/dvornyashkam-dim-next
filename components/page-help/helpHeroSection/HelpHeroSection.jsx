@@ -9,8 +9,6 @@ import "./helpHeroSection.scss";
 const HelpHeroSection = ({ content, helpData, items }) => {
   const { title, description } = content;
 
-  //   console.log(helpData);
-
   return (
     <section className="help-page">
       <header className="help-page__header">
