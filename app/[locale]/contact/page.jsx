@@ -1,27 +1,66 @@
 import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
+import { fetchApi } from "@/lib/api";
+import ContactForm from "@/components/page-contact/contactForm/ContactForm";
+import VisitedUs from "@/components/page-contact/visitedUs/VisitedUs";
+// import { motion } from "framer-motion";
 import contactPageData from "@/data/contactPageData";
-import {
-  slideFromLeft,
-  slideFromRight,
-  slideFromBottom,
-  heroAnimationX,
-  heroAnimationY,
-  scale,
-} from "@/constants/animations";
 
-export default function ContactPage() {
-  const {
-    title,
-    header,
-    headerContent,
-    socialHeader,
-    responseble,
-    sterilaz,
-    tomuch,
-    slogan,
-  } = contactPageData || {};
-  const t = useTranslations();
+import "./page.scss";
+// import {
+//   slideFromLeft,
+//   slideFromRight,
+//   slideFromBottom,
+//   heroAnimationX,
+//   heroAnimationY,
+//   scale,
+// } from "@/constants/animations";
+
+export default async function ContactPage() {
+  const contactsHeaderContent = await fetchApi("/contact-hero-section");
+  const { title, header, headerContent } = contactsHeaderContent.data;
+
+  const resContactsForm = await fetchApi("/contact-form-data", {
+    populate: "contactFormItem",
+  });
+  const contactsForm = resContactsForm.data.contactFormItem;
+
+  const mainContactsInfo = await fetchApi("/contact-main-info");
+  const { headerInfo, subHeader, description, subDescription } =
+    mainContactsInfo.data;
+
+  const resVisitedUs = await fetchApi("/visited-us");
+  const visitedUsData = resVisitedUs.data;
+
+  const resAccordion = await fetchApi("/rules-list", {
+    populate: "rulesList",
+  });
+  const acordionData = resAccordion.data;
+  // const t = useTranslations();
+
+  return (
+    <section className="contact-page">
+      <h2 className="title h2">{title}</h2>
+      <div className="contact-page__adres">
+        <h3 className="contact-page__header h3">{header}</h3>
+        <span className="contact-page__content">{headerContent}</span>
+      </div>
+      <ContactForm data={contactsForm} />
+
+      <div className="contact-page__info">
+        <h2 className="contact-page__info--header h2">
+          {headerInfo}
+          <i>{subHeader}</i>
+        </h2>
+        <p className="contact-page__info--content">{description}</p>
+        <p className="contact-page__info--content">{subDescription}</p>
+      </div>
+
+      <div className="contact-page__contact">
+        {/* Компонент принимает 2 пропса. 1 - содежримое плашки (заголовок и описание)б 2 - данные для акардиона. Заголовок и содержание полей */}
+        <VisitedUs data={visitedUsData} accordionData={acordionData} />
+      </div>
+    </section>
+  );
 }
 
 // "use client";
@@ -35,8 +74,6 @@ export default function ContactPage() {
 // import visitedUsDate from "@/data/visitedUsDate";
 
 // import { contactsSocial } from "@/data/contactsList";
-
-// import "./page.scss";
 
 // export default function ContactPage() {
 
