@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import { fetchApi } from "@/lib/api";
 import ContactForm from "@/components/page-contact/contactForm/ContactForm";
 import VisitedUs from "@/components/page-contact/visitedUs/VisitedUs";
+import MapWithNoSSR from "@/components/page-contact/map/MapLoader";
 // import { motion } from "framer-motion";
 import contactPageData from "@/data/contactPageData";
 
@@ -35,6 +36,10 @@ export default async function ContactPage() {
     populate: "rulesList",
   });
   const acordionData = resAccordion.data;
+
+  const resMapData = await fetchApi("/map-data", {
+    populate: "markerIcon",
+  });
   // const t = useTranslations();
 
   return (
@@ -58,6 +63,8 @@ export default async function ContactPage() {
       <div className="contact-page__contact">
         {/* Компонент принимает 2 пропса. 1 - содежримое плашки (заголовок и описание)б 2 - данные для акардиона. Заголовок и содержание полей */}
         <VisitedUs data={visitedUsData} accordionData={acordionData} />
+
+        <MapWithNoSSR mapData={resMapData.data} />
       </div>
     </section>
   );
