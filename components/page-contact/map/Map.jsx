@@ -18,7 +18,6 @@ const Map = ({ mapData }) => {
     latitude,
     longitude,
     popupText,
-    googleMapsLink,
     markerIcon,
     markerHeight,
     markerWidth,
