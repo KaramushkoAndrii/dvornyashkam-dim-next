@@ -13,6 +13,16 @@
     margin-bottom: 24px;
   }
 
+  &__social {
+    padding: 1rem;
+    background-color: $secondary;
+    border-radius: $main-border-radius;
+
+    &.is-loading {
+      min-height: 100px;
+    }
+  }
+
   &__info {
     display: flex;
     flex-direction: column;

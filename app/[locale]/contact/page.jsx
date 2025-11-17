@@ -3,6 +3,8 @@ import { fetchApi } from "@/lib/api";
 import ContactForm from "@/components/page-contact/contactForm/ContactForm";
 import VisitedUs from "@/components/page-contact/visitedUs/VisitedUs";
 import MapWithNoSSR from "@/components/page-contact/map/MapLoader";
+import ContactsHero from "@/components/page-contact/contactsHero/ContactsHero";
+import ContactsInfo from "@/components/page-contact/contactsInfo/ContactsInfo";
 // import { motion } from "framer-motion";
 import contactPageData from "@/data/contactPageData";
 
@@ -18,7 +20,6 @@ import "./page.scss";
 
 export default async function ContactPage() {
   const contactsHeaderContent = await fetchApi("/contact-hero-section");
-  const { title, header, headerContent } = contactsHeaderContent.data;
 
   const resContactsForm = await fetchApi("/contact-form-data", {
     populate: "contactFormItem",
@@ -26,8 +27,6 @@ export default async function ContactPage() {
   const contactsForm = resContactsForm.data.contactFormItem;
 
   const mainContactsInfo = await fetchApi("/contact-main-info");
-  const { headerInfo, subHeader, description, subDescription } =
-    mainContactsInfo.data;
 
   const resVisitedUs = await fetchApi("/visited-us");
   const visitedUsData = resVisitedUs.data;
@@ -44,21 +43,11 @@ export default async function ContactPage() {
 
   return (
     <section className="contact-page">
-      <h2 className="title h2">{title}</h2>
-      <div className="contact-page__adres">
-        <h3 className="contact-page__header h3">{header}</h3>
-        <span className="contact-page__content">{headerContent}</span>
-      </div>
+      <ContactsHero data={contactsHeaderContent?.data} />
+
       <ContactForm data={contactsForm} />
 
-      <div className="contact-page__info">
-        <h2 className="contact-page__info--header h2">
-          {headerInfo}
-          <i>{subHeader}</i>
-        </h2>
-        <p className="contact-page__info--content">{description}</p>
-        <p className="contact-page__info--content">{subDescription}</p>
-      </div>
+      <ContactsInfo data={mainContactsInfo.data} />
 
       <div className="contact-page__contact">
         {/* Компонент принимает 2 пропса. 1 - содежримое плашки (заголовок и описание)б 2 - данные для акардиона. Заголовок и содержание полей */}

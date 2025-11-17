@@ -1,11 +1,19 @@
-import { PiTelegramLogo } from "react-icons/pi";
-import { SlSocialInstagram } from "react-icons/sl";
+import { FaTelegram } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
+import { FaTiktok } from "react-icons/fa";
+import { FaViber } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
 
 const SocialList = ({ data }) => {
   // Comparison link key with icons
   const icon = {
-    telegram: <PiTelegramLogo />,
-    instagram: <SlSocialInstagram />,
+    telegram: <FaTelegram />,
+    instagram: <FaInstagram />,
+    youtube: <FaYoutube />,
+    tiktok: <FaTiktok />,
+    viber: <FaViber />,
+    facebook: <FaFacebook />,
   };
 
   return (

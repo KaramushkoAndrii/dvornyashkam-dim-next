@@ -9,10 +9,6 @@ const Contacts = () => {
 
   if (!contacts) return "Loading....";
 
-  const socialData = [
-    { key: "instagram", href: contacts.instagram },
-    { key: "telegram", href: contacts.telegram },
-  ];
   return (
     <div className="contacts">
       <ul className="contacts__list">
@@ -32,7 +28,7 @@ const Contacts = () => {
         </li>
       </ul>
 
-      <SocialList data={socialData} />
+      <SocialList data={contacts.social} />
     </div>
   );
 };
