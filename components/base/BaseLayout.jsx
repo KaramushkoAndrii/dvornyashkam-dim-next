@@ -113,6 +113,12 @@ export default async function BaseLayout({ children, locale }) {
         <meta name="msapplication-TileColor" content="#000000" />
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
         <meta name="theme-color" content="#87c7b2" />
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossOrigin=""
+        />
       </head>
 
       <body

@@ -10,7 +10,7 @@ import { FaPaw } from "react-icons/fa";
 import "./helpSection.scss";
 
 const HelpSection = ({ data }) => {
-  const { title, description, btn, items } = data || {};
+  const { title, description, btn, helpListItem } = data || {};
 
   return (
     <section className="help">
@@ -22,8 +22,8 @@ const HelpSection = ({ data }) => {
         <h2 className="h2">{title}</h2>
         <p>{description}</p>
         <ul className="help-list">
-          {items.map((item, key) => (
-            <li className="help-list__item" key={key}>
+          {helpListItem?.map((item) => (
+            <li className="help-list__item" key={item.id}>
               <FaPaw className="help-list__icon" />
               <span className="help-list__description">{item.text}</span>
             </li>

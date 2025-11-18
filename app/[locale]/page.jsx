@@ -22,12 +22,9 @@ export default async function HomePage() {
     .slice(0, 3);
 
   //GET DATA FOR HERO SECTION FROM API
-  const heroData = await fetchApi("/hero-section");
-  const dataHeroSection = {
-    pageTitle: heroData.data?.pageTitle || "",
-    title: heroData.data?.title || "",
-    description: heroData.data?.description || "",
-  };
+  const heroData = await fetchApi("/hero-section", {
+    populate: "mainVideo",
+  });
 
   //GET DATA FOR SEARCH SECTION FROM API
   const searchData = await fetchApi("/search-section");
@@ -82,21 +79,17 @@ export default async function HomePage() {
   ];
 
   //GET DATA FOR HELP SECTION FROM API
-  const helpData = await fetchApi("/help-section?populate=helpListItem");
-  const dataHelpSection = {
-    title: helpData.data?.title || "",
-    description: helpData.data?.description || "",
-    items: helpData.data.helpListItem.map((item) => item),
-    btn: { title: t("buttons.more"), href: "/help" },
-  };
+  const helpData = await fetchApi("/help-section", {
+    populate: ["helpListItem", "btn"],
+  });
 
   return (
     <>
-      <HeroSection data={dataHeroSection} />
+      <HeroSection data={heroData.data} />
       <SearchSection data={dataSearchSection} />
       <AboutSection data={dataAboutSection} />
       <OurAnimals data={dataOurAnimals} />
-      <HelpSection data={dataHelpSection} />
+      <HelpSection data={helpData.data} />
     </>
   );
 }

@@ -1,38 +1,59 @@
 "use client";
 
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-// import "leaflet/dist/leaflet.css";
+import { Icon } from "leaflet";
 import "./map.scss";
-import L from "leaflet";
-import { useState } from "react";
 
-delete L.Icon.Default.prototype._getIconUrl;
+const Map = ({ mapData }) => {
+  if (!mapData) {
+    return (
+      <div
+        className="map__wrapper"
+        style={{ height: "400px", background: "#eee" }}
+      />
+    );
+  }
 
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: "/leaflet/marker-icon-2x.png",
-  iconUrl: "/leaflet/marker-icon.png",
-  shadowUrl: "/leaflet/marker-shadow.png",
-});
+  const {
+    latitude,
+    longitude,
+    popupText,
+    markerIcon,
+    markerHeight,
+    markerWidth,
+    linkText,
+  } = mapData;
 
-const Map = ({ position }) => {
+  const markerSize = [markerWidth, markerHeight];
+
+  const newIcon = new Icon({
+    iconUrl: markerIcon.url,
+    iconSize: markerSize,
+  });
+
+  const positionMarker = [latitude, longitude];
+
   return (
-    <div className="map__wrapper">
-      <MapContainer
-        center={position}
-        zoom={17}
-        style={{ width: "100vw", height: "100vh" }}
-        scrollWheelZoom={false}
-      >
-        <TileLayer
-          // Открытый источник карт
-          attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        <Marker position={position}>
-          <Popup>"ПРиют находится здесь"</Popup>
-        </Marker>
-      </MapContainer>
-    </div>
+    <MapContainer center={positionMarker} zoom={13} scrollWheelZoom={false}>
+      <TileLayer
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      />
+      <Marker position={positionMarker} icon={newIcon}>
+        <Popup>
+          <h2>{popupText}</h2>
+          <br />
+          <a
+            className="map__link"
+            href={`https://www.google.com/maps?q=${latitude},${longitude}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {linkText}
+          </a>
+        </Popup>
+      </Marker>
+    </MapContainer>
   );
 };
 

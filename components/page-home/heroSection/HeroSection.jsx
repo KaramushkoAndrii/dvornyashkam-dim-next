@@ -8,14 +8,14 @@ import { slideFromLeft } from "@/constants/animations";
 import "./heroSection.scss";
 
 const HeroSection = ({ data }) => {
-  const { pageTitle, title, description } = data || {};
+  const { pageTitle, title, description, mainVideo } = data || {};
 
   return (
     <section className="hero">
       <h1 className="hidden">{pageTitle}</h1>
       <div className="hero__wrapper">
         <video className="hero__video" autoPlay muted loop playsInline>
-          <source src="/videos/hero.mp4" type="video/mp4" />
+          <source src={mainVideo?.[0]?.url} type={mainVideo?.[0]?.mime} />
         </video>
       </div>
 

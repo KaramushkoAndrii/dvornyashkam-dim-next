@@ -9,10 +9,10 @@ const ContactProvider = ({ children }) => {
 
   useEffect(() => {
     if (!contacts) {
-      fetchApi("/contact")
+      fetchApi("/contact", { populate: "social" })
         .then((res) => {
-          const { email, instagram, telegram, phone } = res.data;
-          setContacts({ email, instagram, telegram, phone });
+          const { email, phone, social } = res.data;
+          setContacts({ email, phone, social });
         })
         .catch((e) => console.error(e));
     }
