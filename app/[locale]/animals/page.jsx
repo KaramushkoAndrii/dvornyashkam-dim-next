@@ -45,7 +45,7 @@ export default function AnimalsPage() {
               {...heroAnimationX}
               {...animation}
               key={animal.id}
-              className={`animals-content__${animal.id}`}
+              className={`animals-page__content__${animal.id}`}
             >
               <TransitionLink href={getAnimalsCategoryLink(animal.src)}>
                 <img
