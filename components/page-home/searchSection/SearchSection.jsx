@@ -12,22 +12,25 @@ import useModalStore from "@/hooks/useModalStore";
 
 import "./searchSection.scss";
 
-const SearchSection = ({ data }) => {
-  const {
-    title,
-    btnRerol,
-    btnAbout,
-    items: { data: items = [] } = {},
-  } = data || {};
+const SearchSection = ({ data, animals }) => {
+  // const {
+  //   title,
+  //   btnRerol,
+  //   btnAbout,
+  //   items: { data: items = [] } = {},
+  // } = data || {};
+  const { title, btnRerol, btnAbout } = data || {};
 
   const [currentAnimal, setCurrentAnimal] = useState(null);
   const [isAnimating, setIsAnimating] = useState(false);
 
   // TO DO: It's better if you use one type of function (arrow or regular)
   function getRandomAnimal() {
-    const randomAnimalIndex = Math.floor(Math.random() * (items?.length || 0));
+    const randomAnimalIndex = Math.floor(
+      Math.random() * (animals?.length || 0)
+    );
 
-    return items?.[randomAnimalIndex];
+    return animals?.[randomAnimalIndex];
   }
 
   const animalRerol = () => {
@@ -60,17 +63,13 @@ const SearchSection = ({ data }) => {
       </div>
 
       <motion.div className="search__button-group" {...slideFromBottom}>
-        {btnRerol?.title && (
-          <Button
-            text={btnRerol.title}
-            onClick={animalRerol}
-            disabled={isAnimating}
-            variant="search"
-          />
-        )}
-        {btnAbout?.title && btnAbout?.href && (
-          <Button text={btnAbout.title} href={btnAbout.href} variant="search" />
-        )}
+        <Button
+          text={btnRerol}
+          onClick={animalRerol}
+          disabled={isAnimating}
+          variant="search"
+        />
+        <Button text={btnAbout} href="/about" variant="search" />
       </motion.div>
     </section>
   );

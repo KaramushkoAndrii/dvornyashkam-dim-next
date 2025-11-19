@@ -8,7 +8,7 @@ import { slideFromRight, slideFromLeft, scale } from "@/constants/animations";
 import "./aboutSection.scss";
 
 const AboutSection = ({ data }) => {
-  const { title, description, statistics, cards } = data || {};
+  const { title, description, statistic, aboutItem } = data || {};
 
   return (
     <section className="about">
@@ -19,8 +19,8 @@ const AboutSection = ({ data }) => {
 
       <div className="about__info">
         <motion.ul {...slideFromRight} className="about__info-list">
-          {statistics.map((item, key) => (
-            <li key={key} className="about__info-list--item">
+          {statistic.map((item) => (
+            <li key={item.id} className="about__info-list--item">
               {item.symbol ? item.symbol : null}
               <Counter startValue={0} endValue={+item.count} duration={2} />
               <span>{item.description}</span>
@@ -30,9 +30,9 @@ const AboutSection = ({ data }) => {
       </div>
 
       <motion.ul className="about__list" {...scale}>
-        {cards.map((item, key) => (
-          <li key={key} className="about__item">
-            <h3 className="about__item--title h3">{item.title}</h3>
+        {aboutItem.map((item) => (
+          <li key={item.id} className="about__item">
+            <h3 className="about__item--title h3">{item.header}</h3>
             <p className="about__item--content">{item.description}</p>
           </li>
         ))}

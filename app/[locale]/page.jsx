@@ -15,7 +15,10 @@ export default async function HomePage({ params }) {
   const t = await getTranslations();
 
   //GET AnimalsDB
-  const animalsDB = await fetchApi("/dogs?populate=img&populate=moreImg");
+  const animalsDB = await fetchApi("/dogs", {
+    locale: locale,
+    populate: ["img", "moreImg"],
+  });
 
   //CREATE DB ONLY FOR CATS
   const catsData = animalsDB.data
@@ -29,37 +32,15 @@ export default async function HomePage({ params }) {
   });
 
   //GET DATA FOR SEARCH SECTION FROM API
-  const searchData = await fetchApi("/search-section");
-  const dataSearchSection = {
-    title: searchData.data?.title,
-    btnAbout: {
-      title: searchData.data?.btnAbout,
-      href: "/about",
-    },
-    btnRerol: {
-      title: searchData.data?.btnRerol,
-    },
-    items: animalsDB,
-  };
+  const searchData = await fetchApi("/search-section", {
+    locale: locale,
+  });
 
   //GET DATA FOR ABOUT SECTION FROM API
-  const aboutData = await fetchApi("/about-section?populate=*");
-  const dataAboutSection = {
-    title: aboutData.data?.title || "",
-    description: aboutData.data?.description || "",
-
-    statistics: aboutData.data?.statistic.map(
-      ({ symbol, count, description }) => ({
-        symbol,
-        count,
-        description,
-      })
-    ),
-    cards: aboutData.data?.aboutItem.map(({ header, description }) => ({
-      title: header,
-      description,
-    })),
-  };
+  const aboutData = await fetchApi("/about-section", {
+    locale: locale,
+    populate: ["statistic", "aboutItem"],
+  });
 
   //GET DATA FOR ANIMALS LIST FROM API
   const ourAnimalsData = await fetchApi(
@@ -89,8 +70,8 @@ export default async function HomePage({ params }) {
   return (
     <>
       <HeroSection data={heroData.data} />
-      <SearchSection data={dataSearchSection} />
-      <AboutSection data={dataAboutSection} />
+      <SearchSection data={searchData.data} animals={animalsDB.data} />
+      <AboutSection data={aboutData.data} />
       <OurAnimals data={dataOurAnimals} />
       <HelpSection data={helpData.data} />
     </>
