@@ -10,7 +10,8 @@ import { fetchApi } from "@/lib/api";
 import "./page.scss";
 import next from "next";
 
-export default async function HomePage() {
+export default async function HomePage({ params }) {
+  const { locale } = await params;
   const t = await getTranslations();
 
   //GET AnimalsDB
@@ -23,6 +24,7 @@ export default async function HomePage() {
 
   //GET DATA FOR HERO SECTION FROM API
   const heroData = await fetchApi("/hero-section", {
+    locale: locale,
     populate: "mainVideo",
   });
 
@@ -81,6 +83,7 @@ export default async function HomePage() {
   //GET DATA FOR HELP SECTION FROM API
   const helpData = await fetchApi("/help-section", {
     populate: ["helpListItem", "btn"],
+    locale: locale,
   });
 
   return (
