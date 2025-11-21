@@ -14,6 +14,7 @@ import Modal from "@/components/UI/modal/Modal";
 import ModalForm from "@/components/UI/modalForm/ModalForm";
 
 const ContactForm = ({ data }) => {
+  const { contactFormItem } = data || {};
   const t = useTranslations();
   const { openModal } = useModalStore();
 
@@ -30,8 +31,8 @@ const ContactForm = ({ data }) => {
         {...heroAnimationY}
         className="contact-form"
       >
-        {data.map((item, key) => (
-          <li key={key} className="contact-form__item">
+        {contactFormItem.map((item) => (
+          <li key={item.id} className="contact-form__item">
             <p className="contact-form__name">{item.name}</p>
             {(item.key === "phone" || item.key === "telegram") && (
               <div className="contact-form__content">
@@ -49,6 +50,7 @@ const ContactForm = ({ data }) => {
                     rel="noopener noreferrer"
                   >
                     <PiTelegramLogo />
+                    {item.value}
                   </a>
                 )}
               </div>

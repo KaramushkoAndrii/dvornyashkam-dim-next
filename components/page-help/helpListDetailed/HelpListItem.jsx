@@ -6,7 +6,7 @@ import useModalStore from "@/hooks/useModalStore";
 import "./HelpListItem.scss";
 
 const HelpListItem = ({ data, index, translationGroup }) => {
-  const t = useTranslations();
+  // const t = useTranslations();
   const { openModal } = useModalStore();
 
   const { header, description, subDescription, type, src, linkContent } =
@@ -22,11 +22,18 @@ const HelpListItem = ({ data, index, translationGroup }) => {
   return (
     <>
       <motion.li {...oddLi} className="detailed-item">
-        <h3 className="h3">{t(`${translationGroup}.${header}`)}</h3>
-        <p>{t(`${translationGroup}.${description}`)}</p>
+        <h3 className="h3">
+          {/* {t(`${translationGroup}.${header}`)} */}
+          {header}
+        </h3>
+        <p>
+          {/* {t(`${translationGroup}.${description}`)} */}
+          {description}
+        </p>
         <footer className="detailed-item__footer">
           <p className="sub__text">
-            {t(`${translationGroup}.${subDescription}`)}
+            {/* {t(`${translationGroup}.${subDescription}`)} */}
+            {subDescription}
           </p>
           {type === "button" ? (
             <button className="detailed-item__button" onClick={openHandler}>

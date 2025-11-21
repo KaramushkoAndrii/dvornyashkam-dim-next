@@ -28,8 +28,6 @@ const AdvicePage = ({ data }) => {
         {t("advise-page.title")}
       </motion.h2>
 
-      {console.log(data)}
-
       <Accordion data={data} />
 
       <motion.p {...slideFromBottom} className="advise-page__content">
