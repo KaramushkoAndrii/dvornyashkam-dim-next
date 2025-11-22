@@ -4,6 +4,8 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
 import { PiTelegramLogo } from "react-icons/pi";
+import { LuMessageCircleMore } from "react-icons/lu";
+import { LuPhone } from "react-icons/lu";
 import useModalStore from "@/hooks/useModalStore";
 
 import { slideFromBottom, heroAnimationY } from "@/constants/animations";
@@ -38,6 +40,7 @@ const ContactForm = ({ data }) => {
               <div className="contact-form__content">
                 {item.key === "phone" && (
                   <a className="contact-form__link" href={`tel:${item.value}`}>
+                    <LuPhone />
                     {item.value}
                   </a>
                 )}
@@ -57,6 +60,7 @@ const ContactForm = ({ data }) => {
             )}
             {item.key === "email" && (
               <a className="contact-form__link" href={`mailto:${item.value}`}>
+                <LuMessageCircleMore />
                 {item.value}
               </a>
             )}
