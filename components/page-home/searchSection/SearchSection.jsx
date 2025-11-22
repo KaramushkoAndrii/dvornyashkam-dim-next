@@ -50,7 +50,7 @@ const SearchSection = ({ data, initialAnimal, locale }) => {
     }
   };
 
-  console.log(currentAnimal);
+  // console.log(currentAnimal);
 
   return (
     <section className="search">
