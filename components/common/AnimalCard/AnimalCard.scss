@@ -115,10 +115,6 @@
   }
 
   .animals & {
-    width: clamp(200px, 55vw, 450px);
-
-    // @media (min-width: $large) {
-    //   width: 29dvw;
-    // }
+    width: clamp(200px, 28vw, 450px);
   }
 }
