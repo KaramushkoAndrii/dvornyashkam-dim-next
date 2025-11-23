@@ -41,9 +41,10 @@
 
     overflow: auto;
 
-    @media (min-width: $laptop) {
+    @media (min-width: $large) {
       max-width: 80%;
       padding: 0 20px;
+      gap: 0;
     }
   }
 
@@ -76,7 +77,7 @@
     justify-content: center;
     gap: 8px;
 
-    @media (min-width: $laptop) {
+    @media (min-width: $large) {
       flex-direction: row;
     }
   }
