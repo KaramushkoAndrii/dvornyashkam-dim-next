@@ -4,4 +4,5 @@ export const navigationList = [
   { title: "navigation.advise", href: "/advise" },
   { title: "navigation.help", href: "/help" },
   { title: "navigation.contacts", href: "/contact" },
+  { title: "navigation.ivents", href: "/ivents" },
 ];
