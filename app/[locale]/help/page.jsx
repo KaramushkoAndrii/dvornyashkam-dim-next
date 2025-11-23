@@ -1,22 +1,24 @@
 import { fetchApi } from "@/lib/api";
 import HelpHeroSection from "@/components/page-help/helpHeroSection/HelpHeroSection";
 
-export default async function HelpPage() {
-  const helpData = await fetchApi("/help-page?populate=helpListDetailed");
-  const helpLIst = await fetchApi("/help-section?populate=helpListItem");
+export default async function HelpPage({ params }) {
+  const { locale } = await params;
+  const helpData = await fetchApi("/help-page", {
+    locale,
+    populate: "helpListDetailed",
+  });
+  const helpListDetailed = helpData.data.helpListDetailed;
 
-  const helpDetailsData = helpData.data.helpListDetailed;
-  const dataHelpSection = {
-    title: helpLIst.data?.title || "",
-    description: helpLIst.data?.description || "",
-    items: helpLIst.data.helpListItem.map((item) => item),
-  };
+  const helpList = await fetchApi("/help-section", {
+    locale,
+    populate: ["helpListItem", "btn"],
+  });
 
   return (
     <HelpHeroSection
       content={helpData.data}
-      helpData={dataHelpSection}
-      items={helpDetailsData}
+      helpData={helpList.data}
+      items={helpListDetailed}
     />
   );
 }

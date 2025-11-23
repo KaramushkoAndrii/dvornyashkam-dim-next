@@ -8,23 +8,29 @@ import ContactsInfo from "@/components/page-contact/contactsInfo/ContactsInfo";
 
 import "./page.scss";
 
-export default async function ContactPage() {
-  const contactsHeaderContent = await fetchApi("/contact-hero-section");
+export default async function ContactPage({ params }) {
+  const { locale } = await params;
+  const contactsHeaderContent = await fetchApi("/contact-hero-section", {
+    locale,
+  });
 
-  const resContactsForm = await fetchApi("/contact-form-data", {
+  const contactsForm = await fetchApi("/contact-form-data", {
+    locale,
     populate: "contactFormItem",
   });
-  const contactsForm = resContactsForm.data.contactFormItem;
 
-  const mainContactsInfo = await fetchApi("/contact-main-info");
+  const mainContactsInfo = await fetchApi("/contact-main-info", {
+    locale,
+  });
 
-  const resVisitedUs = await fetchApi("/visited-us");
-  const visitedUsData = resVisitedUs.data;
+  const visitedUsData = await fetchApi("/visited-us", {
+    locale,
+  });
 
-  const resAccordion = await fetchApi("/rules-list", {
+  const accordionData = await fetchApi("/rules-list", {
+    locale,
     populate: "rulesList",
   });
-  const acordionData = resAccordion.data;
 
   const resMapData = await fetchApi("/map-data", {
     populate: "markerIcon",
@@ -35,13 +41,16 @@ export default async function ContactPage() {
     <section className="contact-page">
       <ContactsHero data={contactsHeaderContent?.data} />
 
-      <ContactForm data={contactsForm} />
+      <ContactForm data={contactsForm.data} />
 
       <ContactsInfo data={mainContactsInfo.data} />
 
       <div className="contact-page__contact">
         {/* Компонент принимает 2 пропса. 1 - содежримое плашки (заголовок и описание)б 2 - данные для акардиона. Заголовок и содержание полей */}
-        <VisitedUs data={visitedUsData} accordionData={acordionData} />
+        <VisitedUs
+          data={visitedUsData.data}
+          accordionData={accordionData.data}
+        />
 
         <MapWithNoSSR mapData={resMapData.data} />
       </div>

@@ -1,10 +1,11 @@
 {
   "navigation": {
-    "about_us": "(en)Про нас",
-    "animals": "(en)Улюбленці",
-    "advise": "(en)Поради",
-    "help": "(en)Допомога",
-    "contacts": "(en)Контакти"
+    "about_us": "about",
+    "animals": "animals",
+    "advise": "advise",
+    "help": "help",
+    "contacts": "contacts",
+    "ivents": "ivents"
   },
   "LocaleLayout": {
     "title": "Dvoronyshkam dim",

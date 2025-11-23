@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { getRandomAnimal } from "@/lib/random";
 
 import { slideFromBottom } from "@/constants/animations";
 import AnimalCard from "@/components/common/AnimalCard/AnimalCard";
@@ -11,66 +12,62 @@ import ModalForm from "@/components/UI/modalForm/ModalForm";
 import useModalStore from "@/hooks/useModalStore";
 
 import "./searchSection.scss";
+// import { resolve } from "styled-jsx/css";
 
-const SearchSection = ({ data }) => {
-  const {
-    title,
-    btnRerol,
-    btnAbout,
-    items: { data: items = [] } = {},
-  } = data || {};
+//DURATION MUST BE EQUAL DURATION IS CSS FILE
+const ANIMATION_DURATION = 1000;
 
-  const [currentAnimal, setCurrentAnimal] = useState(null);
+const SearchSection = ({ data, initialAnimal, locale }) => {
+  const { title, btnRerol, btnAbout } = data || {};
+
+  const [currentAnimal, setCurrentAnimal] = useState(initialAnimal);
   const [isAnimating, setIsAnimating] = useState(false);
 
-  // TO DO: It's better if you use one type of function (arrow or regular)
-  function getRandomAnimal() {
-    const randomAnimalIndex = Math.floor(Math.random() * (items?.length || 0));
-
-    return items?.[randomAnimalIndex];
-  }
-
-  const animalRerol = () => {
+  const animalRerol = async () => {
     setIsAnimating(true);
+
+    const startTime = Date.now();
+
+    try {
+      const newAnimal = await getRandomAnimal(locale);
+      const elapsedTime = Date.now() - startTime;
+
+      const cycles = Math.max(1, Math.ceil(elapsedTime / ANIMATION_DURATION));
+
+      const targetTime = cycles * ANIMATION_DURATION;
+
+      const remainingTime = targetTime - elapsedTime;
+
+      await new Promise((resolve) => setTimeout(resolve, remainingTime));
+
+      if (newAnimal) {
+        setCurrentAnimal(newAnimal);
+      }
+    } catch (error) {
+      console.log("Error rerol :", error);
+    } finally {
+      setIsAnimating(false);
+    }
   };
 
-  // The action will run once after the application is built.
-  useEffect(() => {
-    setCurrentAnimal(getRandomAnimal());
-    setIsAnimating(false);
-  }, []);
-
-  useEffect(() => {
-    if (isAnimating) {
-      const timer = setTimeout(() => {
-        setCurrentAnimal(getRandomAnimal());
-        setIsAnimating(false);
-      }, 1000);
-
-      return () => clearTimeout(timer);
-    }
-  }, [isAnimating]);
+  // console.log(currentAnimal);
 
   return (
     <section className="search">
       <h2 className="search__title h2">{title}</h2>
 
       <div className={`search__container ${isAnimating ? "rotate" : ""}`}>
-        <AnimalCard animal={currentAnimal} />
+        {currentAnimal && <AnimalCard animal={currentAnimal} />}
       </div>
 
       <motion.div className="search__button-group" {...slideFromBottom}>
-        {btnRerol?.title && (
-          <Button
-            text={btnRerol.title}
-            onClick={animalRerol}
-            disabled={isAnimating}
-            variant="search"
-          />
-        )}
-        {btnAbout?.title && btnAbout?.href && (
-          <Button text={btnAbout.title} href={btnAbout.href} variant="search" />
-        )}
+        <Button
+          text={btnRerol}
+          onClick={animalRerol}
+          disabled={isAnimating}
+          variant="search"
+        />
+        <Button text={btnAbout} href="/about" variant="search" />
       </motion.div>
     </section>
   );

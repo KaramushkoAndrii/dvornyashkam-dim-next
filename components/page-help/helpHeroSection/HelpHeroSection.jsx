@@ -27,7 +27,7 @@ const HelpHeroSection = ({ content, helpData, items }) => {
             key={`help-list-detailed-${index}`}
             data={item}
             index={index}
-            translationGroup={"help-list-detailed"}
+            // translationGroup={"help-list-detailed"}
           />
         ))}
       </ul>

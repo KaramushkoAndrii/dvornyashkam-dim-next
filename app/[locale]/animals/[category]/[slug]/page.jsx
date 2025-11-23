@@ -21,7 +21,7 @@ export default async function AnimalPage({ params }) {
 
   //Change format of data
   const { data } = await res.json();
-  console.log(data);
+  // console.log(data);
 
   //search current animal
   const animal = data[0];

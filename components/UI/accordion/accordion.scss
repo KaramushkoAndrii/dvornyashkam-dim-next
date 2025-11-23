@@ -6,12 +6,21 @@
   border-radius: $main-border-radius;
 
   &__item {
+    min-width: 200px;
     margin-bottom: 16px;
     background-color: $white;
     border-radius: $main-border-radius;
 
     &:last-of-type {
       margin-bottom: 0;
+    }
+
+    @media (min-width: $tablet) {
+      min-width: 300px;
+    }
+
+    @media (min-width: $large) {
+      min-width: 400px;
     }
   }
 
