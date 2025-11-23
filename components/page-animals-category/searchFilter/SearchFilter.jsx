@@ -1,22 +1,26 @@
 "use client";
 
-import { useState } from "react";
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import Select from "react-select";
 
 import "./searchFilter.scss";
 
-const SearchFilter = ({ onFilterChange }) => {
-  const [filters, setFilters] = useState({
-    age: "",
-    size: "",
-    gender: "",
-    vaccine: false,
-  });
+const SearchFilter = () => {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
 
-  const handleChange = (key, value) => {
-    const updateFilters = { ...filters, [key]: value };
-    setFilters(updateFilters);
-    onFilterChange(updateFilters);
+  const handlerUpdateParam = (key, value) => {
+    const current = new URLSearchParams(Array.from(searchParams.entries()));
+
+    !value || value === false ? current.delete(key) : current.set(key, value);
+
+    const search = current.toString();
+
+    const query = search ? `?${search}` : "";
+
+    //{scroll: false} чтобы не прыгало на верх
+    router.push(`${pathname}${query}`, { scroll: false });
   };
 
   const ageSelect = [
@@ -40,43 +44,43 @@ const SearchFilter = ({ onFilterChange }) => {
     { label: "Девочка", value: "female" },
   ];
 
+  const currentAge = searchParams.get("age") || "";
+  const currentSize = searchParams.get("size") || "";
+  const currentGender = searchParams.get("gender") || "";
+  const currentVaccine = searchParams.get("vaccine") === "true";
+
   return (
     <div className="filter">
       <label>
         Врзраст:
         <Select
           options={ageSelect}
-          value={ageSelect.find((option) => option.value === filters.age)}
-          onChange={(option) => handleChange("age", option.value)}
+          value={ageSelect.find((op) => op.value === currentAge)}
+          onChange={(option) => handlerUpdateParam("age", option.value)}
         />
       </label>
       <label>
         Размер:
         <Select
           options={sizeSelect}
-          value={sizeSelect.find((option) => option.value === filters.size)}
-          onChange={(option) => handleChange("size", option.value)}
+          value={sizeSelect.find((op) => op.value === currentSize)}
+          onChange={(option) => handlerUpdateParam("size", option.value)}
         />
       </label>
       <label>
         Пол:
         <Select
           options={genderSelect}
-          value={genderSelect.find((option) => option.value === filters.gender)}
-          onChange={(option) => handleChange("gender", option.value)}
+          value={genderSelect.find((op) => op.value === currentGender)}
+          onChange={(option) => handlerUpdateParam("gender", option.value)}
         />
-        {/* <select value={filters.gender} onChange={(e) => handleChange('gender', e.target.value)}>
-                    <option value=''>Выберите пол</option>
-                    <option value='male'> Мальчик</option>
-                    <option value='female'> Девочка</option>
-                </select> */}
       </label>
       <label>
         привитые
         <input
           type="checkbox"
-          checked={filters.vaccine}
-          onChange={(e) => handleChange("vaccine", e.target.checked)}
+          checked={currentVaccine}
+          onChange={(e) => handlerUpdateParam("vaccine", e.target.checked)}
         />
       </label>
     </div>

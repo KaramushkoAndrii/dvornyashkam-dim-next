@@ -4,8 +4,35 @@ import AnimalsCategory from "@/components/page-animals-category/animalsCategory/
 
 import { fetchApi } from "@/lib/api";
 
-export default async function AnimalsCategoryPage({ params }) {
+// export const dynamic = "force-dynamic";
+
+const getRangeFilters = (field, value) => {
+  if (!value) return {};
+
+  if (value.includes("+")) {
+    const min = parseInt(value);
+    return { [`filters[${field}][$gte]`]: min };
+  }
+
+  if (value.includes("-")) {
+    const [min, max] = value.split("-").map(Number);
+
+    if (min === 0) {
+      return { [`filters[${field}][$lte]`]: max };
+    }
+
+    return {
+      [`filters[${field}][$gte]`]: min,
+      [`filters[${field}][$lte]`]: max,
+    };
+  }
+
+  return {};
+};
+
+export default async function AnimalsCategoryPage({ params, searchParams }) {
   const { category } = await params;
+  const resolvedSearchParams = await searchParams;
 
   const locale = await getLocale();
   const t = await getTranslations({ locale });
@@ -28,14 +55,42 @@ export default async function AnimalsCategoryPage({ params }) {
       break;
   }
 
-  //creaated filter key for get filtered request from Strappi
-  const filterKey = "filters[category][$eq]";
+  // console.log("SEARCH PARAMS:", resolvedSearchParams);
+  // console.log("VACCINE VALUE:", resolvedSearchParams.vaccine);
+  // console.log("TYPE:", typeof resolvedSearchParams.vaccine);
+
+  const strapiFilters = {
+    //Base filter of category
+    "filters[category][$eq]": category,
+  };
+
+  //filter gender
+  if (resolvedSearchParams.gender) {
+    strapiFilters["filters[gender][$eq]"] = resolvedSearchParams.gender;
+  }
+
+  //filter vaccine
+  if (resolvedSearchParams.vaccine === "true") {
+    strapiFilters["filters[vaccine][$eq]"] = "true";
+  }
+
+  //age filter
+  if (resolvedSearchParams.age) {
+    const ageFilters = getRangeFilters("age", resolvedSearchParams.age);
+    Object.assign(strapiFilters, ageFilters);
+  }
+
+  //size filter
+  if (resolvedSearchParams.size) {
+    const sizeFilters = getRangeFilters("weight", resolvedSearchParams.size);
+    Object.assign(strapiFilters, sizeFilters);
+  }
 
   try {
     const jsonResponse = await fetchApi("/dogs", {
       locale: locale,
       populate: "*",
-      [filterKey]: category,
+      ...strapiFilters,
     });
 
     const animals = jsonResponse.data;
