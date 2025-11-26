@@ -38,29 +38,39 @@
     justify-items: center;
     align-items: center;
     padding: 32px 0;
-
-    &::before {
-      position: absolute;
-      top: 32px;
-      left: 50%;
-      height: calc(100% - 64px);
-      width: 1px;
-      content: "";
-      background-color: $white;
-    }
   }
 
   &__item {
+    position: relative;
     width: 100%;
+    padding-bottom: 32px;
+
+    &:nth-child(even) {
+      .donate__link::before {
+        display: none;
+      }
+    }
   }
 
   &__link {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 16px;
     align-items: center;
 
     color: $white;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      right: 0;
+      height: 150px;
+      width: 1px;
+      content: "";
+      background-color: $white;
+    }
   }
 
   &__img-container {

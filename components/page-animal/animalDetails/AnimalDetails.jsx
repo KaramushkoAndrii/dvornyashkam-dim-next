@@ -61,9 +61,11 @@ export default function AnimalDetails({ animal }) {
             <Slider data={animal.moreImg} />
             {console.log(animal.moreImg)}
             <div className="animal-details__wrapper">
-              <h3 className="h3">{animal.name}</h3>
-              <h3 className="h3">{animal.gender}</h3>
-              <h3 className="h3">{animal.age}</h3>
+              <div className="animal-details__params">
+                <h3 className="h3">{animal.name}</h3>
+                <h3 className="h3">{animal.gender}</h3>
+                <h3 className="h3">{animal.age}</h3>
+              </div>
               <div className="animal-details__characteristic">
                 <Tooltip
                   text={
