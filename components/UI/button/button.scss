@@ -53,4 +53,16 @@
       min-width: 600px;
     }
   }
+
+  &--to-home {
+    border: none;
+    color: $secondary;
+    background-color: $white;
+    padding: 8px 12px;
+  }
+
+  &--to-animals {
+    border: none;
+    padding: 8px 12px;
+  }
 }
