@@ -3,16 +3,18 @@
 import { routing } from "@/i18n/routing";
 
 import BaseLayout from "@/components/base/BaseLayout";
-import NotFoundPage from "@/components/page-not-found/NotFoundPage";
+// import NotFoundPage from "@/components/page-not-found/NotFoundPage";
+import NotFoundContainer from "@/components/page-not-found/NotFoundContainer";
 
 // This page renders when a route like `/unknown.txt` is requested.
 // In this case, the layout at `app/[locale]/layout.jsx` receives
 // an invalid value as the `[locale]` param and calls `notFound()`.
 
 export default function RootNotFoundPage() {
+  const defaultLocale = routing.defaultLocale;
   return (
-    <BaseLayout locale={routing.defaultLocale}>
-      <NotFoundPage />
+    <BaseLayout locale={defaultLocale}>
+      <NotFoundContainer locale={defaultLocale} />
     </BaseLayout>
   );
 }
