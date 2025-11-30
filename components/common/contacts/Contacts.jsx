@@ -1,4 +1,5 @@
 import SocialList from "@/components/common/contacts/SocialList";
+import { MdOutlineEmail } from "react-icons/md";
 
 import useContactsStore from "@/hooks/useContactsStore";
 
@@ -13,17 +14,20 @@ const Contacts = () => {
     <div className="contacts">
       <ul className="contacts__list">
         <li className="contacts__item">
+          <a target="_blank" href={`tel:${contacts?.phone}`}>
+            {contacts?.phone}
+          </a>
+        </li>
+        <li className="contacts__item-svg">
           <a
             className="contacts__link"
             target="_blank"
             href={`mailto:${contacts?.email}`}
           >
-            {contacts?.email}
-          </a>
-        </li>
-        <li className="contacts__links-item">
-          <a target="_blank" href={`tel:${contacts?.phone}`}>
-            {contacts?.phone}
+            <i>
+              <MdOutlineEmail />
+            </i>
+            <p>{contacts?.email}</p>
           </a>
         </li>
       </ul>
