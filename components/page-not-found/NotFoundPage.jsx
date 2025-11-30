@@ -1,24 +1,22 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Button from "../UI/button/Button";
-import { fetchApi } from "@/lib/api";
 
 import "./NotFoundPage.scss";
 
-export default function NotFoundPage() {
+export default function NotFoundPage({ data }) {
   const t = useTranslations("NotFound");
+
+  const { title, description, img } = data;
 
   return (
     <div className="not-found-page">
       <div className="not-found-page__aside">
         <div className="not-found-page__content">
           <h2 className="not-found-page__title h2">
-            <b>Ой, мы потерялись</b>
+            <b>{title}</b>
           </h2>
-          <p className="not-found-page__description p">
-            Страница которую вы ищите. не существует, но вы можете найти других
-            животных в нашем приюте
-          </p>
+          <p className="not-found-page__description p">{description}</p>
         </div>
         <div className="not-found-page__buttons">
           <Button text={t("animals")} href="/animals" variant="to-animals" />
@@ -26,7 +24,7 @@ export default function NotFoundPage() {
         </div>
       </div>
       <div className="not-found-page__image">
-        <Image src="/images/happy2.png" fill={true} />
+        <Image src={img.url} fill={true} alt={img.name} sizes="50vw" />
       </div>
     </div>
   );
