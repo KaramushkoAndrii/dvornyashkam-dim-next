@@ -1,6 +1,7 @@
 .animals-list {
-  @include container();
+  @include container($paddingY: 0);
   display: flex;
+  justify-content: center;
   gap: 32px;
 
   overflow-x: scroll;
