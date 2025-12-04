@@ -19,21 +19,34 @@ import { getAnimalsCategoryLink, sleep } from "@/utils";
 import "./AnimalDetails.scss";
 
 export default function AnimalDetails({ animal }) {
+  console.log(animal);
+
+  const {
+    name,
+    age,
+    age_text,
+    gender,
+    weight,
+    weight_text,
+    moreImg,
+    story,
+    category,
+  } = animal;
   const router = useRouter();
 
   const t = useTranslations();
 
   const { openModal } = useModalStore();
 
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    setIsOpen(true);
+  // useEffect(() => {
+  //   setIsOpen(true);
 
-    return () => {
-      setIsOpen(false);
-    };
-  }, []);
+  //   return () => {
+  //     setIsOpen(false);
+  //   };
+  // }, []);
 
   const openHandler = (evt) => {
     evt.preventDefault();
@@ -41,16 +54,76 @@ export default function AnimalDetails({ animal }) {
   };
 
   const closeHandler = async () => {
-    setIsOpen(false);
+    //   setIsOpen(false);
 
-    await sleep(300);
+    //   await sleep(300);
 
-    router.push(getAnimalsCategoryLink(animal.category));
+    router.push(getAnimalsCategoryLink(category));
   };
 
   return (
-    <dialog className={`animal-details ${isOpen ? "open" : ""}`} open>
-      {animal && (
+    <section className="animal-details">
+      <div className="animal-details__header">
+        <div className="animal-details__content">
+          <Slider data={moreImg} />
+          <h3 className="animal-details__name">{name}</h3>
+          <div className="animal-details__info">
+            <h4 className="animal-details__years">
+              {`${t(`characteristics.age`)}: ${age} ${age_text}`}
+            </h4>
+            <h4 className="animal-details__sex">{`${t(
+              `characteristics.sex`
+            )}: ${gender}`}</h4>
+            <h4 className="animal-details__weight">
+              {`${t(`characteristics.weight`)}: ${weight} ${weight_text}`}
+            </h4>
+          </div>
+        </div>
+        <div className="animal-details__characteristic">
+          <Tooltip
+            text={t(
+              `characteristics.${
+                animal.animals ? "animal-friendly" : "not-animal-friendly"
+              }`
+            )}
+          >
+            <FaDog style={{ fill: animal.animals ? "green" : "red" }} />
+            <span className="tooltip__content">
+              {animal.animals ? "Дружит с животными" : "Не дружит с животными"}
+            </span>
+          </Tooltip>
+          <Tooltip text={animal.vaccine ? "Вакцинирован" : "Не вакцинирован"}>
+            <TbVaccine
+              style={{
+                fill: animal.vaccine ? "green" : "red",
+                stroke: animal.vaccine ? "green" : "red",
+              }}
+            />
+            <span className="tooltip__content">
+              {animal.vaccine ? "Вакцинирован" : "Не вакцинирован"}
+            </span>
+          </Tooltip>
+          <Tooltip text={animal.castration ? "Кастрирован" : "Не кастрирован"}>
+            <FaNotesMedical
+              style={{ fill: animal.castration ? "green" : "red" }}
+            />
+            <span className="tooltip__content">
+              {animal.castration ? "Кастрирован" : "Не кастрирован"}
+            </span>
+          </Tooltip>
+        </div>
+      </div>
+      <div className="animal-details__main">
+        {story}
+        <Button
+          className="animal-details__action"
+          text={t("buttons.guard")}
+          onClick={openHandler}
+        />
+        <button onClick={closeHandler}>To category</button>
+      </div>
+
+      {/* {animal && (
         <div className="animal-details__content">
           <header className="animal-details__header">
             <button className="animal-details__close" onClick={closeHandler}>
@@ -109,7 +182,7 @@ export default function AnimalDetails({ animal }) {
             </div>
           </section>
         </div>
-      )}
-    </dialog>
+      )} */}
+    </section>
   );
 }

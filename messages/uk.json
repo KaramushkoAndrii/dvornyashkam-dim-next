@@ -5,7 +5,7 @@
     "advise": "Поради",
     "help": "Допомога",
     "contacts": "Контакти",
-    "ivents": "івенти"
+    "news": "новини"
   },
   "LocaleLayout": {
     "title": "Дворонишкам дiм",
@@ -34,6 +34,16 @@
     "guard": "Стати опікуном",
     "call": "Залишити заявку",
     "contact": "Зв'язатись із нами"
+  },
+
+  "characteristics": {
+    "age": "Вік",
+    "weight": "Вага",
+    "sex": "Стать",
+    "animal-friendly": "Дружить із іншими тваринами",
+    "not-animal-friendly": "Не дружить з іншими тваринами",
+    "vaccine": "Вакцинований",
+    "not-vaccine": "Не вакцинований"
   },
 
   "hero_section": {

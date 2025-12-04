@@ -22,7 +22,7 @@
   visibility: hidden;
   pointer-events: none;
 
-  @media (width >= $tablet) {
+  @media screen and (width >= $large) {
     margin: 0 30px;
   }
 

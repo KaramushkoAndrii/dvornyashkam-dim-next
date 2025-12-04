@@ -24,9 +24,12 @@ const Footer = async () => {
         <ModalForm />
       </Modal>
 
-      <Modal id="test">
-        <ModalFormTest />
-      </Modal>
+      <p>
+        product by:{" "}
+        <a href="https://www.instagram.com/" target="_blank">
+          Karamushko Andrii
+        </a>
+      </p>
     </footer>
   );
 };

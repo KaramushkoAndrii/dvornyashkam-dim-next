@@ -1,124 +1,170 @@
+// .animal-details {
+//   position: fixed;
+
+//   top: 0;
+//   left: 0;
+
+//   z-index: var(--z-modal);
+
+//   display: flex;
+//   flex-direction: column;
+
+//   // justify-content: center;
+//   // align-items: center;
+
+//   width: 100dvw;
+//   height: 100dvh;
+
+//   background: rgba($secondary, 0.9);
+
+//   &__content {
+//     // @include container();
+//   }
+
+//   &__header-content {
+//     display: grid;
+//     grid-template-columns: repeat(2, 1fr);
+//   }
+
+// &__img {
+//   width: clamp(200px, 55vw, 450px);
+//   aspect-ratio: 3 / 4;
+//   border-radius: $main-border-radius;
+// }
+
+// &__content {
+//   position: relative;
+
+//   display: flex;
+
+//   flex-direction: column;
+
+//   gap: 16px;
+
+//   width: 90%;
+//   max-width: 500px;
+//   max-height: 90dvh;
+//   overflow-y: auto;
+
+//   border: 1px solid $primary;
+
+//   border-radius: $main-border-radius;
+
+//   background-color: $primary;
+
+//   overflow: auto;
+
+//   @media (min-width: $large) {
+//     max-width: 800px;
+//     padding: 0 20px;
+//     gap: 0;
+//   }
+// }
+
+// &__header {
+//   position: sticky;
+
+//   top: 0;
+//   left: 0;
+
+//   display: flex;
+
+//   justify-content: end;
+
+//   padding: 16px 16px 0;
+
+//   background-color: $primary;
+
+//   // z-index: 10;
+// }
+
+// &__close {
+//   padding: 8px 12px;
+//   background-color: $secondary;
+//   color: $white;
+//   border-radius: $main-border-radius;
+// }
+
+// &__info {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   gap: 8px;
+//   padding-bottom: 20px;
+
+//   @media (min-width: $large) {
+//     flex-direction: row;
+//   }
+// }
+
+// &__img-container {
+//   display: flex;
+//   width: 100%;
+//   padding: 0 16px;
+//   gap: 16px;
+
+//   overflow-x: scroll;
+//   scroll-behavior: smooth;
+//   scrollbar-width: none;
+
+//   @media (min-width: $large) {
+//     scrollbar-width: auto;
+//   }
+// }
+
+// &__wrapper {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// &__characteristic {
+//   display: flex;
+//   gap: 16px;
+// }
+
+// &__footer {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 16px;
+//   padding: 8px 16px 0;
+//   margin-bottom: 16px;
+//   width: 100%;
+// }
+
+// &__action {
+//   width: 100%;
+// }
+// }
+
 .animal-details {
-  position: fixed;
+  @include container();
 
-  top: 0;
-  left: 0;
-
-  z-index: var(--z-modal);
-
-  display: flex;
-
-  justify-content: center;
-  align-items: center;
-
-  width: 100dvw;
-  height: 100dvh;
-
-  background: $secondary;
-
-  &__img {
-    width: clamp(200px, 55vw, 450px);
-    aspect-ratio: 3 / 4;
-    border-radius: $main-border-radius;
-  }
-
-  &__content {
-    position: relative;
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 16px;
-
-    max-width: 70%;
-
-    border: 1px solid $primary;
-
-    border-radius: $main-border-radius;
-
-    background-color: $primary;
-
-    overflow: auto;
-
-    @media (min-width: $large) {
-      max-width: 80%;
-      padding: 0 20px;
-      gap: 0;
-    }
-  }
-
-  &__header {
-    position: sticky;
-
-    top: 0;
-    left: 0;
-
-    display: flex;
-
-    justify-content: end;
-
-    padding: 16px 16px 0;
-
-    background-color: inherit;
-  }
-
-  &__close {
-    padding: 8px 12px;
-    background-color: $secondary;
-    color: $white;
-    border-radius: $main-border-radius;
+  &__name {
+    text-align: center;
   }
 
   &__info {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 8px;
-
-    @media (min-width: $large) {
-      flex-direction: row;
-    }
-  }
-
-  &__img-container {
-    display: flex;
-    width: 100%;
-    padding: 0 16px;
-    gap: 16px;
-
-    overflow-x: scroll;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-
-    @media (min-width: $large) {
-      scrollbar-width: auto;
-    }
-  }
-
-  &__wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    gap: 4px;
   }
 
   &__characteristic {
     display: flex;
-    gap: 16px;
+    justify-content: center;
+    padding-top: 4px;
+    gap: 8px;
   }
 
-  &__footer {
+  &__main {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    padding: 8px 16px 0;
-    margin-bottom: 16px;
-    width: 100%;
-  }
-
-  &__action {
-    width: 100%;
+    align-items: center;
+    padding-top: 8px;
+    gap: 8px;
   }
 }

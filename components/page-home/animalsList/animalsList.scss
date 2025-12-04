@@ -1,13 +1,13 @@
 .animals-list {
   @include container($paddingY: 0);
   display: flex;
-  justify-content: center;
+  max-height: 100%;
   gap: 32px;
 
   overflow-x: scroll;
   scroll-behavior: smooth;
 
-  @media (min-width: $large) {
+  @media (min-width: $tablet) {
     justify-content: center;
     scrollbar-width: none;
   }

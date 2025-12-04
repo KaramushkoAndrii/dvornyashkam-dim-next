@@ -5,7 +5,7 @@
     "advise": "advise",
     "help": "help",
     "contacts": "contacts",
-    "ivents": "ivents"
+    "news": "news"
   },
   "LocaleLayout": {
     "title": "Dvoronyshkam dim",
@@ -34,6 +34,16 @@
     "guard": "(en)Стати опікуном",
     "call": "(en)Залишити заявку",
     "contact": "(en)Зв'язатись із нами"
+  },
+
+  "characteristics": {
+    "age": "Age",
+    "weight": "Weight",
+    "sex": "Gender",
+    "animal-friendly": "Animal friendly",
+    "not-animal-friendly": "Not animal friendly",
+    "vaccine": "Vaccine",
+    "not-vaccine": "Not vaccine"
   },
 
   "hero_section": {
