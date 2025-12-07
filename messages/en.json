@@ -33,7 +33,8 @@
     "house": "(en)Подарувати дім",
     "guard": "(en)Стати опікуном",
     "call": "(en)Залишити заявку",
-    "contact": "(en)Зв'язатись із нами"
+    "contact": "(en)Зв'язатись із нами",
+    "category": "Back to category"
   },
 
   "characteristics": {
@@ -43,7 +44,10 @@
     "animal-friendly": "Animal friendly",
     "not-animal-friendly": "Not animal friendly",
     "vaccine": "Vaccine",
-    "not-vaccine": "Not vaccine"
+    "not-vaccine": "Not vaccine",
+    "castration": "Castration",
+    "not-castration": "Not castration",
+    "title": "Story"
   },
 
   "hero_section": {
@@ -163,5 +167,11 @@
 
   "maps": {
     "main": "(en)Ми на мапі"
+  },
+
+  "footer": {
+    "title": "(en)Зробіть добро - дайте тварині новий дім!",
+    "privat": "all rules sae",
+    "dev": "product by"
   }
 }

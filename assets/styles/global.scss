@@ -87,7 +87,7 @@ body.modal-open {
 
   overflow: hidden;
 
-  @media (min-width: $large) {
+  @media (min-width: $laptop) {
     order: -1;
   }
 }

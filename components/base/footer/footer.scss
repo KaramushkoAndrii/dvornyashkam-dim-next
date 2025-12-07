@@ -13,4 +13,16 @@
     max-width: 75%;
     color: $white;
   }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+
+    @media screen and (width >= $large) {
+      flex-direction: row;
+    }
+  }
 }

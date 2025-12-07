@@ -1,6 +1,5 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { useRouter } from "@/i18n/routing";
 
 import { useTranslations } from "next-intl";
@@ -31,6 +30,9 @@ export default function AnimalDetails({ animal }) {
     moreImg,
     story,
     category,
+    animals,
+    vaccine,
+    castration,
   } = animal;
   const router = useRouter();
 
@@ -38,25 +40,13 @@ export default function AnimalDetails({ animal }) {
 
   const { openModal } = useModalStore();
 
-  // const [isOpen, setIsOpen] = useState(false);
-
-  // useEffect(() => {
-  //   setIsOpen(true);
-
-  //   return () => {
-  //     setIsOpen(false);
-  //   };
-  // }, []);
-
   const openHandler = (evt) => {
     evt.preventDefault();
     openModal("modal-form");
   };
 
   const closeHandler = async () => {
-    //   setIsOpen(false);
-
-    //   await sleep(300);
+    await sleep(300);
 
     router.push(getAnimalsCategoryLink(category));
   };
@@ -64,125 +54,90 @@ export default function AnimalDetails({ animal }) {
   return (
     <section className="animal-details">
       <div className="animal-details__header">
+        <Slider data={moreImg} />
         <div className="animal-details__content">
-          <Slider data={moreImg} />
-          <h3 className="animal-details__name">{name}</h3>
+          <h3 className="animal-details__name h2">{name}</h3>
+
           <div className="animal-details__info">
-            <h4 className="animal-details__years">
+            <h4 className="animal-details__years h3">
               {`${t(`characteristics.age`)}: ${age} ${age_text}`}
             </h4>
-            <h4 className="animal-details__sex">{`${t(
+
+            <h4 className="animal-details__sex h3">{`${t(
               `characteristics.sex`
             )}: ${gender}`}</h4>
-            <h4 className="animal-details__weight">
+
+            <h4 className="animal-details__weight h3">
               {`${t(`characteristics.weight`)}: ${weight} ${weight_text}`}
             </h4>
           </div>
         </div>
+
         <div className="animal-details__characteristic">
           <Tooltip
             text={t(
               `characteristics.${
-                animal.animals ? "animal-friendly" : "not-animal-friendly"
+                animals ? "animal-friendly" : "not-animal-friendly"
               }`
             )}
           >
-            <FaDog style={{ fill: animal.animals ? "green" : "red" }} />
-            <span className="tooltip__content">
-              {animal.animals ? "Дружит с животными" : "Не дружит с животными"}
+            <FaDog style={{ fill: animals ? "green" : "red" }} />
+            <span className="tooltip__content span">
+              {t(
+                `characteristics.${
+                  animals ? "animal-friendly" : "not-animal-friendly"
+                }`
+              )}
             </span>
           </Tooltip>
-          <Tooltip text={animal.vaccine ? "Вакцинирован" : "Не вакцинирован"}>
+
+          <Tooltip
+            text={t(`characteristics.${vaccine ? "vaccine" : "not-vaccine"}`)}
+          >
             <TbVaccine
               style={{
-                fill: animal.vaccine ? "green" : "red",
-                stroke: animal.vaccine ? "green" : "red",
+                fill: vaccine ? "green" : "red",
+                stroke: vaccine ? "green" : "red",
               }}
             />
-            <span className="tooltip__content">
-              {animal.vaccine ? "Вакцинирован" : "Не вакцинирован"}
+            <span className="tooltip__content span">
+              {t(`characteristics.${vaccine ? "vaccine" : "not-vaccine"}`)}
             </span>
           </Tooltip>
-          <Tooltip text={animal.castration ? "Кастрирован" : "Не кастрирован"}>
-            <FaNotesMedical
-              style={{ fill: animal.castration ? "green" : "red" }}
-            />
-            <span className="tooltip__content">
-              {animal.castration ? "Кастрирован" : "Не кастрирован"}
+
+          <Tooltip
+            text={t(
+              `characteristics.${castration ? "castration" : "not-castration"}`
+            )}
+          >
+            <FaNotesMedical style={{ fill: castration ? "green" : "red" }} />
+            <span className="tooltip__content span">
+              {t(
+                `characteristics.${
+                  castration ? "castration" : "not-castration"
+                }`
+              )}
             </span>
           </Tooltip>
         </div>
       </div>
       <div className="animal-details__main">
-        {story}
+        <h3 className="animal-details__title h3">
+          {t(`characteristics.title`)}
+        </h3>
+        <p className="p">{story}</p>
         <Button
           className="animal-details__action"
           text={t("buttons.guard")}
           onClick={openHandler}
+          variant={"get"}
         />
-        <button onClick={closeHandler}>To category</button>
+        <Button
+          onClick={closeHandler}
+          text={t("buttons.category")}
+          variant={"to-category"}
+        />
       </div>
-
-      {/* {animal && (
-        <div className="animal-details__content">
-          <header className="animal-details__header">
-            <button className="animal-details__close" onClick={closeHandler}>
-              X
-            </button>
-          </header>
-          <section className="animal-details__info">
-            <Slider data={animal.moreImg} />
-            {console.log(animal.moreImg)}
-            <div className="animal-details__wrapper">
-              <div className="animal-details__params">
-                <h3 className="h3">{animal.name}</h3>
-                <h3 className="h3">{animal.gender}</h3>
-                <h3 className="h3">{animal.age}</h3>
-              </div>
-              <div className="animal-details__characteristic">
-                <Tooltip
-                  text={
-                    animal.animals
-                      ? "Дружит с животными"
-                      : "Не дружит с животными"
-                  }
-                >
-                  <FaDog style={{ fill: animal.animals ? "green" : "red" }} />
-                </Tooltip>
-                <Tooltip
-                  text={animal.vaccine ? "Вакцинирован" : "Не вакцинирован"}
-                >
-                  <TbVaccine
-                    style={{
-                      fill: animal.vaccine ? "green" : "red",
-                      stroke: animal.vaccine ? "green" : "red",
-                    }}
-                  />
-                </Tooltip>
-                <Tooltip
-                  text={animal.castration ? "Кастрирован" : "Не кастрирован"}
-                >
-                  <FaNotesMedical
-                    style={{ fill: animal.castration ? "green" : "red" }}
-                  />
-                </Tooltip>
-              </div>
-              <footer className="animal-details__footer">
-                <Button
-                  className="animal-details__action"
-                  text={t("buttons.house")}
-                  onClick={openHandler}
-                />
-                <Button
-                  className="animal-details__action"
-                  text={t("buttons.guard")}
-                  onClick={openHandler}
-                />
-              </footer>
-            </div>
-          </section>
-        </div>
-      )} */}
     </section>
   );
 }
