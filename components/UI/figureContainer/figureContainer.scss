@@ -43,4 +43,12 @@
     width: 100%;
     max-width: 50%;
   }
+
+  .news-post & {
+    margin-bottom: 8px;
+
+    @media (width >= $large) {
+      margin: 16px auto;
+    }
+  }
 }
