@@ -30,6 +30,7 @@ export default function BlockRender({ blocks }) {
         );
 
       case "news-items.figure-and-text":
+        console.log(block);
         return <FigureAndText data={block} />;
 
       case "news-items.slider":
