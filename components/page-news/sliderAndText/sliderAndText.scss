@@ -10,6 +10,11 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  &__text {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
   &--left {
     .slider-and-text__text {
       order: 2;

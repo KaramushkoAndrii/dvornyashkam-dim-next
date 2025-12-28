@@ -3,6 +3,7 @@ import SliderAndText from "../sliderAndText/SliderAndText";
 import FigureContainer from "@/components/UI/figureContainer/FigureContainer";
 import FigureAndText from "../figureAndText/FigureAndText";
 import ImgAndText from "../imgAndText/ImgAndText";
+import RichText from "@/components/UI/richText/RichText";
 
 export default function BlockRender({ blocks }) {
   if (!blocks) {
@@ -12,10 +13,11 @@ export default function BlockRender({ blocks }) {
   return blocks.map((block) => {
     switch (block.__component) {
       case "news-items.title":
-        return <h2 className="h2">{block.title}</h2>;
+        return <h1 className="h2">{block.title}</h1>;
 
       case "news-items.rich-text":
-        return <p className="p">{block.content}</p>;
+        console.log(`Show this ${block}`);
+        return <RichText data={block.text} />;
 
       case "news-items.img-and-text":
         return <ImgAndText data={block} />;
