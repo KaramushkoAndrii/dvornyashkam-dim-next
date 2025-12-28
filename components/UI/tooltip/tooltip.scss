@@ -1,6 +1,9 @@
 .tooltip {
   position: relative;
   display: inline-block;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 
   &__popup {
     position: absolute;
@@ -35,6 +38,14 @@
       opacity: 1;
       transform: translateX(-50%) scale(1);
       pointer-events: auto;
+    }
+  }
+
+  &__content {
+    display: none;
+
+    @media screen and (width >= $tablet) {
+      display: block;
     }
   }
 }

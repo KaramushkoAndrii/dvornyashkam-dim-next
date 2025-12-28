@@ -42,5 +42,17 @@
 
     width: 100%;
     max-width: 50%;
+
+    .figure-and-text & {
+      max-width: 100%;
+    }
+  }
+
+  .news-post & {
+    margin-bottom: 8px;
+
+    @media (width >= $large) {
+      margin: 16px auto;
+    }
   }
 }

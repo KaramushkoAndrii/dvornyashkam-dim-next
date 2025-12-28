@@ -1,5 +1,5 @@
 .nav__wrapper {
-  @media (width >= $large) {
+  @media (width >= $laptop) {
     display: flex;
     flex-grow: 1;
   }
@@ -22,7 +22,7 @@
   visibility: hidden;
   pointer-events: none;
 
-  @media (width >= $tablet) {
+  @media screen and (width >= $laptop) {
     margin: 0 30px;
   }
 
@@ -46,7 +46,7 @@
     padding: 0 $list-padding-x;
     width: 100%;
 
-    @media (width >= $large) {
+    @media (width >= $laptop) {
       flex-direction: row;
       justify-content: center;
       align-items: center;
@@ -73,7 +73,7 @@
 
       color: $white;
 
-      @media (width >= $large) {
+      @media (width >= $laptop) {
         padding: 8px;
       }
     }
@@ -82,7 +82,7 @@
       width: 24px;
     }
 
-    @media (min-width: $large) {
+    @media (min-width: $laptop) {
       border: none;
 
       span {
@@ -100,7 +100,7 @@
     }
   }
 
-  @media (min-width: $large) {
+  @media (min-width: $laptop) {
     position: relative;
     top: 0;
     left: 0;
@@ -149,7 +149,7 @@
     }
   }
 
-  @media (min-width: $large) {
+  @media screen and (width >= $laptop) {
     display: none;
   }
 }

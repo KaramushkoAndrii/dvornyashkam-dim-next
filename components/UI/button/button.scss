@@ -58,11 +58,22 @@
     border: none;
     color: $secondary;
     background-color: $white;
-    padding: 8px 12px;
+    padding: 12px;
   }
 
   &--to-animals {
     border: none;
     padding: 8px 12px;
+  }
+
+  &--get {
+    border: none;
+  }
+
+  &--to-category {
+    border: 1px solid $secondary;
+    color: $secondary;
+    background-color: $white;
+    padding: 12px;
   }
 }

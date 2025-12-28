@@ -1,0 +1,32 @@
+.slider-and-text {
+  gap: 16px;
+
+  @media (width >= $large) {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  @media (width >= $laptop) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__text {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  &--left {
+    .slider-and-text__text {
+      order: 2;
+    }
+
+    @media (width >= $large) {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+    }
+
+    @media (width >= $laptop) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

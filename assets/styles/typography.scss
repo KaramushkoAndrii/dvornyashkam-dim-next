@@ -24,3 +24,9 @@
   font-weight: normal;
   font-size: clamp(20px, 2vw, 30px);
 }
+
+.span {
+  font-family: var(--font-second);
+  font-weight: normal;
+  font-size: clamp(16px, 1.5vw, 24px);
+}

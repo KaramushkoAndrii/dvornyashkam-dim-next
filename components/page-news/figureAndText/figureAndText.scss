@@ -1,0 +1,8 @@
+.figure-and-text {
+  display: grid;
+  gap: 16px;
+
+  @media (width >= $tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
