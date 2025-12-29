@@ -13,7 +13,7 @@ const ImgAndText = ({ data }) => {
           imgPosition == "right" ? null : "left"
         }`}
       >
-        <Image src={img.url} fill />
+        <Image src={img.url} alt={img.name} fill />
       </div>
     </div>
   );

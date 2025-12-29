@@ -17,8 +17,12 @@ export default async function NewsListPage({ params }) {
 
       <ul className="news__list">
         {newsData.data.map((post) => (
-          <li key={post.id}>
-            <Link href={`news/${post.slug}`}>
+          <li
+            key={post.id}
+            className="news__item"
+            style={{ backgroundImage: `url(${post.cover[0].url})` }}
+          >
+            <Link href={`news/${post.slug}`} className="news__link">
               <p>{post.title}</p>
               <p>{post.description}</p>
               <i>{post.published}</i>

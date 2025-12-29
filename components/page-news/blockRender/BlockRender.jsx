@@ -10,17 +10,20 @@ export default function BlockRender({ blocks }) {
     return null;
   }
 
-  return blocks.map((block) => {
+  return blocks.map((block, index) => {
     switch (block.__component) {
       case "news-items.title":
-        return <h1 className="h2">{block.title}</h1>;
+        return (
+          <h1 className="h2" key={index}>
+            {block.title}
+          </h1>
+        );
 
       case "news-items.rich-text":
-        console.log(`Show this ${block}`);
-        return <RichText data={block.text} />;
+        return <RichText data={block.text} key={index} />;
 
       case "news-items.img-and-text":
-        return <ImgAndText data={block} />;
+        return <ImgAndText data={block} key={index} />;
 
       case "news-items.figure":
         return (
@@ -28,18 +31,18 @@ export default function BlockRender({ blocks }) {
             src={block.img[0].url}
             alt={block.text}
             text={block.text}
+            key={index}
           />
         );
 
       case "news-items.figure-and-text":
-        console.log(block);
-        return <FigureAndText data={block} />;
+        return <FigureAndText data={block} key={index} />;
 
       case "news-items.slider":
-        return <Slider data={block.img} />;
+        return <Slider data={block.img} key={index} />;
 
       case "news-items.slider-and-text":
-        return <SliderAndText data={block} />;
+        return <SliderAndText data={block} key={index} />;
 
       case "news-items.video":
         return <video src={block.link}>{block.description}</video>;
