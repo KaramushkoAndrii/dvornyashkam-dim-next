@@ -29,14 +29,14 @@ const AboutSection = ({ data }) => {
         </motion.ul>
       </div>
 
-      <motion.ul className="about__list" {...scale}>
+      <ul className="about__list">
         {aboutItem.map((item) => (
-          <li key={item.id} className="about__item">
+          <motion.li {...scale} key={item.id} className="about__item">
             <h3 className="about__item--title h3">{item.header}</h3>
             <p className="about__item--content">{item.description}</p>
-          </li>
+          </motion.li>
         ))}
-      </motion.ul>
+      </ul>
     </section>
   );
 };
