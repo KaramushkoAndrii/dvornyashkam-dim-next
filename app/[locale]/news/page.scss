@@ -4,44 +4,4 @@
   &__title {
     padding-bottom: 32px;
   }
-
-  &__list {
-    display: grid;
-    gap: 16px;
-    padding-bottom: 16px;
-
-    @media screen and (width >= $tablet) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media screen and (width > $large) {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  &__item {
-    position: relative;
-    border-radius: $main-border-radius;
-    padding: 32px;
-    background-size: cover;
-    background-position: center;
-
-    &::before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      content: "";
-      background-color: $primary;
-      opacity: 0.55;
-      z-index: 1;
-      border-radius: $main-border-radius;
-    }
-  }
-
-  &__link {
-    position: relative;
-    z-index: 2;
-  }
 }

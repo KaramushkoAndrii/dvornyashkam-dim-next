@@ -8,7 +8,7 @@
   &::before {
     position: absolute;
     content: "";
-    bottom: calc(100% - 52px);
+    bottom: calc(100% - 67px);
     left: 0;
 
     width: 100%;
@@ -22,7 +22,11 @@
     z-index: 5;
 
     @media (min-width: $tablet) {
-      bottom: calc(100% - 36px);
+      bottom: calc(100% - 54px);
+    }
+
+    @media screen and (width <= 390px) {
+      bottom: calc(100% - 81px);
     }
   }
 
